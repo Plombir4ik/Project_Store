@@ -7,10 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="233,114,0,0" Height="166" Width="257"><Run Text="ДА"/><InlineUIContainer>
-             
-
-            </InlineUIContainer></TextBlock>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="233,114,0,0" Height="166" Width="257"><Run Text="\ДА/"/><InlineUIContainer/></TextBlock>
         <Button Content="Button" HorizontalAlignment="Center" Height="51" VerticalAlignment="Center" Width="79" RenderTransformOrigin="1.200,0.52" Margin="319,190,394,178"/>
     </Grid>
 </Window>

@@ -141,9 +141,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="321.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="png-clipart-silhouette-graphics-male-silhouette-animals-photography.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

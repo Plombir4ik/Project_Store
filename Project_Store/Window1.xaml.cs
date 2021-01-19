@@ -26,7 +26,26 @@ namespace Project_Store
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            private void enter_Click(object sender, RoutedEventArgs e)
+            {
+                if (textBox_login.Text.Length > 0)    
+                {
+                    if (password.Password.Length > 0)         
+                    {        
+                        DataTable dt_user = Window1.Select("SELECT * FROM [compstore] WHERE [login] = '" + LoginTextBox.Text + "' AND [password] = '" + PasswordTextBox.Password + "'");
+                        if (dt_user.Rows.Count > 0)     
+                        {
+                            MessageBox.Show("Ви авторизовані!");
+                            MainWindow mform = new MainWindow();
+                            mform.Show();
+                            Hide();       
+                        }
+                        else MessageBox.Show("Такого користувача не знайдено");  
+                    }
+                    else MessageBox.Show("Введіть пароль");  
+                }
+                else MessageBox.Show("Введіть логін");
+            }
         }
     }
 }

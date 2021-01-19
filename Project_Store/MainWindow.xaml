@@ -8,5 +8,7 @@
         Title="MainWindow" Height="450" Width="744">
     <Grid>
         <Image Source="pngtree_business_computer_monitor_psd_design_material_image_136116.jpg" Stretch="Fill"/>
+        <Label x:Name="log" Content="admin" HorizontalAlignment="Left" Height="60" Margin="80,0,0,0" VerticalAlignment="Top" Width="209"/>
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click" />
     </Grid>
 </Window>

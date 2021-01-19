@@ -22,3 +22,4 @@ C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Stor
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.CopyComplete
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.exe
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.pdb
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\bin\Debug\MySql.Data.xml

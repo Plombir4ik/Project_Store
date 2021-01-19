@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Windows.Shapes;
 
 namespace Project_Store
@@ -20,9 +22,18 @@ namespace Project_Store
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(string login = "")
         {
             InitializeComponent();
+            if (login == "") { }
+            else { log.Content = login; }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 mform = new Window1();
+            mform.Show();
+            Close();
         }
     }
 }

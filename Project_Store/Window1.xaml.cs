@@ -10,7 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using MySql.Data.MySqlClient;
+using System.Data;
 using System.Windows.Shapes;
+
 
 namespace Project_Store
 {
@@ -26,26 +29,29 @@ namespace Project_Store
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            private void enter_Click(object sender, RoutedEventArgs e)
+            string login = LoginTextBox.Text;
+            string pass = PasswordTextBox.Password;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore;");
+            conn.Open();
+
+            string SQLlogin = "select login from prazivnuku where login = '" + login + "' and password = '" + pass + "';";
+            MySqlCommand command = new MySqlCommand(SQLlogin, conn);
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            conn.Close();
+                  
+            if (table.Rows.Count > 0)       
             {
-                if (textBox_login.Text.Length > 0)    
-                {
-                    if (password.Password.Length > 0)         
-                    {        
-                        DataTable dt_user = Window1.Select("SELECT * FROM [compstore] WHERE [login] = '" + LoginTextBox.Text + "' AND [password] = '" + PasswordTextBox.Password + "'");
-                        if (dt_user.Rows.Count > 0)     
-                        {
-                            MessageBox.Show("Ви авторизовані!");
-                            MainWindow mform = new MainWindow();
-                            mform.Show();
-                            Hide();       
-                        }
-                        else MessageBox.Show("Такого користувача не знайдено");  
-                    }
-                    else MessageBox.Show("Введіть пароль");  
-                }
-                else MessageBox.Show("Введіть логін");
+                MainWindow mform = new MainWindow(login);
+                    mform.Show();
+                    Close();
             }
+            else { MessageBox.Show("Неправильний логін або пароль"); }
+            
         }
     }
 }

@@ -15,7 +15,7 @@
                 <Ellipse x:Name="Ellipse3" HorizontalAlignment="Center" Fill="White" Height="45" VerticalAlignment="Top" Width="70" Margin="-68"/>
                 <TextBox materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5"/>
                 <PasswordBox materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="5" />
-                <Button Content="Вбійти" Margin="75 50" Click="Button_Click"></Button>
+                <Button Content="Увійти" Margin="75 50" Click="Button_Click"></Button>
             </StackPanel>            
         </Border>
     </Grid>

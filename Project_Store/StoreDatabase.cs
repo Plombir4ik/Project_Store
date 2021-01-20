@@ -8,7 +8,7 @@ namespace Project_Store
 {
     class StoreDatabase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;database=lombard");
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
         public void openConnection()
         {
             if (connection.State == System.Data.ConnectionState.Closed)

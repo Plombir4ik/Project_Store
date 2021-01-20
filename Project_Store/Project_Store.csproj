@@ -145,9 +145,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="pngtree_business_computer_monitor_psd_design_material_image_136116.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
@@ -160,28 +157,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="png-clipart-silhouette-graphics-male-silhouette-animals-photography.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="door.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="texture.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="favpng_clip-art-computer-hardware-icon-design.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icon3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="graphic-card-2-660393.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="logoforprogramm_newcolor.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="logoforprogramm_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="theme1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

@@ -8,7 +8,7 @@
         Title="Головне меню" Height="572.177" Width="946" MinWidth="744" MinHeight="450">
     <Grid>
 
-        <Image Source="C:\Users\Plombir\Downloads/theme1.jpg" Stretch="Fill"/>
+        <Image Source="theme1.jpg" Stretch="Fill"/>
         <Label x:Name="log" Content="admin" HorizontalAlignment="Left" Height="39" Margin="54,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="-13.798,0.756" FontSize="20" IsHitTestVisible="False" Visibility="Hidden"/>
         <Grid HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="54" Margin="884,0,0,0">
             <Image Source="door.png" Width="Auto" Margin="-1"/>

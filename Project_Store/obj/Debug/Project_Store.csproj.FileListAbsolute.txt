@@ -54,3 +54,5 @@ C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Entrance.bam
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainTovar.baml
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddTovar.g.cs
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddTovar.baml
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\AddTovar.g.cs
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\AddTovar.baml

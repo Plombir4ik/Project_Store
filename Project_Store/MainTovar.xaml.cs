@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,6 +10,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+//using Microsoft.Office.Interop.Word;
+//using Word = Microsoft.Office.Interop.Word;
+using System.IO;
+using System.Reflection;
 
 namespace Project_Store
 {
@@ -19,9 +23,32 @@ namespace Project_Store
     /// </summary>
     public partial class MainTovar : Window
     {
+        MySqlDataAdapter sda, sda1;
+        MySqlCommandBuilder scb, scb1;
+        System.Data.DataTable dt, dt1;
         public MainTovar()
         {
             InitializeComponent();
+            this.Width = SystemParameters.WorkArea.Width;
+            this.Height = SystemParameters.WorkArea.Height;
+            this.Left = 0;
+            this.Top = 0;
+            this.WindowState = WindowState.Normal;
+                Info();
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void Info()
+        {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+            sda = new MySqlDataAdapter("select * from tovar", con);
+            dt = new System.Data.DataTable();
+            sda.Fill(dt);
+            dataGrid.ItemsSource = dt.DefaultView;
         }
     }
 }

@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
-    <Grid>
-        
+        WindowState="Maximized"
+        Title="Window1" Height="900" Width="1600">
+    <Grid Margin="0,0,-99.667,34.667">
+        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="19,16,0,0" Background="#FFE6F6FF" BorderBrush="Black" Foreground="Black" OpacityMask="White" HorizontalGridLinesBrush="#FFB9FFFC" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="White" RowBackground="#FFDFF1F9" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="389" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1100">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="70" />
+                <DataGridTextColumn Header="Виробник" Binding="{Binding Manufacturer}" Width="175"/>
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}"  Width="200"/>
+                <DataGridTextColumn Header="Специфікації" Binding="{Binding Specifications}" Width="120"/>
+                <DataGridTextColumn Header="Опис" Binding="{Binding Description}" Width="70"/>
+                <DataGridTextColumn Header="Зображення" Binding="{Binding Picture}" Width="100"/>
+                <DataGridTextColumn Header="Кількість" Binding="{Binding Number}" Width="60"/>
+                <DataGridTextColumn Header="Ціна закупівлі" Binding="{Binding PurchasePrice}" Width="90"/>
+                <DataGridTextColumn Header="Ціна продажі" Binding="{Binding SellingPrice}" Width="110"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -30,13 +30,14 @@ namespace Project_Store
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string login = LoginTextBox.Text;
+            string pass = PasswordTextBox.Password;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore;");
             conn.Open();
 
-            string SQLlogin = "select login from prazivnuku where login = '" + login + "' and password = '" + PasswordTextBox.Password + "';";
+            string SQLlogin = "select login from prazivnuku where login = '" + login + "' and password = '" + pass + "';";
             MySqlCommand command = new MySqlCommand(SQLlogin, conn);
             adapter.SelectCommand = command;
             adapter.Fill(table);

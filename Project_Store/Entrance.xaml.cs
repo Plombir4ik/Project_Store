@@ -20,9 +20,9 @@ namespace Project_Store
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Entrance : Window
     {
-        public Window1()
+        public Entrance()
         {
             InitializeComponent();
         }

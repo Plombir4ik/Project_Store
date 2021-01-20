@@ -31,7 +31,7 @@ namespace Project_Store
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 mform = new Window1();
+            Entrance mform = new Entrance();
             mform.Show();
             Close();
         }

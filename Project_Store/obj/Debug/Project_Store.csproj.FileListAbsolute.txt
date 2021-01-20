@@ -48,3 +48,5 @@ C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Project_Stor
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.GenerateResource.cache
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.CoreCompileInputs.cache
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.CopyComplete
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainTovar.g.cs
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainTovar.baml

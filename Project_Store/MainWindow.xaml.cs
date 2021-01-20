@@ -29,9 +29,15 @@ namespace Project_Store
             else { log.Content = login; }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
             Entrance mform = new Entrance();
+            mform.Show();
+            Close();
+        }
+        private void MainTovar_Click(object sender, RoutedEventArgs e)
+        {
+            MainTovar mform = new MainTovar();
             mform.Show();
             Close();
         }

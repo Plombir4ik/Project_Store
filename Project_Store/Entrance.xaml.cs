@@ -27,7 +27,7 @@ namespace Project_Store
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonEntrance(object sender, RoutedEventArgs e)
         {
             string login = LoginTextBox.Text;
             string pass = PasswordTextBox.Password;

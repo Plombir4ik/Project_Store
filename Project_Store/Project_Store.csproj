@@ -155,6 +155,27 @@
   <ItemGroup>
     <Resource Include="png-clipart-silhouette-graphics-male-silhouette-animals-photography.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favpng_clip-art-computer-hardware-icon-design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="graphic-card-2-660393.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logoforprogramm_newcolor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logoforprogramm_white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

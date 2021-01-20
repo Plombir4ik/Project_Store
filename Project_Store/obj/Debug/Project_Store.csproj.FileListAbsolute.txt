@@ -8,13 +8,11 @@ C:\Users\Plombir\source\repos\Project_Store\Project_Store\bin\Debug\MaterialDesi
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.csprojAssemblyReference.cache
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainWindow.g.cs
-C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Window1.g.cs
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\App.g.cs
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store_MarkupCompile.cache
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store_MarkupCompile.lref
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\App.baml
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainWindow.baml
-C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Window1.baml
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.g.resources
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.Properties.Resources.resources
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.GenerateResource.cache
@@ -50,3 +48,7 @@ C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Project_Stor
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Project_Store.csproj.CopyComplete
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainTovar.g.cs
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainTovar.baml
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Entrance.g.cs
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainTovar.g.cs
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\Entrance.baml
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainTovar.baml

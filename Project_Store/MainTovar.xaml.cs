@@ -26,6 +26,25 @@ namespace Project_Store
         MySqlDataAdapter sda, sda1;
         MySqlCommandBuilder scb, scb1;
         System.Data.DataTable dt, dt1;
+
+        private void MainTovar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void toMainWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mform = new MainWindow();
+            mform.Show();
+            Close();
+        }
+
+        private void AddTovar(object sender, RoutedEventArgs e)
+        {
+            AddTovar mform = new AddTovar();
+            mform.Show();
+        }
+
         public MainTovar()
         {
             InitializeComponent();

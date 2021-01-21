@@ -5,31 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="Головне меню" Height="572.177" Width="946" MinWidth="946" MinHeight="572.177">
+        WindowState="Maximized"
+        Title="Головне меню" Width="2046" Height="1051" MinWidth="946" MinHeight="572.177">
     <Grid>
 
         <Image Source="images/theme1.jpg" Stretch="Fill"/>
         <Label x:Name="log" Content="admin" HorizontalAlignment="Left" Height="39" Margin="54,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="-13.798,0.756" FontSize="20" IsHitTestVisible="False" Visibility="Hidden"/>
-        <Grid HorizontalAlignment="Left" Height="39" VerticalAlignment="Top" Width="54" Margin="879,-3,0,0">
+        <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="54" Margin="0,-4,0,0">
             <Image Source="images/door.png" Width="Auto" Margin="-1"/>
             <Button Content="" Background="{x:Null}" Margin="2" Click="Button_Click" />
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="541" VerticalAlignment="Top" Width="159" Margin="107,0,0,0">
-            <StackPanel Margin="0,0,-22,0">
 
-                <Image Margin="0,0,-126,0" Source="images/texture.jpg" Stretch="Fill" Height="632" Opacity="0.5"/>
-
-                <Button x:Name="Товари" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="17.5,-250,17.5,-500" />
-                <Button x:Name="Клієнти" Content="Клієнти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="17.5,-400,17.5,0" />
-                <Button x:Name="Товари3" Content="Замовлення" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="17.5,-325,17.5,-500" />
-                <Button x:Name="Товари4" Content="Журнал" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="17.5,-175,17.5,-500" />
-                <Image  Margin="0,-1085,0,0" Source="images/logoforprogramm_white.png" Stretch="Fill" Height="120" Width="120"/>
-                <Label Content="Glencell" Margin="21,-900,10,0" Height="82" Background="Transparent" Foreground="#DDFFFFFF" FontSize="38" FontStyle="Italic"/>
-
-
+        <Grid HorizontalAlignment="Left" Height="1114" VerticalAlignment="Top" Width="353" Margin="275,0,0,0">
+            <StackPanel Grid.RowSpan="2" Opacity="0.75">
+                <Image Source="images/texture.jpg" Height="1194" Margin="0,0,-182,0" ></Image>
             </StackPanel>
 
-        </Border>
-
+            <Button  x:Name="Товари" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,410,63,618" BorderBrush="Black" BorderThickness="3,3,5,3" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="Замовлення" Content="Замовлення" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,542,63,486" BorderBrush="Black" BorderThickness="3,3,5,3" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="Клієнти" Content="Клієнти" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,666,63,360" BorderBrush="Black" BorderThickness="3,3,5,3" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="Журнал" Content="Журнал" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,792,63,236" BorderBrush="Black" BorderThickness="3,3,5,3">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Button  x:Name="Вихід" Content="Вихід" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,914,63,112" BorderBrush="Black" BorderThickness="3,3,5,3">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Image Source="images/logoforprogramm_white.png" Margin="54,29,49,832" Height="253" Width="250" >
+                <Image.Effect>
+                    <DropShadowEffect/>
+                </Image.Effect>
+            </Image>
+            <Label Content="Glencell"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" Foreground="White" FontStyle="Italic" Margin="15,253,29,747" Background="#00000000" >
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+        </Grid>
     </Grid>
+
 </Window>

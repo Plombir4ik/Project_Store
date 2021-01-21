@@ -50,7 +50,7 @@ namespace Project_Store
                     mform.Show();
                     Close();
             }
-            else { MessageBox.Show("Неправильний логін або пароль"); }
+            else { Error.Visibility = Visibility.Visible; }
             
         }
     }

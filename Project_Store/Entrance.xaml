@@ -16,7 +16,9 @@
                 <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5"/>
                 <PasswordBox x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="5" />
                 <Button Content="Увійти" Margin="75 50" Click="ButtonEntrance"></Button>
+                <Label x:Name="Error" Content="Неправильний логін або пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-45" Foreground="#DDFF0000" FontWeight="Bold" Visibility="Hidden"/>
             </StackPanel>            
         </Border>
+        
     </Grid>
 </Window>

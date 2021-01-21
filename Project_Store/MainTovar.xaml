@@ -21,9 +21,10 @@
                 <DataGridTextColumn Header="Ціна продажі" Binding="{Binding SellingPrice}" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="AddTovar" Height="52" Background="#FF2B2436" Margin="1333,130,111.667,0" />
-        <Button x:Name="Товари_Copy" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnEditTovar" Height="52" Background="#FF2B2436" Margin="1333,278,111.667,0" />
-        <Button x:Name="Товари_Copy1" Content="Видалити товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="1333,434,111.667,0" />
-        <Button x:Name="Товари_Copy2" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="toMainWindow" Height="52" Background="#FF2B2436" Margin="1333,584,111.667,0" />
+        <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="AddTovar" Height="52" Background="#FF2B2436" Margin="1334,101,112,0" />
+        <Button x:Name="РедагуватиІнформацію" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnEditTovar" Height="52" Background="#FF2B2436" Margin="1334,223,112,0" />
+        <Button x:Name="ВидалитиТовар" Content="Видалити товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnDeleteTovar" Height="52" Background="#FF2B2436" Margin="1334,349,112,0" />
+        <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="toMainWindow" Height="52" Background="#FF2B2436" Margin="1334,476,112,0" />
+        <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="Update" Height="52" Background="#FF2B2436" Margin="1334,608,112,0" />
     </Grid>
 </Window>

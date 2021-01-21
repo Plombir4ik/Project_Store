@@ -53,6 +53,32 @@ namespace Project_Store
                 AddTovar a = new AddTovar(id);
                 a.Show();
             }
+            else
+            {
+                MessageBox.Show("Виберіть потрібний товар!");
+            }
+        }
+
+        private void BtnDeleteTovar(object sender, RoutedEventArgs e)
+        {
+            StoreDatabase DB = new StoreDatabase();
+            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            {
+                DB.openConnection();
+                MySqlCommand deleting = new MySqlCommand("DELETE FROM tovar WHERE ID = '" + id + "';", DB.getConnection());
+                deleting.ExecuteNonQuery();
+                DB.closeConnection();
+            }
+            else
+            {
+                MessageBox.Show("Виберіть товар!");
+            }
+            Info();
+        }
+
+        private void Update(object sender, RoutedEventArgs e)
+        {
+            Info();
         }
 
         public MainTovar()
@@ -79,7 +105,7 @@ namespace Project_Store
                 }
             }
         }
-        private void Info()
+        public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
             MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");

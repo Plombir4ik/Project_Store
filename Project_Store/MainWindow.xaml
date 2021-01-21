@@ -21,7 +21,7 @@
                 <Image Source="images/texture.jpg" Height="1194" Margin="0,0,-182,0" ></Image>
             </StackPanel>
 
-            <Button  x:Name="Товари" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,410,63,618" BorderBrush="Black" BorderThickness="3,3,5,3" >
+            <Button  x:Name="Товари" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,410,63,618" BorderBrush="Black" BorderThickness="3,3,5,3" Click="MainTovar_Click" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
@@ -41,7 +41,7 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button  x:Name="Вихід" Content="Вихід" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,914,63,112" BorderBrush="Black" BorderThickness="3,3,5,3">
+            <Button  x:Name="Вихід" Content="Вихід" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,914,63,112" BorderBrush="Black" BorderThickness="3,3,5,3" Click="Вихід_Click">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>

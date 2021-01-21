@@ -26,10 +26,10 @@ namespace Project_Store
         {
             InitializeComponent();
             this.id = id;
-            InitializeComponent();
             if (id > -1)
             {
                 КнопкаДодатиТовар.Content = "Змінити";
+                Label.Content = "Змінити вибраний товар";
                 StoreDatabase DB = new StoreDatabase();
                 MySqlCommand command = new MySqlCommand("select * from tovar where id = '" + id + "';", DB.getConnection());
                 DB.openConnection();
@@ -43,14 +43,13 @@ namespace Project_Store
                         BoxName.Text = (string)reader.GetValue(3);
                         BoxSpecifications.Text = (string)reader.GetValue(4);
                         BoxDescription.Text = (string)reader.GetValue(5);
-                        //BoxNumber.Text = (string)reader.GetValue(6);
-                        //BoxPurchasePrice.Text = (string)reader.GetValue(7);
-                        //BoxSellingPrice.Text = (string)reader.GetValue(8);
+                        BoxNumber.Text = Convert.ToString(reader.GetValue(6));
+                        BoxPurchasePrice.Text = Convert.ToString(reader.GetValue(7));
+                        BoxSellingPrice.Text = Convert.ToString(reader.GetValue(8));
                     }
                     reader.Close();
                     DB.closeConnection();
                 }
-                Label.Content = "Змінити вибраного працівника";
             }
         }
 

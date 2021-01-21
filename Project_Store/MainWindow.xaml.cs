@@ -49,5 +49,14 @@ namespace Project_Store
             Close();
         }
 
+        private void Товари_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Вихід_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

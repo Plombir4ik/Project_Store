@@ -8,7 +8,7 @@
         WindowState="Maximized"
         Title="Window1" Height="900" Width="1600">
     <Grid Margin="0,0,3.333,-0.333">
-        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="89,101,0,0" Background="#FFE6F6FF" BorderBrush="Black" Foreground="Black" OpacityMask="White" HorizontalGridLinesBrush="#FFB9FFFC" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="White" RowBackground="#FFDFF1F9" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="559" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1200">
+        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="89,101,0,0" Background="#FFE6F6FF" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="#FFB9FFFC" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="White" RowBackground="#FFDFF1F9" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="559" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1200">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="70" />
@@ -24,6 +24,6 @@
         <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="AddTovar" Height="52" Background="#FF2B2436" Margin="174,717,1272,0" />
         <Button x:Name="Товари_Copy" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="390,717,1056,0" />
         <Button x:Name="Товари_Copy1" Content="Видалити товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="599,717,847,0" />
-        <Button x:Name="Товари_Copy2" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="toMainWindow" Height="52" Background="#FF2B2436" Margin="809,717,637,0" />
+        <Button x:Name="Товари_Copy2" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="toMainWindow" Height="52" Background="#FF2B2436" Margin="808,720,636.667,0" />
     </Grid>
 </Window>

@@ -41,5 +41,12 @@ namespace Project_Store
             mform.Show();
             Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Entrance mform = new Entrance();
+            mform.Show();
+            Close();
+        }
     }
 }

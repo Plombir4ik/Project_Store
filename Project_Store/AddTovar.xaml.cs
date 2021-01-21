@@ -21,9 +21,37 @@ namespace Project_Store
     /// </summary>
     public partial class AddTovar : Window
     {
-        public AddTovar()
+        long id = 0;
+        public AddTovar(long id = -1)
         {
             InitializeComponent();
+            this.id = id;
+            InitializeComponent();
+            if (id > -1)
+            {
+                КнопкаДодатиТовар.Content = "Змінити";
+                StoreDatabase DB = new StoreDatabase();
+                MySqlCommand command = new MySqlCommand("select * from tovar where id = '" + id + "';", DB.getConnection());
+                DB.openConnection();
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        BoxTypeOF.Text = (string)reader.GetValue(1);
+                        BoxManufacturer.Text = (string)reader.GetValue(2);
+                        BoxName.Text = (string)reader.GetValue(3);
+                        BoxSpecifications.Text = (string)reader.GetValue(4);
+                        BoxDescription.Text = (string)reader.GetValue(5);
+                        //BoxNumber.Text = (string)reader.GetValue(6);
+                        //BoxPurchasePrice.Text = (string)reader.GetValue(7);
+                        //BoxSellingPrice.Text = (string)reader.GetValue(8);
+                    }
+                    reader.Close();
+                    DB.closeConnection();
+                }
+                Label.Content = "Змінити вибраного працівника";
+            }
         }
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
@@ -35,29 +63,36 @@ namespace Project_Store
             }
             else
             {
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-                //MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (ID, Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
-                //    "('" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.getConnection());
-                MySqlCommand adding = new MySqlCommand("INSERT INTO `tovar` (`ID`, `Type`, `Manufacturer`, `Name`, `Specifications`, `Description`, `Number`, `PurchasePrice`, `SellingPrice`) VALUES (@ID, @Type, @Manufacturer, @Name, @Specifications, @Description, @Number, @PurchasePrice, @SellingPrice);", DB.getConnection());
-                adding.Parameters.AddWithValue("@ID", "");
-                adding.Parameters.AddWithValue("@Type", BoxTypeOF.Text);
-                adding.Parameters.AddWithValue("@Manufacturer", BoxManufacturer.Text);
-                adding.Parameters.AddWithValue("@Name", BoxName.Text);
-                adding.Parameters.AddWithValue("@Specifications", BoxSpecifications.Text);
-                adding.Parameters.AddWithValue("@Description", BoxSpecifications.Text);
-                adding.Parameters.AddWithValue("@Number", BoxNumber.Text);
-                adding.Parameters.AddWithValue("@PurchasePrice", BoxPurchasePrice.Text);
-                adding.Parameters.AddWithValue("@SellingPrice", BoxSellingPrice.Text);
-                DB.openConnection();
-                if (adding.ExecuteNonQuery() > 0)
+                if (id == -1)
                 {
-                    MessageBox.Show("Товар успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (ID, Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
+                        "('" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.getConnection());
+                    DB.openConnection();
+                    if (adding.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Товар успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Хм, товар не було додано...", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                    }
+                    DB.closeConnection();
                 }
                 else
                 {
-                    MessageBox.Show("Хм, товар не було додано...", "Створення договору", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = '" + BoxSpecifications.Text + "', `Description` = '" + BoxDescription.Text + "', `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '"+BoxSellingPrice.Text+"' where ID = '" + id + "';", DB.getConnection());
+                    DB.openConnection();
+                    if (editing.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Інформація про товар \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Інформація про товар \nне була успішно змінена.", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                    }
+                    DB.closeConnection();
                 }
-                DB.closeConnection();
                 this.Hide();
             }
         }

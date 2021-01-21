@@ -25,6 +25,7 @@
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="416,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.946,0.643" Text="Ціна закупівлі"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="588,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.946,0.643" Text="Ціна продажі"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="599,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Назва"/>
+        <Label Name ="Label" Content="Додати товар" HorizontalAlignment="Left" Height="42" Margin="298,10,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24"/>
 
     </Grid>
 </Window>

@@ -26,6 +26,7 @@ namespace Project_Store
         MySqlDataAdapter sda, sda1;
         MySqlCommandBuilder scb, scb1;
         System.Data.DataTable dt, dt1;
+        long id = 0;
 
         private void MainTovar_Click(object sender, RoutedEventArgs e)
         {
@@ -45,6 +46,15 @@ namespace Project_Store
             mform.Show();
         }
 
+        private void BtnEditTovar(object sender, RoutedEventArgs e)
+        {
+            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            {
+                AddTovar a = new AddTovar(id);
+                a.Show();
+            }
+        }
+
         public MainTovar()
         {
             InitializeComponent();
@@ -58,7 +68,16 @@ namespace Project_Store
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            {
+                foreach (DataRowView row in dataGrid.SelectedItems)
+                {
+                    if (row.Row.ItemArray[0] != DBNull.Value)
+                    {
+                        id = Convert.ToInt32(row.Row.ItemArray[0]);
+                    }
+                }
+            }
         }
         private void Info()
         {

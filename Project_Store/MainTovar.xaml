@@ -22,7 +22,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="AddTovar" Height="52" Background="#FF2B2436" Margin="174,717,1272,0" />
-        <Button x:Name="Товари_Copy" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="390,717,1056,0" />
+        <Button x:Name="Товари_Copy" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnEditTovar" Height="52" Background="#FF2B2436" Margin="390,717,1056,0" />
         <Button x:Name="Товари_Copy1" Content="Видалити товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="MainTovar_Click" Height="52" Background="#FF2B2436" Margin="599,717,847,0" />
         <Button x:Name="Товари_Copy2" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="toMainWindow" Height="52" Background="#FF2B2436" Margin="808,720,636.667,0" />
     </Grid>

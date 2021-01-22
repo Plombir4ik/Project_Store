@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="images\theme1.jpg"/>
         </Grid.Background>
-        <Label x:Name="log" Content="admin" HorizontalAlignment="Left" Height="39" Margin="54,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="-13.798,0.756" FontSize="20" IsHitTestVisible="False" Visibility="Hidden"/>
+
         <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="54" Margin="0,-4,0,0">
             <Image Source="images/door.png" Width="Auto" Margin="-1"/>
             <Button Content="" Background="{x:Null}" Margin="2" Click="Button_Click" />
@@ -58,6 +58,8 @@
                 </Label.Effect>
             </Label>
         </Grid>
+        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0,3,59,0" Foreground="White" Width="84"/>
+
     </Grid>
 
 </Window>

@@ -27,7 +27,7 @@ namespace Project_Store
         {
             InitializeComponent();
             if (login == "") { }
-            else { log.Content = login; }
+            else { log.Text = login; }
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -57,7 +57,7 @@ namespace Project_Store
 
         private void Вихід_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

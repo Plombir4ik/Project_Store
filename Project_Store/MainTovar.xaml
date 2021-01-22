@@ -8,10 +8,7 @@
         Title="Window1" Width="1930" Height="1051">
     <Grid Background="#FF212121">
         <TextBox TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="67,74,1376,0" Height="35" Width="479" FontSize="18" Background="#FFF0F0F0" BorderBrush="#89000000" BorderThickness="3"/>
-        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="#00FF" RowBackground="#00ff" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2">
-            <DataGrid.Background>
-                <ImageBrush ImageSource="Anime.jpg"/>
-            </DataGrid.Background>
+        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="70" />

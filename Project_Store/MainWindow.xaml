@@ -9,7 +9,7 @@
         Title="Головне меню" Width="2046" Height="1051" MinWidth="946" MinHeight="572.177">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Agirl-anime-colorful-purple-blue-flowers-pink-raindrops-dress.jpg"/>
+            <ImageBrush ImageSource="images\theme1.jpg"/>
         </Grid.Background>
         <Label x:Name="log" Content="admin" HorizontalAlignment="Left" Height="39" Margin="54,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="-13.798,0.756" FontSize="20" IsHitTestVisible="False" Visibility="Hidden"/>
         <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="54" Margin="0,-4,0,0">

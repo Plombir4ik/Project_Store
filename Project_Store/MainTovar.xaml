@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        Title="Window1" Height="900" Width="1600">
-    <Grid Margin="0,0,3.333,-0.333">
-        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="89,101,0,0" Background="#FFE6F6FF" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="#FFB9FFFC" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="White" RowBackground="#FFDFF1F9" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="559" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1200" BorderThickness="3">
+        Title="Window1" Width="1930" Height="1051">
+    <Grid Background="#FF212121">
+        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="67,74,1376,0" Height="35" Width="479" FontSize="18" Background="#FFF0F0F0" BorderBrush="#89000000" BorderThickness="3"/>
+        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="67,113,0,0" Background="#FFCFEAF9" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="#FFB9FFFC" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="White" RowBackground="#FFDFF1F9" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="70" />
@@ -21,10 +21,39 @@
                 <DataGridTextColumn Header="Ціна продажі" Binding="{Binding SellingPrice}" Width="120"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="AddTovar" Height="52" Background="#FF2B2436" Margin="1334,101,112,0" />
-        <Button x:Name="РедагуватиІнформацію" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnEditTovar" Height="52" Background="#FF2B2436" Margin="1334,223,112,0" />
-        <Button x:Name="ВидалитиТовар" Content="Видалити товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnDeleteTovar" Height="52" Background="#FF2B2436" Margin="1334,349,112,0" />
-        <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="toMainWindow" Height="52" Background="#FF2B2436" Margin="1334,476,112,0" />
-        <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="Update" Height="52" Background="#FF2B2436" Margin="1334,608,112,0" />
+
+        <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="AddTovar" Height="68" Background="#FF1D1D1D" Margin="1620,221,114,0" BorderBrush="White" BorderThickness="3" Foreground="White" FontWeight="Normal" FontSize="21" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="РедагуватиІнформацію" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="BtnEditTovar" Height="68" Background="#FF1D1D1D" Margin="1620,337,114,0" BorderBrush="White" BorderThickness="3" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="ВидалитиТовар" Content="Видалити товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="BtnDeleteTovar" Height="68" Background="#FF1D1D1D" Margin="1620,455,114,0" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="toMainWindow" Height="68" Background="#FF1D1D1D" Margin="1620,580,114,0" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="Update" Height="68" Background="#FF1D1D1D" Margin="1620,712,114,0" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Пошук" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,27,0,0" FontSize="34" Foreground="#DDFFFFFF"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="551,76,0,0" BorderBrush="Black" Opacity="0.8">
+            <Button.Background>
+                <ImageBrush ImageSource="1234.png"/>
+            </Button.Background>
+        </Button>
+
+
     </Grid>
 </Window>

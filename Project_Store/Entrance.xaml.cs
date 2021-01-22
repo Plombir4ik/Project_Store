@@ -24,6 +24,7 @@ namespace Project_Store
     {
         public Entrance()
         {
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 

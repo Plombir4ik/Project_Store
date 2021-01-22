@@ -88,8 +88,8 @@ namespace Project_Store
             this.Height = SystemParameters.WorkArea.Height;
             this.Left = 0;
             this.Top = 0;
-            this.WindowState = WindowState.Normal;
-                Info();
+            this.WindowState = WindowState.Maximized;
+            Info();
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

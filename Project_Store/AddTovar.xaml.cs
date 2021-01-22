@@ -93,6 +93,7 @@ namespace Project_Store
                     DB.closeConnection();
                 }
                 this.Hide();
+                this.Close();
             }
         }
         void OnComboboxTextChanged(object sender, RoutedEventArgs e)

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Window1" Width="1930" Height="1051">
     <Grid Background="#FF212121">
-        <TextBox TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="67,74,1376,0" Height="35" Width="479" FontSize="18" Background="#FFF0F0F0" BorderBrush="#89000000" BorderThickness="3"/>
+        <TextBox x:Name="SearchBox" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="67,74,1376,0" Height="35" Width="479" FontSize="18" Background="#FFF0F0F0" BorderBrush="#89000000" BorderThickness="3"/>
         <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
@@ -48,11 +48,15 @@
             </Button.Effect>
         </Button>
         <Label Content="Пошук" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,27,0,0" FontSize="34" Foreground="#DDFFFFFF"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="551,76,0,0" BorderBrush="Black" Opacity="0.8">
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="551,76,0,0" BorderBrush="Black" Opacity="0.8" Click="BtnSearchTovar">
             <Button.Background>
                 <ImageBrush ImageSource="1234.png"/>
             </Button.Background>
         </Button>
+        <RadioButton Content="Пошук по хз чому" x:Name="LubchekPodymau" HorizontalAlignment="Left" Height="32" Margin="1175,76,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16"/>
+        <RadioButton Content="Пошук по виробнику" x:Name="ButtonSearchManufacturer" HorizontalAlignment="Left" Height="32" Margin="742,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16"/>
+        <RadioButton Content="Пошук по назві" x:Name="ButtonSearchName" HorizontalAlignment="Left" Height="32" Margin="989,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16"/>
+        <RadioButton Content="Пошук по ID" x:Name="ButtonSearchID" HorizontalAlignment="Left" Height="32" Margin="588,76,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16"/>
 
 
     </Grid>

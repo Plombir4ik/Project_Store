@@ -81,6 +81,55 @@ namespace Project_Store
             Info();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSearchTovar(object sender, RoutedEventArgs e)
+        {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlConnection con = new MySqlConnection("server=localhost; port=3306;username=root;database=compstore");
+            string searching;
+            if (ButtonSearchID.IsChecked == true)
+            {
+                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+            }
+            else if (ButtonSearchManufacturer.IsChecked == true)
+            {
+                searching = "select * from tovar where tovar.Manufacturer like '%"+SearchBox.Text+"%'";
+            }
+            else if (ButtonSearchName.IsChecked == true)
+            {
+                searching = "select * from tovar where tovar.Name like '%" + SearchBox.Text + "%'";
+            }
+            else if (LubchekPodymau.IsChecked == true)
+            {
+                MessageBox.Show("Подумай.");
+                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+            }
+            else
+            {
+                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+            }
+            MySqlCommand thesearch = new MySqlCommand(searching, DB.getConnection());
+            DB.openConnection();
+            if (Convert.ToInt32(thesearch.ExecuteScalar()) <= 0)
+            {
+                MessageBox.Show("Нима");
+                Info();
+                SearchBox.Text = "";
+            }
+            else
+            {
+                sda = new MySqlDataAdapter(searching, con);
+                dt = new System.Data.DataTable();
+                sda.Fill(dt);
+                dataGrid.ItemsSource = dt.DefaultView;
+            }
+            DB.closeConnection();
+        }
+
         public MainTovar()
         {
             InitializeComponent();

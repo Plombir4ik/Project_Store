@@ -163,5 +163,10 @@ namespace Project_Store
             sda.Fill(dt);
             dataGrid.ItemsSource = dt.DefaultView;
         }
+        private void SearchBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            SearchBox.Text = "";
+            SearchBox.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
     }
 }

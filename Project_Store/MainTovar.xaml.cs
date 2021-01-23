@@ -149,39 +149,54 @@ namespace Project_Store
             {
                 DoubleAnimation anim = new DoubleAnimation();
                 DoubleAnimation anim2 = new DoubleAnimation();
+                DoubleAnimation anim3 = new DoubleAnimation();
+                DoubleAnimation anim4 = new DoubleAnimation();
                 anim.From = 33;
                 anim.To = 600;
                 anim2.From = 0;
-                anim2.To = 1.0;
+                anim2.To = 1;
+                anim3.From = 0;
+                anim3.To = 1;
+                anim4.From = 0;
+                anim4.To = 1;
                 anim.Duration = TimeSpan.FromSeconds(0.5);
-                anim2.Duration = TimeSpan.FromSeconds(0.5);
+                anim2.Duration = TimeSpan.FromSeconds(0.25);
+                anim3.Duration = TimeSpan.FromSeconds(0.5);
+                anim4.Duration = TimeSpan.FromSeconds(0.75);
                 ramka.BeginAnimation(WidthProperty, anim);
-                id_ellipse.BeginAnimation(OpacityProperty,anim2);
+                id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
-                ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim2);
-                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim2);
-                ButtonSearchName.BeginAnimation(OpacityProperty, anim2);
-                Name_ellipse.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
+                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
+                ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
+                Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = true;
             }
             else
             {
                 DoubleAnimation anim = new DoubleAnimation();
                 DoubleAnimation anim2 = new DoubleAnimation();
+                DoubleAnimation anim3 = new DoubleAnimation();
+                DoubleAnimation anim4 = new DoubleAnimation();
                 anim.From = 600;
                 anim.To = 33;
                 anim2.From = 1;
                 anim2.To = 0;
+                anim3.From = 1;
+                anim3.To = 0;
+                anim4.From = 1;
+                anim4.To = 0;
                 anim.Duration = TimeSpan.FromSeconds(0.5);
                 anim2.Duration = TimeSpan.FromSeconds(0.5);
-                anim.Duration = TimeSpan.FromSeconds(0.5);
+                anim3.Duration = TimeSpan.FromSeconds(0.5);
+                anim4.Duration = TimeSpan.FromSeconds(0.25);
                 ramka.BeginAnimation(WidthProperty, anim);
                 id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
-                ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim2);
-                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim2);
-                ButtonSearchName.BeginAnimation(OpacityProperty, anim2);
-                Name_ellipse.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
+                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
+                ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
+                Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = false;
             }
         }

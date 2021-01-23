@@ -52,26 +52,32 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="552,76,0,0" BorderBrush="Black" Opacity="0.8" Click="BtnSearchTovar">
+        <Image Margin="555,79,1340,914" Source="serch.png" Stretch="Fill"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="552,76,0,0" BorderBrush="White" Click="BtnSearchTovar" Background="#0000FFFF">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
-            <Button.Background>
-                <ImageBrush ImageSource="1234.png"/>
-            </Button.Background>
         </Button>
-        <Border  BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="775" Margin="596,77,0,0" Background="#FF1D1D1D">
+        <Border x:Name="ramka" BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="33" Margin="593,76,0,0" Background="#FF1D1D1D">
             <Border.Effect>
                 <DropShadowEffect/>
             </Border.Effect>
         </Border>
-        <RadioButton Content="Пошук по хз чому" x:Name="LubchekPodymau" HorizontalAlignment="Left" Height="32" Margin="1185,78,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
-        <RadioButton Content="Пошук по виробнику" x:Name="ButtonSearchManufacturer" HorizontalAlignment="Left" Height="32" Margin="759,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
-        <RadioButton Content="Пошук по назві" x:Name="ButtonSearchName" HorizontalAlignment="Left" Height="32" Margin="999,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
-        <RadioButton Content="Пошук по ID" x:Name="ButtonSearchID" HorizontalAlignment="Left" Height="32" Margin="598,76,0,0" VerticalAlignment="Top" Width="154"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
-        <Ellipse Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="760,86,0,0" IsEnabled="False" StrokeThickness="2"/>
-        <Ellipse Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="1000,86,0,0" IsEnabled="False" StrokeThickness="2"/>
-        <Ellipse Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="1186,86,0,0" IsEnabled="False" StrokeThickness="2"/>
-        <Ellipse Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="599,85,0,0" IsEnabled="False" StrokeThickness="2"/>
+        <RadioButton Content="Пошук по хз чому" x:Name="LubchekPodymau" HorizontalAlignment="Left" Height="32" Margin="1235,78,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
+        <RadioButton Content="Пошук по виробнику" x:Name="ButtonSearchManufacturer" HorizontalAlignment="Left" Height="32" Margin="809,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White" Opacity="0"/>
+        <RadioButton Content="Пошук по назві" x:Name="ButtonSearchName" HorizontalAlignment="Left" Height="32" Margin="1049,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White" Opacity="0"/>
+        <RadioButton Content="Пошук по ID" x:Name="ButtonSearchID" HorizontalAlignment="Left" Height="32" Margin="648,77,0,0" VerticalAlignment="Top" Width="154"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White" Opacity="0"/>
+        <Ellipse x:Name="Manufacturer_ellipse" Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="810,86,0,0" IsEnabled="False" StrokeThickness="2" Opacity="0"/>
+        <Ellipse x:Name="Name_ellipse" Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="1050,86,0,0" IsEnabled="False" StrokeThickness="2" Opacity="0"/>
+        <Ellipse Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="1236,87,0,0" IsEnabled="False" StrokeThickness="2"/>
+        <Ellipse x:Name="id_ellipse" Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="649,86,0,0" IsEnabled="False" StrokeThickness="2" Opacity="0"/>
+        <Image Margin="598,80,1298,914" Source="gear.png" Stretch="Fill" IsEnabled="False"/>
+        <Button x:Name="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="594,76,0,0" BorderBrush="White" Background="#0000FFFF" BorderThickness="1" Click="Settings_Click"  >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+
     </Grid>
 </Window>

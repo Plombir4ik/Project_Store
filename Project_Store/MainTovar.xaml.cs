@@ -15,6 +15,7 @@ using MySql.Data.MySqlClient;
 //using Word = Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Reflection;
+using System.Windows.Media.Animation;
 
 namespace Project_Store
 {
@@ -27,6 +28,7 @@ namespace Project_Store
         MySqlCommandBuilder scb, scb1;
         System.Data.DataTable dt, dt1;
         long id = 0;
+        bool a = false;
 
         private void MainTovar_Click(object sender, RoutedEventArgs e)
         {
@@ -139,6 +141,49 @@ namespace Project_Store
             this.Top = 0;
             this.WindowState = WindowState.Maximized;
             Info();
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            if (a == false)
+            {
+                DoubleAnimation anim = new DoubleAnimation();
+                DoubleAnimation anim2 = new DoubleAnimation();
+                anim.From = 33;
+                anim.To = 600;
+                anim2.From = 0;
+                anim2.To = 1.0;
+                anim.Duration = TimeSpan.FromSeconds(0.5);
+                anim2.Duration = TimeSpan.FromSeconds(0.5);
+                ramka.BeginAnimation(WidthProperty, anim);
+                id_ellipse.BeginAnimation(OpacityProperty,anim2);
+                ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim2);
+                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchName.BeginAnimation(OpacityProperty, anim2);
+                Name_ellipse.BeginAnimation(OpacityProperty, anim2);
+                a = true;
+            }
+            else
+            {
+                DoubleAnimation anim = new DoubleAnimation();
+                DoubleAnimation anim2 = new DoubleAnimation();
+                anim.From = 600;
+                anim.To = 33;
+                anim2.From = 1;
+                anim2.To = 0;
+                anim.Duration = TimeSpan.FromSeconds(0.5);
+                anim2.Duration = TimeSpan.FromSeconds(0.5);
+                anim.Duration = TimeSpan.FromSeconds(0.5);
+                ramka.BeginAnimation(WidthProperty, anim);
+                id_ellipse.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim2);
+                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim2);
+                ButtonSearchName.BeginAnimation(OpacityProperty, anim2);
+                Name_ellipse.BeginAnimation(OpacityProperty, anim2);
+                a = false;
+            }
         }
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

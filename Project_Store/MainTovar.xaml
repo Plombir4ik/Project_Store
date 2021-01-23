@@ -63,13 +63,11 @@
                 <DropShadowEffect/>
             </Border.Effect>
         </Border>
-        <RadioButton Content="Пошук по хз чому" x:Name="LubchekPodymau" HorizontalAlignment="Left" Height="32" Margin="1235,78,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
         <RadioButton Content="Пошук по виробнику" x:Name="ButtonSearchManufacturer" HorizontalAlignment="Left" Height="32" Margin="809,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White" Opacity="0"/>
         <RadioButton Content="Пошук по назві" x:Name="ButtonSearchName" HorizontalAlignment="Left" Height="32" Margin="1049,77,0,0" VerticalAlignment="Top" Width="186"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White" Opacity="0"/>
         <RadioButton Content="Пошук по ID" x:Name="ButtonSearchID" HorizontalAlignment="Left" Height="32" Margin="648,77,0,0" VerticalAlignment="Top" Width="154"  IsChecked="True" FontSize="16" Foreground="White" Background="White" BorderBrush="White" Opacity="0"/>
         <Ellipse x:Name="Manufacturer_ellipse" Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="810,86,0,0" IsEnabled="False" StrokeThickness="2" Opacity="0"/>
         <Ellipse x:Name="Name_ellipse" Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="1050,86,0,0" IsEnabled="False" StrokeThickness="2" Opacity="0"/>
-        <Ellipse Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="1236,87,0,0" IsEnabled="False" StrokeThickness="2"/>
         <Ellipse x:Name="id_ellipse" Fill="#0000FFFF" HorizontalAlignment="Left" Height="15" Stroke="White" VerticalAlignment="Top" Width="16" Margin="649,86,0,0" IsEnabled="False" StrokeThickness="2" Opacity="0"/>
         <Image Margin="598,80,1298,914" Source="gear.png" Stretch="Fill" IsEnabled="False"/>
         <Button x:Name="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Margin="594,76,0,0" BorderBrush="White" Background="#0000FFFF" BorderThickness="1" Click="Settings_Click"  >

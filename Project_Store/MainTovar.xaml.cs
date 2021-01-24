@@ -105,11 +105,6 @@ namespace Project_Store
             {
                 searching = "select * from tovar where tovar.Name like '%" + SearchBox.Text + "%'";
             }
-            else if (LubchekPodymau.IsChecked == true)
-            {
-                MessageBox.Show("Подумай.");
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
-            }
             else
             {
                 searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
@@ -164,12 +159,9 @@ namespace Project_Store
                 anim3.Duration = TimeSpan.FromSeconds(0.5);
                 anim4.Duration = TimeSpan.FromSeconds(0.75);
                 ramka.BeginAnimation(WidthProperty, anim);
-                id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
-                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
                 ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
-                Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = true;
             }
             else
@@ -191,12 +183,12 @@ namespace Project_Store
                 anim3.Duration = TimeSpan.FromSeconds(0.5);
                 anim4.Duration = TimeSpan.FromSeconds(0.25);
                 ramka.BeginAnimation(WidthProperty, anim);
-                id_ellipse.BeginAnimation(OpacityProperty, anim2);
+                //id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
-                Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
+                //Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
                 ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
-                Name_ellipse.BeginAnimation(OpacityProperty, anim4);
+                //Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = false;
             }
         }

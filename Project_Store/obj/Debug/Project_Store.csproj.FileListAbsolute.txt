@@ -56,3 +56,7 @@ C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddTovar.g.c
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddTovar.baml
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\AddTovar.g.cs
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\AddTovar.baml
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainClient.g.cs
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainClient.baml
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddClient.g.cs
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddClient.baml

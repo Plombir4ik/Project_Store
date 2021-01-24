@@ -22,7 +22,7 @@ namespace Project_Store
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class MainTovar : Window
+    public partial class MainClient : Window
     {
         MySqlDataAdapter sda, sda1;
         MySqlCommandBuilder scb, scb1;
@@ -30,7 +30,7 @@ namespace Project_Store
         long id = 0;
         bool a = false;
 
-        public MainTovar(string login)
+        public MainClient(string login)
         {
             InitializeComponent();
             log.Text = login;
@@ -41,6 +41,7 @@ namespace Project_Store
             this.WindowState = WindowState.Maximized;
             Info();
         }
+
         private void toMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mform = new MainWindow(log.Text);
@@ -48,38 +49,38 @@ namespace Project_Store
             Close();
         }
 
-        private void AddTovar(object sender, RoutedEventArgs e)
+        private void AddClient(object sender, RoutedEventArgs e)
         {
-            AddTovar mform = new AddTovar();
+            AddClient mform = new AddClient();
             mform.Show();
         }
 
-        private void BtnEditTovar(object sender, RoutedEventArgs e)
+        private void EditClient(object sender, RoutedEventArgs e)
         {
             if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                AddTovar a = new AddTovar(id);
+                AddClient a = new AddClient(id);
                 a.Show();
             }
             else
             {
-                MessageBox.Show("Виберіть потрібний товар!");
+                MessageBox.Show("Виберіть потрібного клієнта!");
             }
         }
 
-        private void BtnDeleteTovar(object sender, RoutedEventArgs e)
+        private void DeleteClient(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
             if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
                 DB.openConnection();
-                MySqlCommand deleting = new MySqlCommand("DELETE FROM tovar WHERE ID = '" + id + "';", DB.getConnection());
+                MySqlCommand deleting = new MySqlCommand("DELETE FROM client WHERE ID = '" + id + "';", DB.getConnection());
                 deleting.ExecuteNonQuery();
                 DB.closeConnection();
             }
             else
             {
-                MessageBox.Show("Виберіть товар!");
+                MessageBox.Show("Виберіть клієнта!");
             }
             Info();
         }
@@ -89,11 +90,6 @@ namespace Project_Store
             Info();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BtnSearchTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
@@ -101,19 +97,19 @@ namespace Project_Store
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from client where client.ID = '" + SearchBox.Text + "' ";
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Manufacturer like '%"+SearchBox.Text+"%'";
+                searching = "select * from client where client.PIB like '%"+SearchBox.Text+"%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Name like '%" + SearchBox.Text + "%'";
+                searching = "select * from client where client.Phone like '%" + SearchBox.Text + "%'";
             }
             else
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from client where tovar.id = '" + SearchBox.Text + "' ";
             }
             MySqlCommand thesearch = new MySqlCommand(searching, DB.getConnection());
             DB.openConnection();
@@ -205,7 +201,7 @@ namespace Project_Store
         {
             StoreDatabase DB = new StoreDatabase();
             MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-            sda = new MySqlDataAdapter("select * from tovar", con);
+            sda = new MySqlDataAdapter("select * from client", con);
             dt = new System.Data.DataTable();
             sda.Fill(dt);
             dataGrid.ItemsSource = dt.DefaultView;

@@ -22,40 +22,48 @@ namespace Project_Store
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        public MainWindow(string login = "")
+        public MainWindow(string login)
         {
             InitializeComponent();
-            if (login == "") { }
-            else { log.Text = login; }
+            log.Text = login;
         }
 
-        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        private void BtnUnlogin(object sender, RoutedEventArgs e)
         {
-            Entrance mform = new Entrance();
-            mform.Show();
-            Close();
-        }
-        private void MainTovar_Click(object sender, RoutedEventArgs e)
-        {
-            MainTovar mform = new MainTovar();
-            mform.Show();
+            Entrance form = new Entrance();
+            form.Show();
             Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BtnMainTovar(object sender, RoutedEventArgs e)
         {
-            Entrance mform = new Entrance();
-            mform.Show();
+            MainTovar form = new MainTovar(log.Text);
+            form.Show();
             Close();
         }
 
-        private void Товари_Click(object sender, RoutedEventArgs e)
+        private void BtnMainOrder(object sender, RoutedEventArgs e)
         {
-
+            //MainOrder form = new MainJournal(log.Text);
+            //form.Show();
+            //Close();
         }
 
-        private void Вихід_Click(object sender, RoutedEventArgs e)
+        private void BtnMainClient(object sender, RoutedEventArgs e)
+        {
+            MainClient form = new MainClient(log.Text);
+            form.Show();
+            Close();
+        }
+
+        private void BtnMainJournal(object sender, RoutedEventArgs e)
+        {
+            //MainJournal form = new MainJournal(log.Text);
+            //form.Show();
+            //Close();
+        }
+
+        private void BtnExit(object sender, RoutedEventArgs e)
         {
             Close();
         }

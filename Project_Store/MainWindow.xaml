@@ -14,7 +14,7 @@
 
         <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="54" Margin="0,-4,0,0">
             <Image Source="images/door.png" Width="Auto" Margin="-1"/>
-            <Button Content="" Background="{x:Null}" Margin="2" Click="Button_Click" />
+            <Button Content="" Background="{x:Null}" Margin="2" Click="BtnUnlogin" />
         </Grid>
 
         <Grid HorizontalAlignment="Left" Height="1114" VerticalAlignment="Top" Width="353" Margin="275,0,0,0">
@@ -22,27 +22,27 @@
                 <Image Source="images/texture.jpg" Height="1194" Margin="0,0,-182,0" ></Image>
             </StackPanel>
 
-            <Button  x:Name="Товари" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,400,63,628" BorderBrush="Black" BorderThickness="3,3,5,3" Click="MainTovar_Click" >
+            <Button  x:Name="Товари" Content="Товари" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,400,63,628" BorderBrush="Black" BorderThickness="3,3,5,3" Click="BtnMainTovar" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button  x:Name="Замовлення" Content="Замовлення" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,532,63,496" BorderBrush="Black" BorderThickness="3,3,5,3" >
+            <Button  x:Name="Замовлення" Content="Замовлення" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,532,63,496" BorderBrush="Black" BorderThickness="3,3,5,3" Click="BtnMainOrder" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button  x:Name="Клієнти" Content="Клієнти" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,657,63,371" BorderBrush="Black" BorderThickness="3,3,5,3" >
+            <Button  x:Name="Клієнти" Content="Клієнти" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,657,63,371" BorderBrush="Black" BorderThickness="3,3,5,3" Click="BtnMainClient" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button  x:Name="Журнал" Content="Журнал" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,782,63,246" BorderBrush="Black" BorderThickness="3,3,5,3">
+            <Button  x:Name="Журнал" Content="Журнал" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,782,63,246" BorderBrush="Black" BorderThickness="3,3,5,3" Click="BtnMainJournal">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Button  x:Name="Вихід" Content="Вихід" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,905,63,123" BorderBrush="Black" BorderThickness="3,3,5,3" Click="Вихід_Click">
+            <Button  x:Name="Вихід" Content="Вихід" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="228" Height="86" Margin="62,905,63,123" BorderBrush="Black" BorderThickness="3,3,5,3" Click="BtnExit">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>

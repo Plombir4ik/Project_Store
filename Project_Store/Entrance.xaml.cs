@@ -30,29 +30,21 @@ namespace Project_Store
 
         private void ButtonEntrance(object sender, RoutedEventArgs e)
         {
-            string login = LoginTextBox.Text;
-            string pass = PasswordTextBox.Password;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-
             MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore;");
             conn.Open();
-
-            string SQLlogin = "select login from prazivnuku where login = '" + login + "' and password = '" + pass + "';";
-            MySqlCommand command = new MySqlCommand(SQLlogin, conn);
+            MySqlCommand command = new MySqlCommand("select login from prazivnuku where login = '" + LoginTextBox.Text + "' and password = '" + PasswordTextBox.Password + "';", conn);
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
-            conn.Close();
-                  
+            conn.Close();    
             if (table.Rows.Count > 0)       
             {
-                MainWindow mform = new MainWindow(login);
+                MainWindow mform = new MainWindow(LoginTextBox.Text);
                     mform.Show();
                     Close();
             }
             else { Error.Visibility = Visibility.Visible; }
-            
         }
     }
 }

@@ -82,8 +82,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddClient.xaml.cs">
+      <DependentUpon>AddClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddTovar.xaml.cs">
       <DependentUpon>AddTovar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainClient.xaml.cs">
+      <DependentUpon>MainClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="StoreDatabase.cs" />
     <Compile Include="Entrance.xaml.cs">
@@ -92,9 +98,17 @@
     <Compile Include="MainTovar.xaml.cs">
       <DependentUpon>MainTovar.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddClient.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AddTovar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainClient.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

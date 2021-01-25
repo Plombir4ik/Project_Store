@@ -9,8 +9,8 @@
     <Grid Margin="0,0,3.333,-0.333">
         <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FF2B2436" Margin="104,339,545.333,0" />
         <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FF2B2436" Margin="328,339,321.333,0" />
-        <ComboBox HorizontalAlignment="Left" Height="26" Margin="102,78,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxTypeOF" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="OnComboboxTextChanged"/>
-        <ComboBox HorizontalAlignment="Left" Height="26" Margin="102,152,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxManufacturer" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="OnComboboxTextChanged2" SelectionChanged="BoxManufacturer_SelectionChanged"/>
+        <ComboBox HorizontalAlignment="Left" Height="26" Margin="102,78,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxTypeOF" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxTypeOFTextChanged"/>
+        <ComboBox HorizontalAlignment="Left" Height="26" Margin="102,152,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxManufacturer" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxManufacturerTextChanged"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="416,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxSpecifications"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="416,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxDescription"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="102,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxNumber"/>

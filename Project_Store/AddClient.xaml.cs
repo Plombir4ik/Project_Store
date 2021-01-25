@@ -41,7 +41,9 @@ namespace Project_Store
                 {
                     while (reader.Read())
                     {
-                        BoxPIB.Text = (string)reader.GetValue(1);
+                        BoxP.Text = (string)reader.GetValue(1);
+                        BoxI.Text = (string)reader.GetValue(1);
+                        //BoxB.Text = (string)reader.GetValue(1);
                         BoxPhoneMask.Text = (string)reader.GetValue(2);
                         BoxEmail.Text = (string)reader.GetValue(3);
                     }
@@ -54,7 +56,7 @@ namespace Project_Store
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            if (BoxPIB.Text == "" || BoxPhoneMask.Text == "" || BoxEmail.Text == "")
+            if (BoxP.Text == "" || BoxPhoneMask.Text == "" || BoxEmail.Text == "")
             {
                 System.Windows.MessageBox.Show("Ви забули ввести якусь інформацію!");
             }
@@ -63,7 +65,7 @@ namespace Project_Store
                 if (id == -1)
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('" + BoxPIB.Text + "', '" + BoxPhoneMask.Text + "', '" + BoxEmail.Text + "');", DB.getConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('" + BoxP.Text + " " +BoxI.Text+ " " +BoxB.Text+"', '" + BoxPhoneMask.Text + "', '" + BoxEmail.Text + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
@@ -77,7 +79,7 @@ namespace Project_Store
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE client SET `PIB` = '" + BoxPIB.Text + "', `Phone` = '" + BoxPhoneMask.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
+                    MySqlCommand editing = new MySqlCommand("UPDATE client SET `PIB` = '" + BoxP.Text + " " + BoxI.Text + " " + BoxB.Text + "', `Phone` = '" + BoxPhoneMask.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
                     DB.openConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {

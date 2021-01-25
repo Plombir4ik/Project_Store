@@ -26,6 +26,8 @@ namespace Project_Store
         public AddTovar(MainTovar form, long id = -1)
         {
             InitializeComponent();
+            fillComboBoxTypeOf();
+            fillComboBoxManufacturer();
             mform = form;
             this.id = id;
             if (id > -1)
@@ -49,8 +51,9 @@ namespace Project_Store
                         BoxPurchasePrice.Text = Convert.ToString(reader.GetValue(7));
                         BoxSellingPrice.Text = Convert.ToString(reader.GetValue(8));
                     }
-                    reader.Close();
                     DB.closeConnection();
+                    BoxTypeOF.IsDropDownOpen = false;
+                    BoxManufacturer.IsDropDownOpen = false;
                 }
             }
         }
@@ -82,7 +85,7 @@ namespace Project_Store
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = '" + BoxSpecifications.Text + "', `Description` = '" + BoxDescription.Text + "', `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '"+BoxSellingPrice.Text+"' where ID = '" + id + "';", DB.getConnection());
+                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = '" + BoxSpecifications.Text + "', `Description` = '" + BoxDescription.Text + "', `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '" + BoxSellingPrice.Text + "' where ID = '" + id + "';", DB.getConnection());
                     DB.openConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {
@@ -98,22 +101,82 @@ namespace Project_Store
                 this.Close();
             }
         }
-        void OnComboboxTextChanged(object sender, RoutedEventArgs e)
+
+        void fillComboBoxTypeOf()
         {
-            BoxTypeOF.Items.Clear();
+            if(BoxTypeOF.Text == "")
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select Type as 'Type' from tovar group by Type", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxTypeOF.Items.Add(myReader.GetString("Type"));
+                }
+                con.Close();
+            }
+            else
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select Type from tovar where Type like '%" + BoxTypeOF.Text + "%' group by Type", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxTypeOF.Items.Add(myReader.GetString("Type"));
+                }
+                con.Close();
+            }
         }
-        void OnComboboxTextChanged2(object sender, RoutedEventArgs e)
+        void fillComboBoxManufacturer()
         {
-            BoxManufacturer.Items.Clear();
+            if (BoxManufacturer.Text == "")
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar group by Manufacturer", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxManufacturer.Items.Add(myReader.GetString("Manufacturer"));
+                }
+                con.Close();
+            }
+            else
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar where Manufacturer like '%" + BoxManufacturer.Text + "%' group by Manufacturer", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxManufacturer.Items.Add(myReader.GetString("Manufacturer"));
+                }
+                con.Close();
+            }
         }
         private void BtnCancel(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void BoxManufacturer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BoxTypeOFTextChanged(object sender, RoutedEventArgs e)
         {
+            BoxTypeOF.Items.Clear();
+            fillComboBoxTypeOf();
+            BoxTypeOF.IsDropDownOpen = true;
+        }
 
+        private void BoxManufacturerTextChanged(object sender, RoutedEventArgs e)
+        {
+            BoxManufacturer.Items.Clear();
+            fillComboBoxManufacturer();
+            BoxManufacturer.IsDropDownOpen = true;
         }
     }
 }

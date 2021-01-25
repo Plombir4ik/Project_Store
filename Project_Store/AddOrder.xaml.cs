@@ -26,6 +26,8 @@ namespace Project_Store
         public AddOrder(MainOrder mform, long id = -1)
         {
             InitializeComponent();
+            fillComboBoxID_C();
+            fillComboBoxID_T();
             this.id = id;
             if (id > -1)
             {
@@ -53,7 +55,7 @@ namespace Project_Store
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            if (PayBox.Text == "" || ID_CBox.Text == "" || ID_TBox.Text == "")
+            if (PayBox.Text == "" || BoxID_C.Text == "" || BoxID_T.Text == "")
             {
                 MessageBox.Show("Ви забули ввести якусь інформацію!");
             }
@@ -62,7 +64,7 @@ namespace Project_Store
                 if (id == -1)
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + ID_CBox.Text + "', '" + ID_TBox.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateBox.Text + "');", DB.getConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateBox.Text + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
@@ -96,20 +98,76 @@ namespace Project_Store
         {
             this.Close();
         }
-
-        private void OnComboboxTextChanged(object sender, TextChangedEventArgs e)
+        void fillComboBoxID_C()
         {
-
+            if (BoxID_C.Text == "")
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client group by ID", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxID_C.Items.Add(myReader.GetString("ID_C"));
+                }
+                con.Close();
+            }
+            else
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client where concat(ID, ') ', PIB) like '%" + BoxID_C.Text + "%' group by ID_C", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxID_C.Items.Add(myReader.GetString("ID_C"));
+                }
+                con.Close();
+            }
+        }
+        void fillComboBoxID_T()
+        {
+            if (BoxID_T.Text == "")
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar group by ID", con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxID_T.Items.Add(myReader.GetString("ID_T"));
+                }
+                con.Close();
+            }
+            else
+            {
+                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
+                MySqlDataReader myReader;
+                con.Open();
+                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar where like '%" + BoxID_T.Text + "%' group by ID_T" , con);
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxID_T.Items.Add(myReader.GetString("ID_T"));
+                }
+                con.Close();
+            }
         }
 
-        private void ID_CBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BoxID_CTextChanged(object sender, RoutedEventArgs e)
         {
-
+            BoxID_C.Items.Clear();
+            fillComboBoxID_T();
+            BoxID_C.IsDropDownOpen = true;
         }
-
-        private void ID_TBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BoxID_TTextChanged(object sender, RoutedEventArgs e)
         {
-
+            BoxID_T.Items.Clear();
+            fillComboBoxID_C();
+            BoxID_T.IsDropDownOpen = true;
         }
 
         private void BoxEmail_Copy_TextChanged(object sender, TextChangedEventArgs e)

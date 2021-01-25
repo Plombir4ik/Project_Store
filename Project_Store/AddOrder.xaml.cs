@@ -22,7 +22,8 @@ namespace Project_Store
     public partial class AddOrder : Window
     {
         long id = 0;
-        public AddOrder(long id = -1)
+        private readonly MainTovar mform;
+        public AddOrder(MainOrder mform, long id = -1)
         {
             InitializeComponent();
             this.id = id;
@@ -87,6 +88,7 @@ namespace Project_Store
                     }
                     DB.closeConnection();
                 }
+                mform.Info();
                 this.Close();
             }
         }

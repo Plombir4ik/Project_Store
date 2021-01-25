@@ -51,7 +51,7 @@ namespace Project_Store
 
         private void AddOrder(object sender, RoutedEventArgs e)
         {
-            AddClient mform = new AddClient();
+            AddOrder mform = new AddOrder(this);
             mform.Show();
         }
 
@@ -59,7 +59,7 @@ namespace Project_Store
         {
             if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                AddClient a = new AddClient(id);
+                AddOrder a = new AddOrder(this, id);
                 a.Show();
             }
             else

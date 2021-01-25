@@ -22,9 +22,11 @@ namespace Project_Store
     public partial class AddTovar : Window
     {
         long id = 0;
-        public AddTovar(long id = -1)
+        private readonly MainTovar mform;
+        public AddTovar(MainTovar form, long id = -1)
         {
             InitializeComponent();
+            mform = form;
             this.id = id;
             if (id > -1)
             {
@@ -92,7 +94,7 @@ namespace Project_Store
                     }
                     DB.closeConnection();
                 }
-                this.Hide();
+                mform.Info();
                 this.Close();
             }
         }

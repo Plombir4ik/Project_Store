@@ -50,7 +50,7 @@ namespace Project_Store
 
         private void AddTovar(object sender, RoutedEventArgs e)
         {
-            AddTovar mform = new AddTovar();
+            AddTovar mform = new AddTovar(this);
             mform.Show();
         }
 
@@ -58,7 +58,7 @@ namespace Project_Store
         {
             if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                AddTovar a = new AddTovar(id);
+                AddTovar a = new AddTovar(this, id);
                 a.Show();
             }
             else

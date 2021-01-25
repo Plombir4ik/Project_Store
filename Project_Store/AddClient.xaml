@@ -18,6 +18,6 @@
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.946,0.643" Text="Номер телефону"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.946,0.643" Text="Електронна пошта"/>
         <Label Name ="Label" Content="Додати клієнта" HorizontalAlignment="Left" Height="42" Margin="298,10,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24"/>
-        <xctk:MaskedTextBox Mask="+(38\0\)00 000-00-00 " ValueDataType="{x:Type s:String}" AllowPromptAsInput="False"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="102,26,0,0" ClipboardMaskFormat="IncludePrompt" AutomationProperties.IsOffscreenBehavior="Onscreen"/>
+        <xctk:MaskedTextBox Mask="+38\0000000000" x:Name="BoxPhoneMask" ValueDataType="{x:Type s:String}" AllowPromptAsInput="False"  HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="326,152,0,0" ClipboardMaskFormat="IncludePrompt" AutomationProperties.IsOffscreenBehavior="Onscreen"/>
     </Grid>
 </Window>

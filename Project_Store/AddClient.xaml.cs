@@ -23,10 +23,12 @@ namespace Project_Store
     public partial class AddClient : Window
     {
         long id = 0;
-        public AddClient(long id = -1)
+        private readonly MainClient mform;
+        public AddClient(MainClient form, long id = -1)
         {
             InitializeComponent();
             this.id = id;
+            mform = form;
             if (id > -1)
             {
                 КнопкаДодатиТовар.Content = "Змінити";
@@ -40,7 +42,7 @@ namespace Project_Store
                     while (reader.Read())
                     {
                         BoxPIB.Text = (string)reader.GetValue(1);
-                        BoxPhone.Text = (string)reader.GetValue(2);
+                        BoxPhoneMask.Text = (string)reader.GetValue(2);
                         BoxEmail.Text = (string)reader.GetValue(3);
                     }
                     reader.Close();
@@ -52,7 +54,7 @@ namespace Project_Store
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            if (BoxPIB.Text == "" || BoxPhone.Text == "" || BoxEmail.Text == "")
+            if (BoxPIB.Text == "" || BoxPhoneMask.Text == "" || BoxEmail.Text == "")
             {
                 System.Windows.MessageBox.Show("Ви забули ввести якусь інформацію!");
             }
@@ -61,7 +63,7 @@ namespace Project_Store
                 if (id == -1)
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('" + BoxPIB.Text + "', '" + BoxPhone.Text + "', '" + BoxEmail.Text + "');", DB.getConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('" + BoxPIB.Text + "', '" + BoxPhoneMask.Text + "', '" + BoxEmail.Text + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
@@ -75,7 +77,7 @@ namespace Project_Store
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE client SET `PIB` = '" + BoxPIB.Text + "', `Phone` = '" + BoxPhone.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
+                    MySqlCommand editing = new MySqlCommand("UPDATE client SET `PIB` = '" + BoxPIB.Text + "', `Phone` = '" + BoxPhoneMask.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
                     DB.openConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {
@@ -87,6 +89,7 @@ namespace Project_Store
                     }
                     DB.closeConnection();
                 }
+                mform.Info();
                 this.Close();
             }
         }

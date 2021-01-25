@@ -18,6 +18,7 @@
                 <DataGridTextColumn Header="Кількість" Binding="{Binding Number}"  Width="60"/>
                 <DataGridTextColumn Header="Знижка" Binding="{Binding Discount}"  Width="60"/>
                 <DataGridTextColumn Header="Вартість" Binding="{Binding Pay}"  Width="200"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"  Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -50,7 +51,7 @@
             </Button>
         </Grid>
         <Border HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="479" Margin="67,73,0,0">
-            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red">
+            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red" KeyDown="ToSearch">
                 <TextBox.Effect>
                     <DropShadowEffect/>
                 </TextBox.Effect>

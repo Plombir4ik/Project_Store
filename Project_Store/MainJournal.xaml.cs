@@ -41,6 +41,11 @@ namespace Project_Store
             this.WindowState = WindowState.Maximized;
             Info();
         }
+        private void ToSearch(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                BtnSearchTovar(this, null);
+        }
         private void toMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mform = new MainWindow(log.Text);

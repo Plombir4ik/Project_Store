@@ -56,7 +56,7 @@ namespace Project_Store
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            if (BoxP.Text == "" || BoxPhoneMask.Text == "" || BoxEmail.Text == "")
+            if (BoxP.Text == "" || BoxPhoneMask.Text == "+380" || BoxEmail.Text == "")
             {
                 System.Windows.MessageBox.Show("Ви забули ввести якусь інформацію!");
             }

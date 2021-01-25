@@ -93,8 +93,12 @@ namespace Project_Store
         {
 
         }
-
-        private void BtnSearchTovar(object sender, RoutedEventArgs e)
+        private void ToSearch(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                BtnSearchTovar(this, null);
+        }
+            private void BtnSearchTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
             MySqlConnection con = new MySqlConnection("server=localhost; port=3306;username=root;database=compstore");

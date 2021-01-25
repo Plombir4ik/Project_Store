@@ -22,12 +22,14 @@ namespace Project_Store
     public partial class AddOrder : Window
     {
         long id = 0;
-        private readonly MainTovar mform;
-        public AddOrder(MainOrder mform, long id = -1)
+        private readonly MainOrder mform;
+        public AddOrder(MainOrder form, long id = -1)
         {
             InitializeComponent();
             fillComboBoxID_C();
             fillComboBoxID_T();
+            dP.SelectedDate = DateTime.Now;
+            mform = form;
             this.id = id;
             if (id > -1)
             {
@@ -64,7 +66,7 @@ namespace Project_Store
                 if (id == -1)
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateBox.Text + "');", DB.getConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {

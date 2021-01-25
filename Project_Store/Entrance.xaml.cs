@@ -26,8 +26,19 @@ namespace Project_Store
         {
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            LoginTextBox.Focus();
         }
 
+        private void ToPassword(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                PasswordTextBox.Focus();
+        }
+        private void AcceptLogin(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                ButtonEntrance(this, null);
+        }
         private void ButtonEntrance(object sender, RoutedEventArgs e)
         {
             DataTable table = new DataTable();

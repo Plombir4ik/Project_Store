@@ -44,9 +44,9 @@ namespace Project_Store
 
         private void BtnMainOrder(object sender, RoutedEventArgs e)
         {
-            //MainOrder form = new MainJournal(log.Text);
-            //form.Show();
-            //Close();
+            MainOrder form = new MainOrder(log.Text);
+            form.Show();
+            Close();
         }
 
         private void BtnMainClient(object sender, RoutedEventArgs e)

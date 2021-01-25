@@ -60,3 +60,7 @@ C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainClient.g
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainClient.baml
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddClient.g.cs
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddClient.baml
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddOrder.g.cs
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\AddOrder.baml
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainOrder.g.cs
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainOrder.baml

@@ -1,0 +1,97 @@
+﻿<Window x:Class="Project_Store.MainOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Store"
+        mc:Ignorable="d"
+        Title="Window1" Width="1930" Height="1051">
+    <Grid Background="#FF212121">
+
+
+        <DataGrid x:Name="dataGrid"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="dataGrid_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="70" />
+                <DataGridTextColumn Header="ID клієнта" Binding="{Binding ID_C}" Width="70" />
+                <DataGridTextColumn Header="ID товару" Binding="{Binding ID_T}" Width="70"/>
+                <DataGridTextColumn Header="ID працівника" Binding="{Binding ID_P}"  Width="70"/>
+                <DataGridTextColumn Header="Кількість" Binding="{Binding Number}"  Width="60"/>
+                <DataGridTextColumn Header="Знижка" Binding="{Binding Discount}"  Width="60"/>
+                <DataGridTextColumn Header="Вартість" Binding="{Binding Pay}"  Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Border x:Name="ramka" BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="35" Margin="598,73,0,0" Background="#FF1D1D1D">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <WrapPanel>
+                <Grid>
+                    <Image Source="gear.png" IsEnabled="False" Width="29" Height="29"/>
+                    <Button x:Name="Settings" HorizontalAlignment="Left" Margin="-1" VerticalAlignment="Top" Width="35" BorderBrush="White" BorderThickness="1" Click="Settings_Click" Background="{x:Null}" Height="35"  />
+                </Grid>
+                <RadioButton Content="Пошук по ID" x:Name="ButtonSearchID" Margin="12,0,0,0" FontSize="16" Foreground="White" Background="White" VerticalAlignment="Center"  BorderBrush="#FF761813" Height="32" IsChecked="True" Width="162"/>
+                <RadioButton Content="Пошук по ПІБ" x:Name="ButtonSearchName" Height="32" Width="180" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
+                <RadioButton Content="Пошук по телефону" x:Name="ButtonSearchManufacturer" HorizontalAlignment="Left" Height="32"  VerticalAlignment="Top" Width="180" FontSize="16" Foreground="White" Background="White" BorderBrush="White"/>
+            </WrapPanel>
+        </Border>
+        <Grid Background="#FF1D1D1D" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="35" Margin="555,73,0,0">
+            <Border BorderThickness="1" BorderBrush="White" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+            </Border>
+            <Image  Source="serch.png" Stretch="Fill" Width="29" Height="29"/>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="35"  BorderBrush="White" Click="BtnSearchTovar" Background="#0000FFFF" Height="35">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <Border HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="479" Margin="67,73,0,0">
+            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red">
+                <TextBox.Effect>
+                    <DropShadowEffect/>
+                </TextBox.Effect>
+                <TextBox.ToolTip>Пошук</TextBox.ToolTip>
+            </TextBox>
+        </Border>
+        <Grid HorizontalAlignment="Left" Height="559" VerticalAlignment="Top" Width="188" Margin="1620,221,0,0">
+            <WrapPanel>
+                
+        <Button x:Name="Товари" Content="Додати &#xD;&#xA;замовлення" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="AddOrder" Height="68" Margin="0,0,0,54" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Foreground="White" FontWeight="Normal" FontSize="21" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+                <Button x:Name="РедагуватиІнформацію" Content="Редагувати&#xD;&#xA;інформацію" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Margin="0,0,0,54" Click="EditOrder" Height="68" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" FontSize="21" FontWeight="Normal" Visibility="Hidden">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+                <Button x:Name="ВидалитиТовар" Content="Видалити &#xD;&#xA;замовлення" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="DeleteOrder" Margin="0,0,0,54" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" Visibility="Hidden">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+                <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="toMainWindow" Margin="0,0,0,54" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+                <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="Update" Height="68" Background="#FF1D1D1D"  BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+            </WrapPanel>
+        </Grid>
+        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0,10,9.333,0" Foreground="White" Width="84"/>
+
+
+
+
+
+    </Grid>
+</Window>

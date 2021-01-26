@@ -53,46 +53,98 @@ namespace Project_Store
                 DB.CloseConnection();
             }
         }
-
-        private void BtnAddTovar(object sender, RoutedEventArgs e)
+        private void BtnCheckKlkst(object sender, RoutedEventArgs e)
         {
-            if (PayBox.Text == "" || BoxID_C.Text == "" || BoxID_T.Text == "")
+            if (BoxID_T.Text == "" || NumberBox.Text == "")
             {
-                MessageBox.Show("Ви забули ввести якусь інформацію!");
+                MessageBox.Show("Щось не то");
             }
             else
             {
                 StoreDatabase DB = new StoreDatabase();
-                if (id == -1)
+                MySqlCommand checkNumber = new MySqlCommand("select Number from tovar where id = '" + BoxID_T.Text + "'", DB.GetConnection());
+                MySqlDataReader myReader;
+                DB.OpenConnection();
+                myReader = checkNumber.ExecuteReader();
+                int klk = 0;
+                int boxklk = 0;
+                if (myReader.Read())
                 {
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');", DB.GetConnection());
-                    DB.OpenConnection();
-                    if (adding.ExecuteNonQuery() > 0)
-                    {
-                        MessageBox.Show("Замовлення успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Хм, замовлення не було додано...", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                    }
-                    DB.CloseConnection();
+                    klk = Convert.ToInt16(myReader.GetValue(0));
+                }
+                log.Text = Convert.ToString(klk);
+                DB.CloseConnection();
+                boxklk = Convert.ToInt16(NumberBox.Text);
+                if(boxklk > klk)
+                {
+                    MessageBox.Show("У нас стільки нима((");
+                }
+            }
+        }
+        private void BtnAddTovar(object sender, RoutedEventArgs e)
+        {
+            if (PayBox.Text == "" || BoxID_C.Text == "" || BoxID_T.Text == "" || NumberBox.Text == "")
+            {
+                MessageBox.Show("Ви забули ввести якусь інформацію!");
+            }
+            else if (NumberBox.Text == "0")
+            {
+                MessageBox.Show("Кількість не може дорівнювати нулю!");
+            }
+            else
+            {
+                StoreDatabase DB = new StoreDatabase();
+                MySqlCommand checkNumber = new MySqlCommand("select Number from tovar where id = '" + BoxID_T.Text + "'", DB.GetConnection());
+                MySqlDataReader myReader;
+                DB.OpenConnection();
+                myReader = checkNumber.ExecuteReader();
+                int klk = 0;
+                if (myReader.Read())
+                {
+                    klk = Convert.ToInt16(myReader.GetValue(0));
+                }
+                log.Text = Convert.ToString(klk);
+                DB.CloseConnection();
+                int boxklk = Convert.ToInt16(NumberBox.Text);
+                if (boxklk > klk)
+                {
+                    MessageBox.Show("У нас стільки нима((");
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand(); //("UPDATE orders SET `PIB` = '" + BoxPIB.Text + "', `Phone` = '" + BoxPhone.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
-                    DB.OpenConnection();
-                    if (editing.ExecuteNonQuery() > 0)
+                    if (id == -1)
                     {
-                        MessageBox.Show("Інформація про клієнта \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        int teper = klk - boxklk;
+                        MySqlCommand updatenumber = new MySqlCommand("UPDATE tovar set Number = '"+teper+"' where ID = '"+BoxID_T.Text+"'", DB.GetConnection());
+                        MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');", DB.GetConnection());
+                        DB.OpenConnection();
+                        if (adding.ExecuteNonQuery() > 0 && updatenumber.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("Замовлення успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Хм, замовлення не було додано...", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                        DB.CloseConnection();
                     }
                     else
                     {
-                        MessageBox.Show("Інформація про клієнта \nне була успішно змінена.", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        MySqlCommand editing = new MySqlCommand(); //("UPDATE orders SET `PIB` = '" + BoxPIB.Text + "', `Phone` = '" + BoxPhone.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
+                        DB.OpenConnection();
+                        if (editing.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("Інформація про клієнта \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Інформація про клієнта \nне була успішно змінена.", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                        DB.CloseConnection();
                     }
-                    DB.CloseConnection();
+                    mform.Info();
+                    this.Close();
                 }
-                mform.Info();
-                this.Close();
             }
         }
         private void BtnCancel(object sender, RoutedEventArgs e)
@@ -146,7 +198,7 @@ namespace Project_Store
             {
                 MySqlDataReader myReader;
                 DB.OpenConnection();
-                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar where like '%" + BoxID_T.Text + "%' group by ID_T" , DB.GetConnection());
+                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar where ID like '%"+BoxID_T.Text+"%' group by ID_T" , DB.GetConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
@@ -159,19 +211,44 @@ namespace Project_Store
         private void BoxID_CTextChanged(object sender, RoutedEventArgs e)
         {
             BoxID_C.Items.Clear();
-            FillComboBoxID_T();
+            FillComboBoxID_C();
             BoxID_C.IsDropDownOpen = true;
         }
         private void BoxID_TTextChanged(object sender, RoutedEventArgs e)
         {
             BoxID_T.Items.Clear();
-            FillComboBoxID_C();
+            FillComboBoxID_T();
             BoxID_T.IsDropDownOpen = true;
+            UpdateAddOrder();
+        }
+        private void UpdateAddOrder()
+        {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlCommand checkNumber = new MySqlCommand("select SellingPrice from tovar where id = '" + BoxID_T.Text + "'", DB.GetConnection());
+            MySqlDataReader myReader;
+            DB.OpenConnection();
+            myReader = checkNumber.ExecuteReader();
+            int klk = 0;
+            if (NumberBox.Text != "")
+            {
+                klk = Convert.ToInt32(NumberBox.Text);
+            }
+            long tsina = 0;
+            if (myReader.Read())
+            {
+                tsina = Convert.ToInt32(myReader.GetValue(0));
+            }
+            if (NumberBox.Text != "")
+            {
+                tsina *= klk;
+            }
+            PayBox.Text = Convert.ToString(tsina);
+            DB.CloseConnection();
         }
 
-        private void BoxEmail_Copy_TextChanged(object sender, TextChangedEventArgs e)
+        private void NumberBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            UpdateAddOrder();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Project_Store
         {
             Entrance form = new Entrance();
             form.Show();
+            FillJournal jr = new FillJournal();
+            jr.FillProcess(log.Text, "Logout");
             Close();
         }
 
@@ -50,6 +52,13 @@ namespace Project_Store
 
         private void BtnExit(object sender, RoutedEventArgs e)
         {
+            Close();
+        }
+
+        private void BtnMainEmployee(object sender, RoutedEventArgs e)
+        {
+            MainEmployee form = new MainEmployee(log.Text);
+            form.Show();
             Close();
         }
     }

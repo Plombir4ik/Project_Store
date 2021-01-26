@@ -37,7 +37,9 @@ namespace Project_Store
             {
                 MainWindow mform = new MainWindow(LoginTextBox.Text);
                     mform.Show();
-                    Close();
+                FillJournal jr = new FillJournal();
+                jr.FillProcess(LoginTextBox.Text, "Login");
+                Close();
             }
             else { Error.Visibility = Visibility.Visible; }
         }

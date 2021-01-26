@@ -24,10 +24,12 @@ namespace Project_Store
     {
         readonly long id = 0;
         private readonly MainClient mform;
-        public AddClient(MainClient form, long id = -1)
+        string login = "";
+        public AddClient(string login, MainClient form, long id = -1)
         {
             InitializeComponent();
             this.id = id;
+            this.login = login;
             mform = form;
             if (id > -1)
             {
@@ -67,6 +69,8 @@ namespace Project_Store
                     if (adding.ExecuteNonQuery() > 0)
                     {
                         System.Windows.MessageBox.Show("Клієнта успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        FillJournal jr = new FillJournal();
+                        jr.FillProcess(login, "AddClient");
                     }
                     else
                     {
@@ -81,6 +85,8 @@ namespace Project_Store
                     if (editing.ExecuteNonQuery() > 0)
                     {
                         System.Windows.MessageBox.Show("Інформація про клієнта \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        FillJournal jr = new FillJournal();
+                        jr.FillProcess(login, "EditClient");
                     }
                     else
                     {

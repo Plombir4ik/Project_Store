@@ -103,6 +103,9 @@
     <Compile Include="AddClient.xaml.cs">
       <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddEmployee.xaml.cs">
+      <DependentUpon>AddEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddTovar.xaml.cs">
       <DependentUpon>AddTovar.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
     <Compile Include="MainJournal.xaml.cs">
       <DependentUpon>MainJournal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainEmployee.xaml.cs">
+      <DependentUpon>MainEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FillJournal.cs" />
     <Compile Include="TakeLogin.cs" />
     <Compile Include="StoreDatabase.cs" />
     <Compile Include="Entrance.xaml.cs">
@@ -131,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="AddEmployee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AddTovar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +155,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainJournal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainEmployee.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

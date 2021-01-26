@@ -128,6 +128,8 @@ namespace Project_Store
                         {
                             MessageBox.Show("Хм, замовлення не було додано...", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                         }
+                        FillJournal jr = new FillJournal(); 
+                        jr.FillProcess(login, "AddOrder");
                         DB.CloseConnection();
                     }
                     else

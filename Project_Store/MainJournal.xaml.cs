@@ -88,19 +88,19 @@ namespace Project_Store
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from journal where journal.id = '"+SearchBox.Text+"'";
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Manufacturer like '%"+SearchBox.Text+"%'";
+                searching = "select * from journal where journal.PIB like '%"+SearchBox.Text+"%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Name like '%" + SearchBox.Text + "%'";
+                searching = "select * from journal where journal.ID_P like '%"+SearchBox.Text + "%'";
             }
             else
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from journal where journal.id = '"+SearchBox.Text+"'";
             }
             MySqlCommand thesearch = new MySqlCommand(searching, DB.GetConnection());
             DB.OpenConnection();
@@ -191,7 +191,7 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select * from tovar", DB.GetConnection());
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from journal", DB.GetConnection());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DataGridJournal.ItemsSource = dt.DefaultView;

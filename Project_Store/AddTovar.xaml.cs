@@ -23,12 +23,14 @@ namespace Project_Store
     {
         readonly long id = 0;
         private readonly MainTovar mform;
-        public AddTovar(MainTovar form, long id = -1)
+        string login = "";
+        public AddTovar(string login, MainTovar form, long id = -1)
         {
             InitializeComponent();
             FillComboBoxTypeOf();
             FillComboBoxManufacturer();
             mform = form;
+            this.login = login;
             this.id = id;
             if (id > -1)
             {
@@ -74,7 +76,9 @@ namespace Project_Store
                     DB.OpenConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
-                        MessageBox.Show("Товар успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
+                        FillJournal jr = new FillJournal();
+                        jr.FillProcess(login, "AddTovar");
+                        MessageBox.Show("Товар успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);                       
                     }
                     else
                     {
@@ -88,6 +92,8 @@ namespace Project_Store
                     DB.OpenConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {
+                        FillJournal jr = new FillJournal();
+                        jr.FillProcess(login, "EditTovar");
                         MessageBox.Show("Інформація про товар \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
                     else

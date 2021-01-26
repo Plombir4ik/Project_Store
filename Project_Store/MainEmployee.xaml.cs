@@ -22,11 +22,11 @@ namespace Project_Store
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class MainTovar : Window
+    public partial class MainEmployee : Window
     {
         long id = 0;
         bool a = false;
-        public MainTovar(string login)
+        public MainEmployee(string login)
         {
             InitializeComponent();
             log.Text = login;
@@ -46,7 +46,7 @@ namespace Project_Store
 
         private void AddTovar(object sender, RoutedEventArgs e)
         {
-            AddTovar mform = new AddTovar(log.Text, this);
+            AddEmployee mform = new AddEmployee(this);
             mform.Show();
         }
 
@@ -54,7 +54,7 @@ namespace Project_Store
         {
             if (DataGridTovar.SelectedItem != null && DataGridTovar.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                AddTovar a = new AddTovar(log.Text, this, id);
+                AddEmployee a = new AddEmployee(this, id);
                 a.Show();
             }
             else
@@ -65,20 +65,18 @@ namespace Project_Store
 
         private void BtnDeleteTovar(object sender, RoutedEventArgs e)
         {
-            StoreDatabase DB = new StoreDatabase();
-            if (DataGridTovar.SelectedItem != null && DataGridTovar.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            {
-                DB.OpenConnection();
-                MySqlCommand deleting = new MySqlCommand("DELETE FROM tovar WHERE ID = '" + id + "';", DB.GetConnection());
-                deleting.ExecuteNonQuery();
-                FillJournal jr = new FillJournal();
-                jr.FillProcess(log.Text, "DeleteTovar");
-                DB.CloseConnection();
-            }
-            else
-            {
-                MessageBox.Show("Виберіть товар!");
-            }
+            //StoreDatabase DB = new StoreDatabase();
+            //if (DataGridTovar.SelectedItem != null && DataGridTovar.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            //{
+            //    DB.OpenConnection();
+            //    MySqlCommand deleting = new MySqlCommand("DELETE FROM tovar WHERE ID = '" + id + "';", DB.GetConnection());
+            //    deleting.ExecuteNonQuery();
+            //    DB.CloseConnection();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Виберіть товар!");
+            //}
             Info();
         }
 
@@ -200,7 +198,7 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select * from tovar", DB.GetConnection());
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from prazivnuku", DB.GetConnection());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DataGridTovar.ItemsSource = dt.DefaultView;

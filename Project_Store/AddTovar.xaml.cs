@@ -51,27 +51,26 @@ namespace Project_Store
                         BoxPurchasePrice.Text = Convert.ToString(reader.GetValue(7));
                         BoxSellingPrice.Text = Convert.ToString(reader.GetValue(8));
                     }
-                    DB.closeConnection();
-                    BoxTypeOF.IsDropDownOpen = false;
-                    BoxManufacturer.IsDropDownOpen = false;
                 }
+                DB.closeConnection();
+                BoxTypeOF.IsDropDownOpen = false;
+                BoxManufacturer.IsDropDownOpen = false;
             }
         }
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            StoreDatabase DB = new StoreDatabase();
             if (BoxTypeOF.Text == "")
             {
                 MessageBox.Show("Щось тут не так");
             }
             else
             {
+                StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlDataAdapter adapter = new MySqlDataAdapter();
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (ID, Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
-                        "('', '" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.getConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
+                        "('" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
@@ -102,63 +101,58 @@ namespace Project_Store
             }
         }
 
-        void fillComboBoxTypeOf()
+        private void fillComboBoxTypeOf()
         {
-            if(BoxTypeOF.Text == "")
+            StoreDatabase DB = new StoreDatabase();
+            MySqlDataReader myReader;
+            if (BoxTypeOF.Text == "")
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-                MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select Type as 'Type' from tovar group by Type", con);
+                MySqlCommand comm = new MySqlCommand("select Type as 'Type' from tovar group by Type", DB.getConnection());
+                DB.openConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
-
                     BoxTypeOF.Items.Add(myReader.GetString("Type"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
             else
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-                MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select Type from tovar where Type like '%" + BoxTypeOF.Text + "%' group by Type", con);
+                MySqlCommand comm = new MySqlCommand("select Type from tovar where Type like '%" + BoxTypeOF.Text + "%' group by Type", DB.getConnection());
+                DB.openConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxTypeOF.Items.Add(myReader.GetString("Type"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
         }
-        void fillComboBoxManufacturer()
+        private void fillComboBoxManufacturer()
         {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlDataReader myReader;
             if (BoxManufacturer.Text == "")
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-                MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar group by Manufacturer", con);
+                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar group by Manufacturer", DB.getConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxManufacturer.Items.Add(myReader.GetString("Manufacturer"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
             else
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-                MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar where Manufacturer like '%" + BoxManufacturer.Text + "%' group by Manufacturer", con);
+                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar where Manufacturer like '%" + BoxManufacturer.Text + "%' group by Manufacturer", DB.getConnection());
+                DB.openConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxManufacturer.Items.Add(myReader.GetString("Manufacturer"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
         }
         private void BtnCancel(object sender, RoutedEventArgs e)

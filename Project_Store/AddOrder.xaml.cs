@@ -56,16 +56,15 @@ namespace Project_Store
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            StoreDatabase DB = new StoreDatabase();
             if (PayBox.Text == "" || BoxID_C.Text == "" || BoxID_T.Text == "")
             {
                 MessageBox.Show("Ви забули ввести якусь інформацію!");
             }
             else
             {
+                StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlDataAdapter adapter = new MySqlDataAdapter();
                     MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
@@ -102,60 +101,58 @@ namespace Project_Store
         }
         void fillComboBoxID_C()
         {
+            StoreDatabase DB = new StoreDatabase();
             if (BoxID_C.Text == "")
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
                 MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client group by ID", con);
+                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client group by ID", DB.getConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxID_C.Items.Add(myReader.GetString("ID_C"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
             else
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
                 MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client where concat(ID, ') ', PIB) like '%" + BoxID_C.Text + "%' group by ID_C", con);
+                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client where concat(ID, ') ', PIB) like '%" + BoxID_C.Text + "%' group by ID_C", DB.getConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxID_C.Items.Add(myReader.GetString("ID_C"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
         }
         void fillComboBoxID_T()
         {
+            StoreDatabase DB = new StoreDatabase();
             if (BoxID_T.Text == "")
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
                 MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar group by ID", con);
+                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar group by ID", DB.getConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxID_T.Items.Add(myReader.GetString("ID_T"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
             else
             {
-                MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
                 MySqlDataReader myReader;
-                con.Open();
-                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar where like '%" + BoxID_T.Text + "%' group by ID_T" , con);
+                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar where like '%" + BoxID_T.Text + "%' group by ID_T" , DB.getConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxID_T.Items.Add(myReader.GetString("ID_T"));
                 }
-                con.Close();
+                DB.closeConnection();
             }
         }
 

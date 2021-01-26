@@ -1,19 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using MySql.Data.MySqlClient;
-using System.Data;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Project_Store
 {
@@ -58,9 +43,9 @@ namespace Project_Store
 
         private void BtnMainJournal(object sender, RoutedEventArgs e)
         {
-            //MainJournal form = new MainJournal(log.Text);
-            //form.Show();
-            //Close();
+            MainJournal form = new MainJournal(log.Text);
+            form.Show();
+            Close();
         }
 
         private void BtnExit(object sender, RoutedEventArgs e)

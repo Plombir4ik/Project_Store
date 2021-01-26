@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using MySql.Data.MySqlClient;
 using System.Data;
-using System.Windows.Shapes;
 
 
 namespace Project_Store
@@ -24,7 +13,7 @@ namespace Project_Store
     {
         public Entrance()
         {
-            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
         }
 
@@ -40,14 +29,10 @@ namespace Project_Store
         }
         private void ButtonEntrance(object sender, RoutedEventArgs e)
         {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("select login from prazivnuku where login = '" + LoginTextBox.Text + "' and password = '" + PasswordTextBox.Password + "';", DB.getConnection());
             DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore;");
-            conn.Open();
-            MySqlCommand command = new MySqlCommand("select login from prazivnuku where login = '" + LoginTextBox.Text + "' and password = '" + PasswordTextBox.Password + "';", conn);
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            conn.Close();    
+            adapter.Fill(table);    
             if (table.Rows.Count > 0)       
             {
                 MainWindow mform = new MainWindow(LoginTextBox.Text);

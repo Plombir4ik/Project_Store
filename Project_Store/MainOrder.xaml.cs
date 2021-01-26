@@ -24,12 +24,8 @@ namespace Project_Store
     /// </summary>
     public partial class MainOrder : Window
     {
-        MySqlDataAdapter sda, sda1;
-        MySqlCommandBuilder scb, scb1;
-        System.Data.DataTable dt, dt1;
         long id = 0;
         bool a = false;
-
         public MainOrder(string login)
         {
             InitializeComponent();
@@ -97,7 +93,6 @@ namespace Project_Store
         private void BtnSearchTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlConnection con = new MySqlConnection("server=localhost; port=3306;username=root;database=compstore");
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
@@ -125,8 +120,8 @@ namespace Project_Store
             }
             else
             {
-                sda = new MySqlDataAdapter(searching, con);
-                dt = new System.Data.DataTable();
+                MySqlDataAdapter sda = new MySqlDataAdapter(searching, DB.getConnection());
+                DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -204,9 +199,8 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-            sda = new MySqlDataAdapter("select * from orders", con);
-            dt = new System.Data.DataTable();
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from orders", DB.getConnection());
+            DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGrid.ItemsSource = dt.DefaultView;
         }

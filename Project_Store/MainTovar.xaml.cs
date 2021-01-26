@@ -24,12 +24,8 @@ namespace Project_Store
     /// </summary>
     public partial class MainTovar : Window
     {
-        MySqlDataAdapter sda, sda1;
-        MySqlCommandBuilder scb, scb1;
-        System.Data.DataTable dt, dt1;
         long id = 0;
         bool a = false;
-
         public MainTovar(string login)
         {
             InitializeComponent();
@@ -88,20 +84,13 @@ namespace Project_Store
         {
             Info();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void ToSearch(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
                 BtnSearchTovar(this, null);
         }
-            private void BtnSearchTovar(object sender, RoutedEventArgs e)
+        private void BtnSearchTovar(object sender, RoutedEventArgs e)
         {
-            StoreDatabase DB = new StoreDatabase();
-            MySqlConnection con = new MySqlConnection("server=localhost; port=3306;username=root;database=compstore");
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
@@ -119,6 +108,7 @@ namespace Project_Store
             {
                 searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
             }
+            StoreDatabase DB = new StoreDatabase();
             MySqlCommand thesearch = new MySqlCommand(searching, DB.getConnection());
             DB.openConnection();
             if (Convert.ToInt32(thesearch.ExecuteScalar()) <= 0)
@@ -129,8 +119,8 @@ namespace Project_Store
             }
             else
             {
-                sda = new MySqlDataAdapter(searching, con);
-                dt = new System.Data.DataTable();
+                MySqlDataAdapter sda = new MySqlDataAdapter(searching, DB.getConnection());
+                DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -208,9 +198,8 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-            sda = new MySqlDataAdapter("select * from tovar", con);
-            dt = new System.Data.DataTable();
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from tovar", DB.getConnection());
+            DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGrid.ItemsSource = dt.DefaultView;
         }

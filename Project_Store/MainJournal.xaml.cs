@@ -24,12 +24,8 @@ namespace Project_Store
     /// </summary>
     public partial class MainJournal : Window
     {
-        MySqlDataAdapter sda, sda1;
-        MySqlCommandBuilder scb, scb1;
-        System.Data.DataTable dt, dt1;
         long id = 0;
         bool a = false;
-
         public MainJournal(string login)
         {
             InitializeComponent();
@@ -74,19 +70,7 @@ namespace Project_Store
 
         private void BtnDeleteTovar(object sender, RoutedEventArgs e)
         {
-            StoreDatabase DB = new StoreDatabase();
-            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            {
-                DB.openConnection();
-                MySqlCommand deleting = new MySqlCommand("DELETE FROM tovar WHERE ID = '" + id + "';", DB.getConnection());
-                deleting.ExecuteNonQuery();
-                DB.closeConnection();
-            }
-            else
-            {
-                MessageBox.Show("Виберіть товар!");
-            }
-            Info();
+            
         }
 
         private void Update(object sender, RoutedEventArgs e)
@@ -102,7 +86,6 @@ namespace Project_Store
         private void BtnSearchTovar(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlConnection con = new MySqlConnection("server=localhost; port=3306;username=root;database=compstore");
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
@@ -130,8 +113,8 @@ namespace Project_Store
             }
             else
             {
-                sda = new MySqlDataAdapter(searching, con);
-                dt = new System.Data.DataTable();
+                MySqlDataAdapter sda = new MySqlDataAdapter(searching, DB.getConnection());
+                DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -209,9 +192,8 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlConnection con = new MySqlConnection("server=localhost;port=3306;username=root;database=compstore");
-            sda = new MySqlDataAdapter("select * from tovar", con);
-            dt = new System.Data.DataTable();
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from tovar", DB.getConnection());
+            DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGrid.ItemsSource = dt.DefaultView;
         }

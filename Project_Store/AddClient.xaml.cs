@@ -48,23 +48,22 @@ namespace Project_Store
                         BoxEmail.Text = (string)reader.GetValue(3);
                     }
                     reader.Close();
-                    DB.closeConnection();
                 }
+                DB.closeConnection();
             }
         }
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            StoreDatabase DB = new StoreDatabase();
             if (BoxP.Text == "" || BoxPhoneMask.Text == "+380" || BoxEmail.Text == "")
             {
                 System.Windows.MessageBox.Show("Ви забули ввести якусь інформацію!");
             }
             else
             {
+                StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlDataAdapter adapter = new MySqlDataAdapter();
                     MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('" + BoxP.Text + " " +BoxI.Text+ " " +BoxB.Text+"', '" + BoxPhoneMask.Text + "', '" + BoxEmail.Text + "');", DB.getConnection());
                     DB.openConnection();
                     if (adding.ExecuteNonQuery() > 0)
@@ -97,7 +96,7 @@ namespace Project_Store
         }
         private void BtnCancel(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

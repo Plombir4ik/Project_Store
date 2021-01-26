@@ -113,6 +113,7 @@ namespace Project_Store
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
+
                     BoxTypeOF.Items.Add(myReader.GetString("Type"));
                 }
                 con.Close();
@@ -178,5 +179,6 @@ namespace Project_Store
             fillComboBoxManufacturer();
             BoxManufacturer.IsDropDownOpen = true;
         }
+
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\
 Project_Store
 none
 false
 DEBUG;TRACE
-C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\App.xaml
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\App.xaml
 9677127000
 
 15-192134741
-21304416750
+217748091
 AddOrder.xaml;AddClient.xaml;AddTovar.xaml;MainOrder.xaml;MainClient.xaml;MainJournal.xaml;MainWindow.xaml;Entrance.xaml;MainTovar.xaml;
 
-False
+True
 

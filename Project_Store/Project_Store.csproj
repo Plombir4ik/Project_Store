@@ -216,25 +216,16 @@
     <Resource Include="Images\theme1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="seacrh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="search.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\58427.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="gear.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="settings-cogwheel-button_icon-icons.com_72559.png" />
+    <Resource Include="Images\gear.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logoforprogramm_white.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="serch.png" />
+    <Resource Include="Images\serch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />

@@ -108,3 +108,5 @@ C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\bin\Debug\sv\Xceed.Wpf
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainJournal.g.cs
 C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\MainJournal.baml
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainJournal.g.cs
+C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainJournal.baml

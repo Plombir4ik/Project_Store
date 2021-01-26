@@ -25,7 +25,7 @@
             </Border.Effect>
             <WrapPanel>
                 <Grid>
-                    <Image Source="gear.png" IsEnabled="False" Width="29" Height="29"/>
+                    <Image Source="images\gear.png" IsEnabled="False" Width="29" Height="29"/>
                     <Button x:Name="Settings" HorizontalAlignment="Left" Margin="-1" VerticalAlignment="Top" Width="35" BorderBrush="White" BorderThickness="1" Click="Settings_Click" Background="{x:Null}" Height="35"  />
                 </Grid>
                 <RadioButton Content="Пошук по ID" x:Name="ButtonSearchID" Margin="12,0,0,0" FontSize="16" Foreground="White" Background="White" VerticalAlignment="Center"  BorderBrush="#FF761813" Height="32" IsChecked="True" Width="162"/>
@@ -39,7 +39,7 @@
                     <DropShadowEffect/>
                 </Border.Effect>
             </Border>
-            <Image  Source="serch.png" Stretch="Fill" Width="29" Height="29"/>
+            <Image  Source="images\serch.png" Stretch="Fill" Width="29" Height="29"/>
             <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="35"  BorderBrush="White" Click="BtnSearchTovar" Background="#0000FFFF" Height="35">
                 <Button.Effect>
                     <DropShadowEffect/>

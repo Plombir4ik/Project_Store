@@ -26,7 +26,6 @@ namespace Project_Store
         {
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            LoginTextBox.Focus();
         }
 
         private void ToPassword(object sender, KeyEventArgs e)

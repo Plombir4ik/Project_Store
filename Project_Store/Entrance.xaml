@@ -7,18 +7,38 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Авторизація" Height="450" Width="350">
-    <Grid Background="#FF7E7C7C" >
-        <Border Margin="10 8" Background="LightGray" CornerRadius="20">
+    <Grid Background="#FF252525" >
+        <Border Margin="10 8" Background="#FF1D1D1D" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
             <StackPanel>
-                <Ellipse x:Name="Ellipse1" Height="102" Margin="20" Width="116" Fill="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Ellipse x:Name="Ellipse2" Height="41" Width="46" Margin="-112" Fill="White" VerticalAlignment="Top" HorizontalAlignment="Center" />
-                <Ellipse x:Name="Ellipse3" HorizontalAlignment="Center" Fill="White" Height="45" VerticalAlignment="Top" Width="70" Margin="-68"/>
-                <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="5" KeyDown="ToPassword"/>
-                <PasswordBox x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="5" KeyDown="AcceptLogin"/>
-                <Button Content="Увійти" Margin="75 50" Click="ButtonEntrance"></Button>
-                <Label x:Name="Error" Content="Неправильний логін або пароль" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-45" Foreground="#DDFF0000" FontWeight="Bold" Visibility="Hidden"/>
-            </StackPanel>            
+                <Ellipse x:Name="Ellipse1" Height="102" Margin="20" Width="116" Fill="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.8">
+                    <Ellipse.Effect>
+                        <DropShadowEffect/>
+                    </Ellipse.Effect>
+                </Ellipse>
+                <Ellipse x:Name="Ellipse2" Height="41" Width="46" Margin="-112" Fill="White" VerticalAlignment="Top" HorizontalAlignment="Center" Opacity="0.8" />
+                <Ellipse x:Name="Ellipse3" HorizontalAlignment="Center" Fill="White" Height="45" VerticalAlignment="Top" Width="70" Margin="-68" Opacity="0.8"/>
+                <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="8" KeyDown="ToPassword" Foreground="White" BorderBrush="White">
+                    <TextBox.Effect>
+                        <DropShadowEffect/>
+                    </TextBox.Effect>
+                </TextBox>
+                <PasswordBox x:Name="PasswordTextBox" materialDesign:HintAssist.Hint="Пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="8" KeyDown="AcceptLogin" Foreground="White" BorderBrush="White">
+                    <PasswordBox.Effect>
+                        <DropShadowEffect/>
+                    </PasswordBox.Effect>
+                </PasswordBox>
+                <Button Content="Увійти" Margin="75 50" Click="ButtonEntrance" Background="#FF1D1D1D" BorderBrush="White" Foreground="#DDFFFFFF" BorderThickness="2">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Label x:Name="Error" Content="Неправильний логін або пароль" HorizontalAlignment="Center" Margin="-40" VerticalAlignment="Top"  Foreground="#DDFF0000" FontWeight="Bold" Visibility="Hidden"/>
+
+            </StackPanel>
         </Border>
-        
+
     </Grid>
 </Window>

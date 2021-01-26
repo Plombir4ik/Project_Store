@@ -30,7 +30,7 @@ namespace Project_Store
         private void ButtonEntrance(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("select login from prazivnuku where login = '" + LoginTextBox.Text + "' and password = '" + PasswordTextBox.Password + "';", DB.getConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter("select login from prazivnuku where login = '"+LoginTextBox.Text+"' and password = '"+PasswordTextBox.Password+"';", DB.GetConnection());
             DataTable table = new DataTable();
             adapter.Fill(table);    
             if (table.Rows.Count > 0)       

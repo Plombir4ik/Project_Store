@@ -21,13 +21,13 @@ namespace Project_Store
     /// </summary>
     public partial class AddTovar : Window
     {
-        long id = 0;
+        readonly long id = 0;
         private readonly MainTovar mform;
         public AddTovar(MainTovar form, long id = -1)
         {
             InitializeComponent();
-            fillComboBoxTypeOf();
-            fillComboBoxManufacturer();
+            FillComboBoxTypeOf();
+            FillComboBoxManufacturer();
             mform = form;
             this.id = id;
             if (id > -1)
@@ -35,8 +35,8 @@ namespace Project_Store
                 КнопкаДодатиТовар.Content = "Змінити";
                 Label.Content = "Змінити вибраний товар";
                 StoreDatabase DB = new StoreDatabase();
-                MySqlCommand command = new MySqlCommand("select * from tovar where id = '" + id + "';", DB.getConnection());
-                DB.openConnection();
+                MySqlCommand command = new MySqlCommand("select * from tovar where id = '" + id + "';", DB.GetConnection());
+                DB.OpenConnection();
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -52,7 +52,7 @@ namespace Project_Store
                         BoxSellingPrice.Text = Convert.ToString(reader.GetValue(8));
                     }
                 }
-                DB.closeConnection();
+                DB.CloseConnection();
                 BoxTypeOF.IsDropDownOpen = false;
                 BoxManufacturer.IsDropDownOpen = false;
             }
@@ -60,7 +60,7 @@ namespace Project_Store
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            if (BoxTypeOF.Text == "")
+            if (BoxTypeOF.Text == "" || BoxManufacturer.Text == "" || BoxNumber.Text == ""|| BoxSpecifications.Text == "" || BoxDescription.Text == "" || BoxPurchasePrice.Text == "" || BoxName.Text == "" || BoxSellingPrice.Text == "")
             {
                 MessageBox.Show("Щось тут не так");
             }
@@ -70,8 +70,8 @@ namespace Project_Store
                 if (id == -1)
                 {
                     MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
-                        "('" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.getConnection());
-                    DB.openConnection();
+                        "('" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.GetConnection());
+                    DB.OpenConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("Товар успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
@@ -80,12 +80,12 @@ namespace Project_Store
                     {
                         MessageBox.Show("Хм, товар не було додано...", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
-                    DB.closeConnection();
+                    DB.CloseConnection();
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = '" + BoxSpecifications.Text + "', `Description` = '" + BoxDescription.Text + "', `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '" + BoxSellingPrice.Text + "' where ID = '" + id + "';", DB.getConnection());
-                    DB.openConnection();
+                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = '" + BoxSpecifications.Text + "', `Description` = '" + BoxDescription.Text + "', `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '" + BoxSellingPrice.Text + "' where ID = '" + id + "';", DB.GetConnection());
+                    DB.OpenConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {
                         MessageBox.Show("Інформація про товар \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
@@ -94,65 +94,65 @@ namespace Project_Store
                     {
                         MessageBox.Show("Інформація про товар \nне була успішно змінена.", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
-                    DB.closeConnection();
+                    DB.CloseConnection();
                 }
                 mform.Info();
                 this.Close();
             }
         }
 
-        private void fillComboBoxTypeOf()
+        private void FillComboBoxTypeOf()
         {
             StoreDatabase DB = new StoreDatabase();
             MySqlDataReader myReader;
             if (BoxTypeOF.Text == "")
             {
-                MySqlCommand comm = new MySqlCommand("select Type as 'Type' from tovar group by Type", DB.getConnection());
-                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select Type as 'Type' from tovar group by Type", DB.GetConnection());
+                DB.OpenConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxTypeOF.Items.Add(myReader.GetString("Type"));
                 }
-                DB.closeConnection();
+                DB.CloseConnection();
             }
             else
             {
-                MySqlCommand comm = new MySqlCommand("select Type from tovar where Type like '%" + BoxTypeOF.Text + "%' group by Type", DB.getConnection());
-                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select Type from tovar where Type like '%" + BoxTypeOF.Text + "%' group by Type", DB.GetConnection());
+                DB.OpenConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxTypeOF.Items.Add(myReader.GetString("Type"));
                 }
-                DB.closeConnection();
+                DB.CloseConnection();
             }
         }
-        private void fillComboBoxManufacturer()
+        private void FillComboBoxManufacturer()
         {
             StoreDatabase DB = new StoreDatabase();
             MySqlDataReader myReader;
             if (BoxManufacturer.Text == "")
             {
-                DB.openConnection();
-                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar group by Manufacturer", DB.getConnection());
+                DB.OpenConnection();
+                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar group by Manufacturer", DB.GetConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxManufacturer.Items.Add(myReader.GetString("Manufacturer"));
                 }
-                DB.closeConnection();
+                DB.CloseConnection();
             }
             else
             {
-                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar where Manufacturer like '%" + BoxManufacturer.Text + "%' group by Manufacturer", DB.getConnection());
-                DB.openConnection();
+                MySqlCommand comm = new MySqlCommand("select Manufacturer from tovar where Manufacturer like '%" + BoxManufacturer.Text + "%' group by Manufacturer", DB.GetConnection());
+                DB.OpenConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
                     BoxManufacturer.Items.Add(myReader.GetString("Manufacturer"));
                 }
-                DB.closeConnection();
+                DB.CloseConnection();
             }
         }
         private void BtnCancel(object sender, RoutedEventArgs e)
@@ -163,14 +163,14 @@ namespace Project_Store
         private void BoxTypeOFTextChanged(object sender, RoutedEventArgs e)
         {
             BoxTypeOF.Items.Clear();
-            fillComboBoxTypeOf();
+            FillComboBoxTypeOf();
             BoxTypeOF.IsDropDownOpen = true;
         }
 
         private void BoxManufacturerTextChanged(object sender, RoutedEventArgs e)
         {
             BoxManufacturer.Items.Clear();
-            fillComboBoxManufacturer();
+            FillComboBoxManufacturer();
             BoxManufacturer.IsDropDownOpen = true;
         }
 

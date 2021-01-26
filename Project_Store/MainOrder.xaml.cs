@@ -42,7 +42,7 @@ namespace Project_Store
             if (e.Key == Key.Enter)
                 BtnSearchTovar(this, null);
         }
-        private void toMainWindow(object sender, RoutedEventArgs e)
+        private void ToMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mform = new MainWindow(log.Text);
             mform.Show();
@@ -57,7 +57,7 @@ namespace Project_Store
 
         private void EditOrder(object sender, RoutedEventArgs e)
         {
-            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
                 AddOrder a = new AddOrder(this, id);
                 a.Show();
@@ -71,12 +71,12 @@ namespace Project_Store
         private void DeleteOrder(object sender, RoutedEventArgs e)
         {
             StoreDatabase DB = new StoreDatabase();
-            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                DB.openConnection();
-                MySqlCommand deleting = new MySqlCommand("DELETE FROM orders WHERE ID = '" + id + "';", DB.getConnection());
+                DB.OpenConnection();
+                MySqlCommand deleting = new MySqlCommand("DELETE FROM orders WHERE ID = '" + id + "';", DB.GetConnection());
                 deleting.ExecuteNonQuery();
-                DB.closeConnection();
+                DB.CloseConnection();
             }
             else
             {
@@ -110,8 +110,8 @@ namespace Project_Store
             {
                 searching = "select * from orders where orders.Pay = '" + SearchBox.Text + "' ";
             }
-            MySqlCommand thesearch = new MySqlCommand(searching, DB.getConnection());
-            DB.openConnection();
+            MySqlCommand thesearch = new MySqlCommand(searching, DB.GetConnection());
+            DB.OpenConnection();
             if (Convert.ToInt32(thesearch.ExecuteScalar()) <= 0)
             {
                 MessageBox.Show("Нима");
@@ -120,12 +120,12 @@ namespace Project_Store
             }
             else
             {
-                MySqlDataAdapter sda = new MySqlDataAdapter(searching, DB.getConnection());
+                MySqlDataAdapter sda = new MySqlDataAdapter(searching, DB.GetConnection());
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                dataGrid.ItemsSource = dt.DefaultView;
+                DataGridOrder.ItemsSource = dt.DefaultView;
             }
-            DB.closeConnection();
+            DB.CloseConnection();
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
@@ -183,11 +183,11 @@ namespace Project_Store
             }
         }
 
-        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataGridOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dataGrid.SelectedItem != null && dataGrid.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                foreach (DataRowView row in dataGrid.SelectedItems)
+                foreach (DataRowView row in DataGridOrder.SelectedItems)
                 {
                     if (row.Row.ItemArray[0] != DBNull.Value)
                     {
@@ -199,10 +199,10 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select * from orders", DB.getConnection());
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from orders", DB.GetConnection());
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            dataGrid.ItemsSource = dt.DefaultView;
+            DataGridOrder.ItemsSource = dt.DefaultView;
         }
         private void SearchBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

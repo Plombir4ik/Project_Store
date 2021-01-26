@@ -22,7 +22,7 @@ namespace Project_Store
     /// </summary>
     public partial class AddClient : Window
     {
-        long id = 0;
+        readonly long id = 0;
         private readonly MainClient mform;
         public AddClient(MainClient form, long id = -1)
         {
@@ -34,28 +34,26 @@ namespace Project_Store
                 КнопкаДодатиТовар.Content = "Змінити";
                 Label.Content = "Змінити інформацію про клієнта";
                 StoreDatabase DB = new StoreDatabase();
-                MySqlCommand command = new MySqlCommand("select * from client where id = '" + id + "';", DB.getConnection());
-                DB.openConnection();
+                MySqlCommand command = new MySqlCommand("select * from client where id = '" + id + "';", DB.GetConnection());
+                DB.OpenConnection();
                 MySqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
                     {
-                        BoxP.Text = (string)reader.GetValue(1);
-                        BoxI.Text = (string)reader.GetValue(1);
-                        //BoxB.Text = (string)reader.GetValue(1);
+                        BoxPIB.Text = (string)reader.GetValue(1);
                         BoxPhoneMask.Text = (string)reader.GetValue(2);
                         BoxEmail.Text = (string)reader.GetValue(3);
                     }
                     reader.Close();
                 }
-                DB.closeConnection();
+                DB.CloseConnection();
             }
         }
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            if (BoxP.Text == "" || BoxPhoneMask.Text == "+380" || BoxEmail.Text == "")
+            if (!BoxPhoneMask.IsMaskFull || BoxPIB.Text == "" || BoxEmail.Text == "")
             {
                 System.Windows.MessageBox.Show("Ви забули ввести якусь інформацію!");
             }
@@ -64,8 +62,8 @@ namespace Project_Store
                 StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('" + BoxP.Text + " " +BoxI.Text+ " " +BoxB.Text+"', '" + BoxPhoneMask.Text + "', '" + BoxEmail.Text + "');", DB.getConnection());
-                    DB.openConnection();
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO client (PIB, Phone, Email) VALUES ('"+BoxPIB.Text+"', '" + BoxPhoneMask.Text + "', '" + BoxEmail.Text + "');", DB.GetConnection());
+                    DB.OpenConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
                         System.Windows.MessageBox.Show("Клієнта успішно додано!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
@@ -74,12 +72,12 @@ namespace Project_Store
                     {
                         System.Windows.MessageBox.Show("Хм, клієнта не було додано...", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
-                    DB.closeConnection();
+                    DB.CloseConnection();
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE client SET `PIB` = '" + BoxP.Text + " " + BoxI.Text + " " + BoxB.Text + "', `Phone` = '" + BoxPhoneMask.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
-                    DB.openConnection();
+                    MySqlCommand editing = new MySqlCommand("UPDATE client SET `PIB` = '"+BoxPIB.Text+"', `Phone` = '"+BoxPhoneMask.Text+"', `Email` = '"+BoxEmail.Text+"' where ID = '"+id+"';", DB.GetConnection());
+                    DB.OpenConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {
                         System.Windows.MessageBox.Show("Інформація про клієнта \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
@@ -88,7 +86,7 @@ namespace Project_Store
                     {
                         System.Windows.MessageBox.Show("Інформація про клієнта \nне була успішно змінена.", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
-                    DB.closeConnection();
+                    DB.CloseConnection();
                 }
                 mform.Info();
                 this.Close();

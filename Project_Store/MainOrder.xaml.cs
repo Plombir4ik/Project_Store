@@ -51,7 +51,7 @@ namespace Project_Store
 
         private void AddOrder(object sender, RoutedEventArgs e)
         {
-            AddOrder mform = new AddOrder(this);
+            AddOrder mform = new AddOrder(log.Text, this);
             mform.Show();
         }
 
@@ -59,7 +59,7 @@ namespace Project_Store
         {
             if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                AddOrder a = new AddOrder(this, id);
+                AddOrder a = new AddOrder(log.Text, this, id);
                 a.Show();
             }
             else

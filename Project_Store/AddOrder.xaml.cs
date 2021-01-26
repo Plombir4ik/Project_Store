@@ -23,12 +23,14 @@ namespace Project_Store
     {
         readonly long id = 0;
         private readonly MainOrder mform;
-        public AddOrder(MainOrder form, long id = -1)
+        string login = "";
+        public AddOrder(string login, MainOrder form, long id = -1)
         {
             InitializeComponent();
             FillComboBoxID_C();
             FillComboBoxID_T();
-            dP.SelectedDate = DateTime.Now;
+            this.login = login;
+            Updating();
             mform = form;
             this.id = id;
             if (id > -1)
@@ -229,9 +231,14 @@ namespace Project_Store
             DB.OpenConnection();
             myReader = checkNumber.ExecuteReader();
             int klk = 0;
+            int dscnt = 0;
             if (NumberBox.Text != "")
             {
                 klk = Convert.ToInt32(NumberBox.Text);
+            }
+            if (DiscountBox.Text != "" && DiscountBox.Text != "0")
+            {
+                dscnt = Convert.ToByte(DiscountBox.Text);
             }
             long tsina = 0;
             if (myReader.Read())
@@ -242,6 +249,10 @@ namespace Project_Store
             {
                 tsina *= klk;
             }
+            if (DiscountBox.Text != "" && DiscountBox.Text != "0")
+            {
+                tsina = (tsina / 100 * (100 - dscnt));
+            }
             PayBox.Text = Convert.ToString(tsina);
             DB.CloseConnection();
         }
@@ -249,6 +260,22 @@ namespace Project_Store
         private void NumberBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateAddOrder();
+        }
+
+        private void DiscountBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAddOrder();
+        }
+
+        private void ID_PBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Updating();
+        }
+        private void Updating()
+        {
+            dP.SelectedDate = DateTime.Now;
+            TakeLogin take = new TakeLogin();
+            ID_PBox.Text = take.RevertToTheID(login);
         }
     }
 }

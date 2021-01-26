@@ -11,7 +11,7 @@
         <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FF2B2436" Margin="328,339,321.333,0" />
         <TextBox HorizontalAlignment="Left" Height="26" Margin="102,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="PayBox"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="102,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="NumberBox" TextChanged="NumberBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="DiscountBox"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="DiscountBox" TextChanged="DiscountBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Ціна"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.946,0.643" Text="Кількість"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.946,0.643" Text="Знижка"/>
@@ -21,7 +21,7 @@
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="317,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643"><Run Text="ID "/><Run Text="клієнта"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="317,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643"><Run Text="ID "/><Run Text="товару"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="317,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="332" RenderTransformOrigin="0.946,0.643"><Run Text="ID "/><Run Text="працівника "/><Run Text="(автоматизовано, не дозволяти редагувати)"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="317,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="ID_PBox"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="317,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="ID_PBox" TextChanged="ID_PBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="594,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.946,0.643" Text="Дата"/>
         <DatePicker x:Name  ="dP" HorizontalAlignment="Left" Height="26" Margin="594,78,0,0" VerticalAlignment="Top" Width="160" IsEnabled="False" Background="Transparent" BorderBrush="#FFAAAAAA" Foreground="Black"/>
         <Button x:Name="КнопкаПеревіритиКількість" Content="Перевірити&#xD;&#xA;кількість&#xD;&#xA;за ID_T" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCheckKlkst" Height="50" Background="#FF2B2436" Margin="575,339,71,0" />

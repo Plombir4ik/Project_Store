@@ -115,6 +115,7 @@
     <Compile Include="MainJournal.xaml.cs">
       <DependentUpon>MainJournal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TakeLogin.cs" />
     <Compile Include="StoreDatabase.cs" />
     <Compile Include="Entrance.xaml.cs">
       <DependentUpon>Entrance.xaml</DependentUpon>

@@ -95,19 +95,19 @@ namespace Project_Store
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
-                searching = "select * from client where client.ID = '" + SearchBox.Text + "' ";
+                searching = "select * from client where ID = '" + SearchBox.Text + "' ";
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from client where client.Phone like '%" + SearchBox.Text + "%'";
+                searching = "select * from client where Phone like '%" + SearchBox.Text + "%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {
-                searching = "select * from client where client.PIB like '%" + SearchBox.Text + "%'";
+                searching = "select * from client where concat(P, ' ', I, ' ', B) like '%" + SearchBox.Text + "%'";
             }
             else
             {
-                searching = "select * from client where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from client where ID = '" + SearchBox.Text + "' ";
             }
             StoreDatabase DB = new StoreDatabase();
             MySqlCommand thesearch = new MySqlCommand(searching, DB.GetConnection());
@@ -208,6 +208,14 @@ namespace Project_Store
         {
             SearchBox.Text = "";
             SearchBox.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchBox.Text == "")
+            {
+                Info();
+            }
         }
     }
 }

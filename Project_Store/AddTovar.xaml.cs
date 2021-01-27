@@ -75,8 +75,8 @@ namespace Project_Store
                 {
                     MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (ID, Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
                         "('"+BoxID.Text+"','" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', @Specifications, @Description, '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.GetConnection()); ;
-                    adding.Parameters.AddWithValue("@Specifications", MySqlDbType.Text).Value = BoxSpecifications.Text;
-                    adding.Parameters.AddWithValue("@Description", MySqlDbType.Text).Value = BoxDescription.Text;
+                    adding.Parameters.AddWithValue("@Specifications", BoxSpecifications.Text);
+                    adding.Parameters.AddWithValue("@Description", BoxDescription.Text);
                     DB.OpenConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
@@ -93,8 +93,8 @@ namespace Project_Store
                 else
                 {
                     MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = @Specifications, `Description` =  @Description, `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '" + BoxSellingPrice.Text + "' where ID = '" + id + "';", DB.GetConnection());
-                    editing.Parameters.AddWithValue("@Specifications", MySqlDbType.Text).Value = BoxSpecifications.Text;
-                    editing.Parameters.AddWithValue("@Description", MySqlDbType.Text).Value = BoxDescription.Text;
+                    editing.Parameters.AddWithValue("@Specifications", BoxSpecifications.Text);
+                    editing.Parameters.AddWithValue("@Description", BoxDescription.Text);
                     DB.OpenConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {

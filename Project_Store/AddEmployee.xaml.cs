@@ -23,10 +23,12 @@ namespace Project_Store
     {
         readonly long id = 0;
         private readonly MainEmployee mform;
-        public AddEmployee(MainEmployee form, long id = -1)
+        string login = "";
+        public AddEmployee(string login, MainEmployee form, long id = -1)
         {
             InitializeComponent();
             mform = form;
+            this.login = login;
             this.id = id;
             if (id > -1)
             {
@@ -40,9 +42,11 @@ namespace Project_Store
                 {
                     while (reader.Read())
                     {
-                        BoxPIB.Text = (string)reader.GetValue(1);
-                        BoxLogin.Text = (string)reader.GetValue(2);
-                        BoxPassword.Text = (string)reader.GetValue(3);
+                        BoxP.Text = (string)reader.GetValue(1);
+                        BoxI.Text = (string)reader.GetValue(2);
+                        BoxB.Text = (string)reader.GetValue(3);
+                        BoxLogin.Text = (string)reader.GetValue(4);
+                        BoxPassword.Text = (string)reader.GetValue(5);
                     }
                 }
                 DB.CloseConnection();
@@ -51,7 +55,7 @@ namespace Project_Store
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            if (BoxPIB.Text == "" || BoxLogin.Text == "" || BoxPassword.Text == "")
+            if (BoxP.Text == "" || BoxI.Text == "" || BoxB.Text == "" || BoxLogin.Text == "" || BoxPassword.Text == "")
             {
                 MessageBox.Show("Щось тут не так");
             }
@@ -60,10 +64,15 @@ namespace Project_Store
                 StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO prazivnuku (PIB, login, password) VALUES ('" + BoxPIB.Text + "', '" + BoxLogin.Text + "', '" + BoxPassword.Text + "');", DB.GetConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO prazivnuku (P, I, B, login, password) VALUES (@P, @I, @B, '" + BoxLogin.Text + "', '" + BoxPassword.Text + "');", DB.GetConnection());
+                    adding.Parameters.AddWithValue("@P", BoxP.Text);
+                    adding.Parameters.AddWithValue("@I", BoxI.Text);
+                    adding.Parameters.AddWithValue("@B", BoxB.Text);
                     DB.OpenConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
+                        FillJournal jr = new FillJournal();
+                        jr.FillProcess(login, "AddPrazivnuk");
                         MessageBox.Show("Працівника успішно додано! ВІТАЄМО!", "Створення позиції...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
                     else
@@ -74,10 +83,15 @@ namespace Project_Store
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE prazivnuku SET `PIB` = '"+BoxPIB.Text+"', `login` = '"+BoxLogin.Text+"', `password` = '"+BoxPassword.Text+"' where ID = '"+id+"';", DB.GetConnection());
+                    MySqlCommand editing = new MySqlCommand("UPDATE prazivnuku SET `P` = @P, `I` = @I, `B` = @B,`login` = '" + BoxLogin.Text+"', `password` = '"+BoxPassword.Text+"' where ID = '"+id+"';", DB.GetConnection());
+                    editing.Parameters.AddWithValue("@P", BoxP.Text);
+                    editing.Parameters.AddWithValue("@I", BoxI.Text);
+                    editing.Parameters.AddWithValue("@B", BoxB.Text);
                     DB.OpenConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {
+                        FillJournal jr = new FillJournal();
+                        jr.FillProcess(login, "EditPrazivnuk");
                         MessageBox.Show("Інформація про товар \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
                     }
                     else

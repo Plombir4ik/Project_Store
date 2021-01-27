@@ -46,7 +46,7 @@ namespace Project_Store
 
         private void AddTovar(object sender, RoutedEventArgs e)
         {
-            AddEmployee mform = new AddEmployee(this);
+            AddEmployee mform = new AddEmployee(log.Text, this);
             mform.Show();
         }
 
@@ -54,7 +54,7 @@ namespace Project_Store
         {
             if (DataGridTovar.SelectedItem != null && DataGridTovar.SelectedItem.ToString() != "{NewItemPlaceholder}")
             {
-                AddEmployee a = new AddEmployee(this, id);
+                AddEmployee a = new AddEmployee(log.Text, this, id);
                 a.Show();
             }
             else
@@ -94,19 +94,19 @@ namespace Project_Store
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from prazivnuku where id = '" + SearchBox.Text + "' ";
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Manufacturer like '%"+SearchBox.Text+"%'";
+                searching = "select * from prazivnuku where login like '%" + SearchBox.Text + "%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Name like '%" + SearchBox.Text + "%'";
+                searching = "select * from prazivnuku where concat(P, ' ', I, ' ', B) like '%" + SearchBox.Text + "%'";
             }
             else
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from prazivnuku where id = '" + SearchBox.Text + "' ";
             }
             StoreDatabase DB = new StoreDatabase();
             MySqlCommand thesearch = new MySqlCommand(searching, DB.GetConnection());
@@ -207,6 +207,14 @@ namespace Project_Store
         {
             SearchBox.Text = "";
             SearchBox.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(SearchBox.Text == "")
+            {
+                Info();
+            }
         }
     }
 }

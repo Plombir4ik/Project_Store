@@ -124,7 +124,7 @@ namespace Project_Store
             {
                 MySqlDataReader myReader;
                 DB.OpenConnection();
-                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client group by ID", DB.GetConnection());
+                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', P, ' ', I, ' ', B) as 'ID_C' from client group by ID", DB.GetConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {
@@ -136,7 +136,7 @@ namespace Project_Store
             {
                 MySqlDataReader myReader;
                 DB.OpenConnection();
-                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', PIB) as 'ID_C' from client where concat(ID, ') ', PIB) like '%" + BoxID_C.Text + "%' group by ID_C", DB.GetConnection());
+                MySqlCommand comm = new MySqlCommand("select concat(ID,') ', P,' ', I, ' ', B) as 'ID_C' from client where concat(ID, ') ', P, ' ', I, ' ', B) like '%" + BoxID_C.Text + "%' group by ID_C", DB.GetConnection());
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())
                 {

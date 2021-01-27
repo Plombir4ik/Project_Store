@@ -209,5 +209,13 @@ namespace Project_Store
             SearchBox.Text = "";
             SearchBox.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
         }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchBox.Text == "")
+            {
+                Info();
+            }
+        }
     }
 }

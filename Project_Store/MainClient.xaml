@@ -11,10 +11,12 @@
 
         <DataGrid x:Name="DataGridClient"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridClient_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
-                <DataGridTextColumn Header="ПІБ" Binding="{Binding PIB}" Width="400" />
-                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="175"/>
-                <DataGridTextColumn Header="Електронна пошта" Binding="{Binding Email}"  Width="200"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="75"/>
+                <DataGridTextColumn Header="Прізвище" Binding="{Binding P}" Width="280"/>
+                <DataGridTextColumn Header="Ім'я" Binding="{Binding I}" Width="280"/>
+                <DataGridTextColumn Header="По-батькові" Binding="{Binding B}" Width="280"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="225"/>
+                <DataGridTextColumn Header="Електронна пошта" Binding="{Binding Email}"  Width="225"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -47,7 +49,7 @@
             </Button>
         </Grid>
         <Border HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="479" Margin="67,73,0,0">
-            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red" KeyDown="ToSearch">
+            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red" KeyDown="ToSearch" TextChanged="SearchBox_TextChanged">
                 <TextBox.Effect>
                     <DropShadowEffect/>
                 </TextBox.Effect>

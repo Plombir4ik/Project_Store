@@ -13,7 +13,7 @@ namespace Project_Store
             log.Text = login;
         }
 
-        private void BtnUnlogin(object sender, RoutedEventArgs e)
+        private void BtnLogout(object sender, RoutedEventArgs e)
         {
             Entrance form = new Entrance();
             form.Show();
@@ -50,15 +50,16 @@ namespace Project_Store
             Close();
         }
 
-        private void BtnExit(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
         private void BtnMainEmployee(object sender, RoutedEventArgs e)
         {
             MainEmployee form = new MainEmployee(log.Text);
             form.Show();
+            Close();
+        }
+        private void BtnExit(object sender, RoutedEventArgs e)
+        {
+            FillJournal jr = new FillJournal();
+            jr.FillProcess(log.Text, "Exit");
             Close();
         }
     }

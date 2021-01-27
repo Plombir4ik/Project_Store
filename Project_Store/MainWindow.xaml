@@ -14,7 +14,7 @@
 
         <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="54" Margin="0,-2,-18,0">
             <Image Source="images/door.png" Width="45" Margin="-7,-1,11,-1"/>
-            <Button Content="" Background="{x:Null}" Margin="-4,2,19,2" Click="BtnUnlogin" Height="Auto" />
+            <Button Content="" Background="{x:Null}" Margin="-4,2,19,2" Click="BtnLogout" Height="Auto" />
         </Grid>
         <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="31" Margin="0,-4,48,0" Height="39">
             <Image Source="images/chel.png" Width="Auto" Margin="0,4,0,7" />

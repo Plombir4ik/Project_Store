@@ -51,7 +51,7 @@
             </Button>
         </Grid>
         <Border HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="479" Margin="67,73,0,0">
-            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red" KeyDown="ToSearch">
+            <TextBox x:Name="SearchBox" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Пошук" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red" KeyDown="ToSearch" TextChanged="SearchBox_TextChanged">
                 <TextBox.Effect>
                     <DropShadowEffect/>
                 </TextBox.Effect>

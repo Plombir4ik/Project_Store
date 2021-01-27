@@ -9,13 +9,16 @@
     <Grid Margin="0,0,3.333,-0.333" Background="#FFF0F0F0">
         <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="141" Click="BtnAddTovar" Height="50" Background="#FFF0F0F0"  Foreground="#DD000000" BorderBrush="Black" BorderThickness="1,1,2,2" Margin="69,339,237.667,0" />
         <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="141" Click="BtnCancel" Height="50" Background="#FFF0F0F0"  BorderBrush="Black" BorderThickness="1,1,2,2" Margin="254,339,52.667,0" Foreground="#DD000000" />
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="111,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxPIB" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="35,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"  x:Name="BoxP" Foreground="Black" BorderBrush="Black"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="111,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxLogin" Foreground="Black" BorderBrush="Black"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="111,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxPassword" Foreground="Black" BorderBrush="Black"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="111,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="ПІБ" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="35,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Прізвище" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="111,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Логін" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="111,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Пароль" Foreground="Black"/>
         <Label Name ="Label" Content="Додати працівника" HorizontalAlignment="Left" Height="42" Margin="116,19,0,0" VerticalAlignment="Top" Width="239" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24" Foreground="Black"/>
-
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="171,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"  x:Name="BoxI" Foreground="Black" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="171,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Ім'я" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="311,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"  x:Name="BoxB" Foreground="Black" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="311,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Foreground="Black" Text="По-батькові"/>
     </Grid>
 </Window>

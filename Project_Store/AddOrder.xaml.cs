@@ -69,27 +69,16 @@ namespace Project_Store
             else
             {
                 StoreDatabase DB = new StoreDatabase();
-                MySqlCommand checkNumber = new MySqlCommand("select Number from tovar where id = '" + BoxID_T.Text + "'", DB.GetConnection());
-                MySqlDataReader myReader;
-                DB.OpenConnection();
-                myReader = checkNumber.ExecuteReader();
-                int klk = 0;
-                if (myReader.Read())
-                {
-                    klk = Convert.ToInt16(myReader.GetValue(0));
-                }
-                log.Text = Convert.ToString(klk);
-                DB.CloseConnection();
                 int boxklk = Convert.ToInt16(NumberBox.Text);
-                if (boxklk > klk)
+                if (boxklk > CheckNumber())
                 {
-                    MessageBox.Show("У нас стільки нима((");
+                    MessageBox.Show("Товару стільки немає.\n Наявна кількість: "+CheckNumber()+ "");
                 }
                 else
                 {
                     if (id == -1)
                     {
-                        int teper = klk - boxklk;
+                        int teper = CheckNumber() - boxklk;
                         MySqlCommand updatenumber = new MySqlCommand("UPDATE tovar set Number = '"+teper+"' where ID = '"+BoxID_T.Text+"'", DB.GetConnection());
                         MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');", DB.GetConnection());
                         DB.OpenConnection();
@@ -197,6 +186,7 @@ namespace Project_Store
             FillComboBoxID_T();
             BoxID_T.IsDropDownOpen = true;
             UpdateAddOrder();
+            CheckNumber();
         }
         private void UpdateAddOrder()
         {
@@ -215,6 +205,7 @@ namespace Project_Store
             {
                 dscnt = Convert.ToByte(DiscountBox.Text);
             }
+            //log.Text = Convert.ToString(boxklk);
             long tsina = 0;
             if (myReader.Read())
             {
@@ -251,6 +242,27 @@ namespace Project_Store
             dP.SelectedDate = DateTime.Now;
             TakeLogin take = new TakeLogin();
             ID_PBox.Text = take.RevertToTheID(login);
+        }
+        private int CheckNumber()
+        {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlCommand checkNumber = new MySqlCommand("select Number from tovar where id = '" + BoxID_T.Text + "'", DB.GetConnection());
+            MySqlDataReader myReader;
+            DB.OpenConnection();
+            myReader = checkNumber.ExecuteReader();
+            int klk = 0;
+            if (myReader.Read())
+            {
+                klk = Convert.ToInt16(myReader.GetValue(0));
+            }
+            log.Text = Convert.ToString(klk);
+            DB.CloseConnection();
+            return klk;
+        }
+
+        private void PayBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAddOrder();
         }
     }
 }

@@ -99,11 +99,11 @@ namespace Project_Store
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from client where client.PIB like '%"+SearchBox.Text+"%'";
+                searching = "select * from client where client.Phone like '%" + SearchBox.Text + "%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {
-                searching = "select * from client where client.Phone like '%" + SearchBox.Text + "%'";
+                searching = "select * from client where client.PIB like '%" + SearchBox.Text + "%'";
             }
             else
             {

@@ -12,11 +12,11 @@
         <DataGrid x:Name="DataGridTovar"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
-                <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="70" />
-                <DataGridTextColumn Header="Виробник" Binding="{Binding Manufacturer}" Width="175"/>
-                <DataGridTextColumn Header="Назва" Binding="{Binding Name}"  Width="200"/>
-                <DataGridTextColumn Header="Специфікації" Binding="{Binding Specifications}" Width="120"/>
-                <DataGridTextColumn Header="Опис" Binding="{Binding Description}" Width="70"/>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="120" />
+                <DataGridTextColumn Header="Виробник" Binding="{Binding Manufacturer}" Width="125"/>
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}"  Width="225"/>
+                <DataGridTextColumn Header="Специфікації" Binding="{Binding Specifications}" Width="275"/>
+                <DataGridTextColumn Header="Опис" Binding="{Binding Description}" Width="300"/>
                 <DataGridTextColumn Header="Кількість" Binding="{Binding Number}" Width="90"/>
                 <DataGridTextColumn Header="Ціна закупівлі" Binding="{Binding PurchasePrice}" Width="120"/>
                 <DataGridTextColumn Header="Ціна продажі" Binding="{Binding SellingPrice}" Width="120"/>

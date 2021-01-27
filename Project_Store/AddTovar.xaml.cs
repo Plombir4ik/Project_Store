@@ -44,6 +44,7 @@ namespace Project_Store
                 {
                     while (reader.Read())
                     {
+                        BoxID.Text = Convert.ToString(reader.GetValue(0));
                         BoxTypeOF.Text = (string)reader.GetValue(1);
                         BoxManufacturer.Text = (string)reader.GetValue(2);
                         BoxName.Text = (string)reader.GetValue(3);
@@ -54,6 +55,7 @@ namespace Project_Store
                         BoxSellingPrice.Text = Convert.ToString(reader.GetValue(8));
                     }
                 }
+                BoxID.IsEnabled = false;
                 DB.CloseConnection();
                 BoxTypeOF.IsDropDownOpen = false;
                 BoxManufacturer.IsDropDownOpen = false;
@@ -62,17 +64,19 @@ namespace Project_Store
 
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
-            if (BoxTypeOF.Text == "" || BoxManufacturer.Text == "" || BoxNumber.Text == ""|| BoxSpecifications.Text == "" || BoxDescription.Text == "" || BoxPurchasePrice.Text == "" || BoxName.Text == "" || BoxSellingPrice.Text == "")
+            if (BoxID.Text == "" || BoxTypeOF.Text == "" || BoxManufacturer.Text == "" || BoxNumber.Text == ""|| BoxSpecifications.Text == "" || BoxDescription.Text == "" || BoxPurchasePrice.Text == "" || BoxName.Text == "" || BoxSellingPrice.Text == "")
             {
-                MessageBox.Show("Щось тут не так");
+                MessageBox.Show("В вас є порожнє поле!");
             }
             else
             {
                 StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
-                        "('" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', '" + BoxSpecifications.Text + "', '" + BoxDescription.Text + "', '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.GetConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO tovar (ID, Type, Manufacturer, Name, Specifications, Description, Number, PurchasePrice, SellingPrice) VALUES " +
+                        "('"+BoxID.Text+"','" + BoxTypeOF.Text + "', '" + BoxManufacturer.Text + "', '" + BoxName.Text + "', @Specifications, @Description, '" + BoxNumber.Text + "', '" + BoxPurchasePrice.Text + "', '" + BoxSellingPrice.Text + "');", DB.GetConnection()); ;
+                    adding.Parameters.AddWithValue("@Specifications", MySqlDbType.Text).Value = BoxSpecifications.Text;
+                    adding.Parameters.AddWithValue("@Description", MySqlDbType.Text).Value = BoxDescription.Text;
                     DB.OpenConnection();
                     if (adding.ExecuteNonQuery() > 0)
                     {
@@ -88,7 +92,9 @@ namespace Project_Store
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = '" + BoxSpecifications.Text + "', `Description` = '" + BoxDescription.Text + "', `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '" + BoxSellingPrice.Text + "' where ID = '" + id + "';", DB.GetConnection());
+                    MySqlCommand editing = new MySqlCommand("UPDATE tovar SET `Type` = '" + BoxTypeOF.Text + "', `Manufacturer` = '" + BoxManufacturer.Text + "', `Name` = '" + BoxName.Text + "', `Specifications` = @Specifications, `Description` =  @Description, `Number` = '" + BoxNumber.Text + "', `PurchasePrice` = '" + BoxPurchasePrice.Text + "', `SellingPrice` = '" + BoxSellingPrice.Text + "' where ID = '" + id + "';", DB.GetConnection());
+                    editing.Parameters.AddWithValue("@Specifications", MySqlDbType.Text).Value = BoxSpecifications.Text;
+                    editing.Parameters.AddWithValue("@Description", MySqlDbType.Text).Value = BoxDescription.Text;
                     DB.OpenConnection();
                     if (editing.ExecuteNonQuery() > 0)
                     {

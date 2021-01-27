@@ -193,6 +193,7 @@ namespace Project_Store
                     if (row.Row.ItemArray[0] != DBNull.Value)
                     {
                         id = Convert.ToInt32(row.Row.ItemArray[0]);
+                        BoxDescription(id);
                     }
                 }
             }
@@ -217,6 +218,23 @@ namespace Project_Store
             {
                 Info();
             }
+        }
+        private void BoxDescription(long id)
+        {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlCommand fill = new MySqlCommand("select Description from tovar where ID = '"+id+"';", DB.GetConnection());
+            DB.OpenConnection();
+            MySqlDataReader myReader = fill.ExecuteReader();
+            if (myReader.Read())
+            {
+                TheBoxDescription.Text = Convert.ToString(myReader.GetValue(0));
+            }
+            DB.CloseConnection();           
+        }
+
+        private void TheBoxDescription_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DataGridTovar_SelectionChanged(this, null);
         }
     }
 }

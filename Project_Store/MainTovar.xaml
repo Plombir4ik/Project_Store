@@ -90,6 +90,12 @@
             </WrapPanel>
         </Grid>
         <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0,10,9.333,0" Foreground="White" Width="84"/>
+        <TextBox x:Name="TheBoxDescription" PreviewMouseLeftButtonDown="SearchBox_PreviewMouseLeftButtonDown" TextWrapping="Wrap" FontSize="18" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Text="Опис товару" Foreground="#FFBFBFBF" CaretBrush="Red" SelectionBrush="Red" Margin="67,903,394.333,38.333" TextChanged="TheBoxDescription_TextChanged">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+            <TextBox.ToolTip>Пошук</TextBox.ToolTip>
+        </TextBox>
 
 
 

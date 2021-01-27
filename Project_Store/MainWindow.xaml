@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
+        Closing="Window_Closing"
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="Головне меню" Width="2046" Height="1051" MinWidth="946" MinHeight="572.177">
@@ -16,7 +17,7 @@
             <Image Source="images/door.png" Width="45" Margin="-7,-1,11,-1"/>
             <Button Content="" Background="{x:Null}" Margin="-4,2,19,2" Click="BtnLogout" Height="Auto" />
         </Grid>
-        <Grid HorizontalAlignment="Right"  VerticalAlignment="Top" Width="31" Margin="0,-4,48,0" Height="39">
+        <Grid x:Name ="BtnEmployee" HorizontalAlignment="Right"  VerticalAlignment="Top" Width="31" Margin="0,-4,48,0" Height="39">
             <Image Source="images/chel.png" Width="Auto" Margin="0,4,0,7" />
             <Button Content="" Background="{x:Null}" Margin="2,4,1,7"  Height="Auto" Click="BtnMainEmployee" />
         </Grid>
@@ -67,8 +68,6 @@
                 </Button.Effect>
             </Button>
         </Grid>
-        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0,3,83,0" Foreground="White" Width="54"/>
-
+        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,3,83,0" Foreground="White" Width="54"/>
     </Grid>
-
 </Window>

@@ -201,7 +201,7 @@ namespace Project_Store
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select * from tovar", DB.GetConnection());
+            MySqlDataAdapter sda = new MySqlDataAdapter("select ID, Type, Manufacturer, Name, Specifications, Number, PurchasePrice, SellingPrice from tovar", DB.GetConnection());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DataGridTovar.ItemsSource = dt.DefaultView;

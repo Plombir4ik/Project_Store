@@ -55,7 +55,7 @@ namespace Project_Store
                         BoxSellingPrice.Text = Convert.ToString(reader.GetValue(8));
                     }
                 }
-                BoxID.IsEnabled = false;
+                BoxID.IsReadOnly = true;
                 DB.CloseConnection();
                 BoxTypeOF.IsDropDownOpen = false;
                 BoxManufacturer.IsDropDownOpen = false;

@@ -42,11 +42,12 @@ namespace Project_Store
                 {
                     while (reader.Read())
                     {
-                        BoxP.Text = (string)reader.GetValue(1);
-                        BoxI.Text = (string)reader.GetValue(2);
-                        BoxB.Text = (string)reader.GetValue(3);
-                        BoxLogin.Text = (string)reader.GetValue(4);
-                        BoxPassword.Text = (string)reader.GetValue(5);
+                        BoxPost.Text = (string)reader.GetValue(1);
+                        BoxP.Text = (string)reader.GetValue(2);
+                        BoxI.Text = (string)reader.GetValue(3);
+                        BoxB.Text = (string)reader.GetValue(4);
+                        BoxLogin.Text = (string)reader.GetValue(5);
+                        BoxPassword.Text = (string)reader.GetValue(6);
                     }
                 }
                 DB.CloseConnection();
@@ -64,7 +65,7 @@ namespace Project_Store
                 StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO prazivnuku (P, I, B, login, password) VALUES (@P, @I, @B, '" + BoxLogin.Text + "', '" + BoxPassword.Text + "');", DB.GetConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO prazivnuku (Post, P, I, B, login, password) VALUES ('"+BoxPost.Text+"', @P, @I, @B, '" + BoxLogin.Text + "', '" + BoxPassword.Text + "');", DB.GetConnection());
                     adding.Parameters.AddWithValue("@P", BoxP.Text);
                     adding.Parameters.AddWithValue("@I", BoxI.Text);
                     adding.Parameters.AddWithValue("@B", BoxB.Text);
@@ -83,7 +84,7 @@ namespace Project_Store
                 }
                 else
                 {
-                    MySqlCommand editing = new MySqlCommand("UPDATE prazivnuku SET `P` = @P, `I` = @I, `B` = @B,`login` = '" + BoxLogin.Text+"', `password` = '"+BoxPassword.Text+"' where ID = '"+id+"';", DB.GetConnection());
+                    MySqlCommand editing = new MySqlCommand("UPDATE prazivnuku SET `Post` = '"+BoxPost.Text+"', `P` = @P, `I` = @I, `B` = @B,`login` = '" + BoxLogin.Text+"', `password` = '"+BoxPassword.Text+"' where ID = '"+id+"';", DB.GetConnection());
                     editing.Parameters.AddWithValue("@P", BoxP.Text);
                     editing.Parameters.AddWithValue("@I", BoxI.Text);
                     editing.Parameters.AddWithValue("@B", BoxB.Text);
@@ -109,5 +110,13 @@ namespace Project_Store
             this.Close();
         }
 
+        private void BoxPost_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void BoxPost_TextChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

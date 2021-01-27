@@ -7,10 +7,30 @@ namespace Project_Store
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(string login)
+        public MainWindow(string login = "")
         {
             InitializeComponent();
             log.Text = login;
+            TakePost check = new TakePost();
+            var post = check.RevertPost(log.Text);
+            if (post == "")
+            {
+                MessageBox.Show("Вийди отсюда розбійник");
+                Close();
+            }
+            else if (post == "Manager")
+            {
+                MessageBox.Show("Вітаємо менеджера!");
+            }
+            else if (post == "Admin")
+            {
+                MessageBox.Show("Адмін, звільняйся");
+            }
+            else
+            {
+                BtnEmployee.Visibility = Visibility.Collapsed;
+                Журнал.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void BtnLogout(object sender, RoutedEventArgs e)
@@ -60,7 +80,13 @@ namespace Project_Store
         {
             FillJournal jr = new FillJournal();
             jr.FillProcess(log.Text, "Exit");
-            Close();
+            Application.Current.Shutdown();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            FillJournal jr = new FillJournal();
+            jr.FillProcess(log.Text, "Exit");
         }
     }
 }

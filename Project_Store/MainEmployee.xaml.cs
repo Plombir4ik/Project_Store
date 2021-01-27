@@ -65,18 +65,22 @@ namespace Project_Store
 
         private void BtnDeleteTovar(object sender, RoutedEventArgs e)
         {
-            //StoreDatabase DB = new StoreDatabase();
-            //if (DataGridTovar.SelectedItem != null && DataGridTovar.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            //{
-            //    DB.OpenConnection();
-            //    MySqlCommand deleting = new MySqlCommand("DELETE FROM tovar WHERE ID = '" + id + "';", DB.GetConnection());
-            //    deleting.ExecuteNonQuery();
-            //    DB.CloseConnection();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Виберіть товар!");
-            //}
+            if (DataGridTovar.SelectedItem != null && DataGridTovar.SelectedItem.ToString() != "{NewItemPlaceholder}")
+            {
+                var result = MessageBox.Show("Ви точно хочете звільнити даного працівника?", "Точно?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    StoreDatabase DB = new StoreDatabase();
+                    DB.OpenConnection();
+                    MySqlCommand dismissal = new MySqlCommand("UPDATE prazivnuku SET Status = 0 WHERE ID = '" + id + "';", DB.GetConnection());
+                    dismissal.ExecuteNonQuery();
+                    DB.CloseConnection();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Виберіть працівника!");
+            }
             Info();
         }
 

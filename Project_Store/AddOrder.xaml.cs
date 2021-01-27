@@ -150,6 +150,7 @@ namespace Project_Store
             StoreDatabase DB = new StoreDatabase();
             if (BoxID_T.Text == "")
             {
+                TextLog.Visibility = Visibility.Hidden;
                 MySqlDataReader myReader;
                 DB.OpenConnection();
                 MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar group by ID", DB.GetConnection());
@@ -255,6 +256,7 @@ namespace Project_Store
             {
                 klk = Convert.ToInt16(myReader.GetValue(0));
             }
+            TextLog.Visibility = Visibility.Visible;
             log.Text = Convert.ToString(klk);
             DB.CloseConnection();
             return klk;

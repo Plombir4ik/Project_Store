@@ -14,9 +14,8 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
                 <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="120" />
                 <DataGridTextColumn Header="Виробник" Binding="{Binding Manufacturer}" Width="125"/>
-                <DataGridTextColumn Header="Назва" Binding="{Binding Name}"  Width="225"/>
-                <DataGridTextColumn Header="Специфікації" Binding="{Binding Specifications}" Width="275"/>
-                <DataGridTextColumn Header="Опис" Binding="{Binding Description}" Width="300"/>
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}"  Width="300"/>
+                <DataGridTextColumn Header="Специфікації" Binding="{Binding Specifications}" Width="500"/>
                 <DataGridTextColumn Header="Кількість" Binding="{Binding Number}" Width="90"/>
                 <DataGridTextColumn Header="Ціна закупівлі" Binding="{Binding PurchasePrice}" Width="120"/>
                 <DataGridTextColumn Header="Ціна продажі" Binding="{Binding SellingPrice}" Width="120"/>

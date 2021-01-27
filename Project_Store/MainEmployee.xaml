@@ -12,11 +12,13 @@
         <DataGrid x:Name="DataGridTovar"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="75"/>
-                <DataGridTextColumn Header="Прізвище" Binding="{Binding P}" Width="350"/>
-                <DataGridTextColumn Header="Ім'я" Binding="{Binding I}" Width="350"/>
-                <DataGridTextColumn Header="По-батькові" Binding="{Binding B}" Width="350"/>
+                <DataGridTextColumn Header="Посада" Binding="{Binding Post}" Width="100"/>
+                <DataGridTextColumn Header="Прізвище" Binding="{Binding P}" Width="250"/>
+                <DataGridTextColumn Header="Ім'я" Binding="{Binding I}" Width="250"/>
+                <DataGridTextColumn Header="По-батькові" Binding="{Binding B}" Width="250"/>
                 <DataGridTextColumn Header="Логін" Binding="{Binding login}" Width="175"/>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding password}"  Width="175"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}"  Width="75"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -65,7 +65,7 @@ namespace Project_Store
                 StoreDatabase DB = new StoreDatabase();
                 if (id == -1)
                 {
-                    MySqlCommand adding = new MySqlCommand("INSERT INTO prazivnuku (Post, P, I, B, login, password) VALUES ('"+BoxPost.Text+"', @P, @I, @B, '" + BoxLogin.Text + "', '" + BoxPassword.Text + "');", DB.GetConnection());
+                    MySqlCommand adding = new MySqlCommand("INSERT INTO prazivnuku (Post, P, I, B, login, password, status) VALUES ('"+BoxPost.Text+"', @P, @I, @B, '" + BoxLogin.Text + "', '" + BoxPassword.Text + "', 1);", DB.GetConnection());
                     adding.Parameters.AddWithValue("@P", BoxP.Text);
                     adding.Parameters.AddWithValue("@I", BoxI.Text);
                     adding.Parameters.AddWithValue("@B", BoxB.Text);
@@ -116,7 +116,36 @@ namespace Project_Store
         }
         private void BoxPost_TextChanged(object sender, RoutedEventArgs e)
         {
-
+            BoxPost.Items.Clear();
+            FillBoxPost();
+            BoxPost.IsDropDownOpen = true;
+        }
+        private void FillBoxPost()
+        {
+            StoreDatabase DB = new StoreDatabase();
+            MySqlDataReader myReader;
+            if (BoxPost.Text == "")
+            {
+                MySqlCommand comm = new MySqlCommand("select Post from prazivnuku group by Post", DB.GetConnection());
+                DB.OpenConnection();
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxPost.Items.Add(myReader.GetString("Post"));
+                }
+                DB.CloseConnection();
+            }
+            else
+            {
+                MySqlCommand comm = new MySqlCommand("select Post from prazivnuku where Post like '%" + BoxPost.Text + "%' group by Post", DB.GetConnection());
+                DB.OpenConnection();
+                myReader = comm.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BoxPost.Items.Add(myReader.GetString("Post"));
+                }
+                DB.CloseConnection();
+            }
         }
     }
 }

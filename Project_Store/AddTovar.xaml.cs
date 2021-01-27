@@ -119,7 +119,7 @@ namespace Project_Store
             MySqlDataReader myReader;
             if (BoxTypeOF.Text == "")
             {
-                MySqlCommand comm = new MySqlCommand("select Type as 'Type' from tovar group by Type", DB.GetConnection());
+                MySqlCommand comm = new MySqlCommand("select Type from tovar group by Type", DB.GetConnection());
                 DB.OpenConnection();
                 myReader = comm.ExecuteReader();
                 while (myReader.Read())

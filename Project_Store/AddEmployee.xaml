@@ -5,56 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="AddTovar" Height="450" Width="800">
-    <Grid Margin="0,0,3.333,-0.333" Background="#FF212121">
-        <Grid.Effect>
-            <DropShadowEffect/>
-        </Grid.Effect>
-        <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FF1D1D1D" Margin="102,339,526.667,0" Foreground="#DDFFFFFF" BorderBrush="White" BorderThickness="2" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FF1D1D1D" Margin="326,339,275.667,0" BorderBrush="White" BorderThickness="2" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxPIB" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxLogin" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxPassword" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="ПІБ" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Логін" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Пароль" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <Label Name ="Label" Content="Додати працівника" HorizontalAlignment="Left" Height="42" Margin="262,10,0,0" VerticalAlignment="Top" Width="239" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24" Foreground="#DDFFFFFF">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
+        Title="AddTovar" Height="450" Width="459.227">
+    <Grid Margin="0,0,3.333,-0.333" Background="#FFF0F0F0">
+        <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="141" Click="BtnAddTovar" Height="50" Background="#FFF0F0F0"  Foreground="#DD000000" BorderBrush="Black" BorderThickness="1,1,2,2" Margin="69,339,237.667,0" />
+        <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="141" Click="BtnCancel" Height="50" Background="#FFF0F0F0"  BorderBrush="Black" BorderThickness="1,1,2,2" Margin="254,339,52.667,0" Foreground="#DD000000" />
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="111,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxPIB" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="111,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxLogin" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="111,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"  x:Name="BoxPassword" Foreground="Black" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="111,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="ПІБ" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="111,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Логін" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="111,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Пароль" Foreground="Black"/>
+        <Label Name ="Label" Content="Додати працівника" HorizontalAlignment="Left" Height="42" Margin="116,19,0,0" VerticalAlignment="Top" Width="239" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24" Foreground="Black"/>
 
     </Grid>
 </Window>

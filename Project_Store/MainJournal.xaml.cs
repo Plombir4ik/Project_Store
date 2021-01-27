@@ -92,7 +92,7 @@ namespace Project_Store
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from journal where journal.PIB like '%"+SearchBox.Text+"%'";
+                searching = "select * from journal where journal.Operation like '%"+SearchBox.Text+"%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {

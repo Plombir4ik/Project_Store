@@ -56,8 +56,8 @@
         </Border>
         <Grid HorizontalAlignment="Left" Height="559" VerticalAlignment="Top" Width="188" Margin="1620,221,0,0">
             <WrapPanel>
-                
-        <Button x:Name="Товари" Content="Додати товар" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="AddTovar" Height="68" Margin="0,0,0,54" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Foreground="White" FontWeight="Normal" FontSize="21" >
+
+                <Button x:Name="Товари" Content="   Додати&#xD;&#xA;працівника" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="AddTovar" Height="68" Margin="0,0,0,54" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Foreground="White" FontWeight="Normal" FontSize="21" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

@@ -12,8 +12,8 @@
         <DataGrid x:Name="DataGridJournal"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridJournal_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
-                <DataGridTextColumn Header="Операція" Binding="{Binding Operation}" Width="70" />
-                <DataGridTextColumn Header="Виробник" Binding="{Binding ID_P}" Width="175"/>
+                <DataGridTextColumn Header="Операція" Binding="{Binding Operation}" Width="90" />
+                <DataGridTextColumn Header="Виробник" Binding="{Binding ID_P}" Width="125"/>
                 <DataGridTextColumn Header="Назва" Binding="{Binding Date}"  Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -56,16 +56,17 @@
         </Border>
         <Grid HorizontalAlignment="Left" Height="559" VerticalAlignment="Top" Width="188" Margin="1620,221,0,0">
             <WrapPanel>
-                <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToMainWindow" Margin="0,0,0,54" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
+                <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,54" Width="188" Click="Update" Height="68" Background="#FF1D1D1D"  BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                </Button.Effect>
+                </Button>
+                <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToMainWindow" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+                    <Button.Effect>
+                            <DropShadowEffect/>
+                    </Button.Effect>
         </Button>
-                <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="Update" Height="68" Background="#FF1D1D1D"  BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
+
             </WrapPanel>
         </Grid>
         <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0,10,9.333,0" Foreground="White" Width="84"/>

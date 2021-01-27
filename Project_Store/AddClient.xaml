@@ -7,16 +7,19 @@
         xmlns:local="clr-namespace:Project_Store"
         xmlns:s="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="AddTovar" Height="450" Width="800">
-    <Grid Margin="0,0,3.333,-0.333">
-        <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FF2B2436" Margin="104,339,545.333,0" />
-        <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FF2B2436" Margin="328,339,321.333,0" />
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxPIB"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxEmail"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643"><Run Text="П"/><Run Text="ІБ"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.946,0.643" Text="Номер телефону"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.946,0.643" Text="Електронна пошта"/>
-        <Label Name ="Label" Content="Додати клієнта" HorizontalAlignment="Left" Height="42" Margin="298,10,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24"/>
-        <xctk:MaskedTextBox Mask="+38\0000000000" x:Name="BoxPhoneMask" ValueDataType="{x:Type s:String}" AllowPromptAsInput="False"  HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="102,152,0,0" ClipboardMaskFormat="IncludePrompt" AutomationProperties.IsOffscreenBehavior="Onscreen"/>
+        Title="AddTovar" Height="450" Width="460">
+    <Grid Margin="0,0,3.333,-0.333" Background="#FFF0F0F0">
+
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="135,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"  x:Name="BoxPIB"/>
+        <TextBox HorizontalAlignment="Left" Height="30" Margin="135,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219"  x:Name="BoxEmail"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="135,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" RenderTransformOrigin="0.946,0.643"><Run Text="П"/><Run Text="ІБ"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="135,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.946,0.643" Text="Номер телефону"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="135,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" RenderTransformOrigin="0.946,0.643" Text="Електронна пошта"/>
+        <Label Name ="Label" Content="Додати клієнта" HorizontalAlignment="Left" Height="42" Margin="137,13,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24"/>
+        <xctk:MaskedTextBox Mask="+38\0000000000" x:Name="BoxPhoneMask" ValueDataType="{x:Type s:String}" AllowPromptAsInput="False"  HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" Margin="135,189,0,0" ClipboardMaskFormat="IncludePrompt" AutomationProperties.IsOffscreenBehavior="Onscreen" BorderThickness="0,0,0,1" Background="Transparent" BorderBrush="Black"/>
+        <WrapPanel HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="387" Margin="62,342,-0.333,0">
+            <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FFF0F0F0"  BorderBrush="Black" Foreground="Black" BorderThickness="1,1,2,2" />
+            <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FFF0F0F0" Margin="50,0,0,0" BorderBrush="Black" Foreground="#DD000000" BorderThickness="1,1,2,2" />
+        </WrapPanel>
     </Grid>
 </Window>

@@ -5,106 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="AddTovar" Height="450" Width="800">
-    <Grid Margin="0,0,3.333,-0.333" Background="#FF212121">
-        <Grid.Effect>
-            <DropShadowEffect/>
-        </Grid.Effect>
-        <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FF1D1D1D" Margin="102,339,526.667,0" Foreground="#DDFFFFFF" BorderBrush="White" BorderThickness="2" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FF1D1D1D" Margin="326,339,275.667,0" BorderBrush="White" BorderThickness="2" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <ComboBox HorizontalAlignment="Left" Height="26" Margin="102,86,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxTypeOF" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxTypeOFTextChanged" Foreground="Black" BorderBrush="White">
-            <ComboBox.Effect>
-                <DropShadowEffect/>
-            </ComboBox.Effect>
-        </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Height="26" Margin="102,160,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxManufacturer" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxManufacturerTextChanged" BorderBrush="White">
-            <ComboBox.Effect>
-                <DropShadowEffect/>
-            </ComboBox.Effect>
-        </ComboBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="416,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxSpecifications" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="416,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxDescription" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxNumber" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="416,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxPurchasePrice" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="588,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxSellingPrice" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="599,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxName" Foreground="White" BorderBrush="White">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-        </TextBox>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Тип товару" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Виробник" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="416,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Специфікації" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="416,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Опис" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Кількість" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="416,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.946,0.643" Text="Ціна закупівлі" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="588,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.946,0.643" Text="Ціна продажі" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="599,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Назва" Foreground="White">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect>
-        </TextBlock>
-        <Label Name ="Label" Content="Додати товар" HorizontalAlignment="Left" Height="42" Margin="298,10,0,0" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24" Foreground="#DDFFFFFF">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
+        Title="AddTovar" Height="450" Width="800" Background="Black" >
+    <Grid Margin="0,0,3.333,-0.333">
+        <Grid.Background>
+            <SolidColorBrush Color="#FFF0F0F0"/>
+        </Grid.Background>
+        <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FFF0F0F0" Margin="102,339,526.667,0"  Foreground="Black" BorderBrush="Black" BorderThickness="1,1,2,2" />
+        <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FFF0F0F0" Margin="326,339,275.667,0" BorderBrush="Black" BorderThickness="1,1,2,2" Foreground="Black" />
+        <ComboBox  HorizontalAlignment="Left" Height="26" Margin="88,96,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxTypeOF" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxTypeOFTextChanged" Foreground="Black" BorderBrush="Black"/>
+        <ComboBox HorizontalAlignment="Left" Height="26" Margin="88,170,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxManufacturer" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxManufacturerTextChanged" BorderBrush="Black" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="584,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"  x:Name="BoxSpecifications" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="403,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"  x:Name="BoxDescription" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="88,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxNumber" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="402,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxPurchasePrice" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="584,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"  x:Name="BoxSellingPrice" Foreground="Black" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="402,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxName" Foreground="Black" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Тип товару" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Виробник" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="584,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Специфікації" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="402,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.946,0.643" Text="Опис" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Кількість" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="402,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.946,0.643" Text="Ціна закупівлі" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="584,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.946,0.643" Text="Ціна продажі" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="402,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.946,0.643" Text="Назва" Foreground="Black"/>
+        <Label Name ="Label" Content="Додати товар" HorizontalAlignment="Left" Height="42" Margin="280,10,0,0" VerticalAlignment="Top" Width="357" RenderTransformOrigin="0.946,0.643" FontSize="28" Foreground="Black" FontWeight="Bold"/>
 
     </Grid>
 </Window>

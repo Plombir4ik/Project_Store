@@ -35,7 +35,7 @@ namespace Project_Store
             if (id > -1)
             {
                 КнопкаДодатиТовар.Content = "Змінити";
-                Label.Content = "Змінити вибраний товар";
+                Label.Content = "Змінити товар";
                 StoreDatabase DB = new StoreDatabase();
                 MySqlCommand command = new MySqlCommand("select * from tovar where id = '" + id + "';", DB.GetConnection());
                 DB.OpenConnection();
@@ -180,5 +180,9 @@ namespace Project_Store
             BoxManufacturer.IsDropDownOpen = true;
         }
 
+        private void BoxTypeOF_PreviewDragLeave(object sender, DragEventArgs e)
+        {
+            BoxTypeOF.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
     }
 }

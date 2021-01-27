@@ -55,34 +55,7 @@ namespace Project_Store
                 DB.CloseConnection();
             }
         }
-        private void BtnCheckKlkst(object sender, RoutedEventArgs e)
-        {
-            if (BoxID_T.Text == "" || NumberBox.Text == "")
-            {
-                MessageBox.Show("Щось не то");
-            }
-            else
-            {
-                StoreDatabase DB = new StoreDatabase();
-                MySqlCommand checkNumber = new MySqlCommand("select Number from tovar where id = '" + BoxID_T.Text + "'", DB.GetConnection());
-                MySqlDataReader myReader;
-                DB.OpenConnection();
-                myReader = checkNumber.ExecuteReader();
-                int klk = 0;
-                int boxklk = 0;
-                if (myReader.Read())
-                {
-                    klk = Convert.ToInt16(myReader.GetValue(0));
-                }
-                log.Text = Convert.ToString(klk);
-                DB.CloseConnection();
-                boxklk = Convert.ToInt16(NumberBox.Text);
-                if(boxklk > klk)
-                {
-                    MessageBox.Show("У нас стільки нима((");
-                }
-            }
-        }
+        
         private void BtnAddTovar(object sender, RoutedEventArgs e)
         {
             if (PayBox.Text == "" || BoxID_C.Text == "" || BoxID_T.Text == "" || NumberBox.Text == "")

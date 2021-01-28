@@ -58,7 +58,7 @@
                 <TextBox.ToolTip>Пошук</TextBox.ToolTip>
             </TextBox>
         </Border>
-        <Grid HorizontalAlignment="Left" Height="559" VerticalAlignment="Top" Width="188" Margin="1620,221,0,0">
+        <Grid HorizontalAlignment="Left" Height="660" VerticalAlignment="Top" Width="188" Margin="1620,221,0,0">
             <WrapPanel>
 
                 <Button x:Name="Товари" Content="   Додати&#xD;&#xA;працівника" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="AddTovar" Height="68" Margin="0,0,0,54" Background="#FF1D1D1D" BorderBrush="White" BorderThickness="3" Foreground="White" FontWeight="Normal" FontSize="21" >
@@ -77,15 +77,20 @@
             </Button.Effect>
         </Button>
                 <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToMainWindow" Margin="0,0,0,54" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
                 <Button x:Name="Оновити" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="Update" Height="68" Background="#FF1D1D1D"  BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="Reports" Content="Звіт" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToZvits" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
             </WrapPanel>
         </Grid>
         <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="0,10,9.333,0" Foreground="White" Width="84"/>

@@ -13,9 +13,5 @@ namespace Project_Store
     /// </summary>
     public partial class App : Application
     {
-        void ExitProgram(object sender, ExitEventArgs e)
-        {
-            MessageBox.Show("Ти дебіл");
-        }
     }
 }

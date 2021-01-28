@@ -109,6 +109,9 @@
     <Compile Include="AddTovar.xaml.cs">
       <DependentUpon>AddTovar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Zvits.xaml.cs">
+      <DependentUpon>Zvits.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainOrder.xaml.cs">
       <DependentUpon>MainOrder.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
     <Page Include="AddTovar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Zvits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainOrder.xaml">
       <Generator>MSBuild:Compile</Generator>

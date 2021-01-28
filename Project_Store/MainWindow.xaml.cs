@@ -39,42 +39,42 @@ namespace Project_Store
             form.Show();
             FillJournal jr = new FillJournal();
             jr.FillProcess(log.Text, "Logout");
-            Close();
+            Hide();
         }
 
         private void BtnMainTovar(object sender, RoutedEventArgs e)
         {
             MainTovar form = new MainTovar(log.Text);
             form.Show();
-            Close();
+            Hide();
         }
 
         private void BtnMainOrder(object sender, RoutedEventArgs e)
         {
             MainOrder form = new MainOrder(log.Text);
             form.Show();
-            Close();
+            Hide();
         }
 
         private void BtnMainClient(object sender, RoutedEventArgs e)
         {
             MainClient form = new MainClient(log.Text);
             form.Show();
-            Close();
+            Hide();
         }
 
         private void BtnMainJournal(object sender, RoutedEventArgs e)
         {
             MainJournal form = new MainJournal(log.Text);
             form.Show();
-            Close();
+            Hide();
         }
 
         private void BtnMainEmployee(object sender, RoutedEventArgs e)
         {
             MainEmployee form = new MainEmployee(log.Text);
             form.Show();
-            Close();
+            Hide();
         }
         private void BtnExit(object sender, RoutedEventArgs e)
         {

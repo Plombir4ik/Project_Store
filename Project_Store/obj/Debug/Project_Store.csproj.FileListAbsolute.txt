@@ -118,3 +118,5 @@ C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\AddEmployee.
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainEmployee.g.cs
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\AddEmployee.baml
 C:\Users\Plombir\source\repos\Project_Store\Project_Store\obj\Debug\MainEmployee.baml
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Zvits.g.cs
+C:\Users\AMD\Documents\GitHub\Project_Store\Project_Store\obj\Debug\Zvits.baml

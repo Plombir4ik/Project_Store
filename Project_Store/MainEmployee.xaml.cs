@@ -220,5 +220,12 @@ namespace Project_Store
                 Info();
             }
         }
+
+        private void ToZvits(object sender, RoutedEventArgs e)
+        {
+            Zvits form = new Zvits(log.Text);
+            form.Show();
+            Close();
+        }
     }
 }

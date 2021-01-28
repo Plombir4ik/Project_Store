@@ -20,16 +20,18 @@ namespace Project_Store
             }
             else if (post == "Manager")
             {
-                MessageBox.Show("Вітаємо менеджера!");
+                //MessageBox.Show("Вітаємо менеджера!");
             }
             else if (post == "Admin")
             {
-                MessageBox.Show("Адмін, звільняйся");
+                //MessageBox.Show("Адмін, звільняйся");
             }
             else
             {
                 BtnEmployee.Visibility = Visibility.Collapsed;
-                Журнал.Visibility = Visibility.Collapsed;
+                double a = 0.75;
+                Журнал.Opacity = a;
+                Журнал.Click -= new RoutedEventHandler(BtnMainJournal);
             }
         }
 

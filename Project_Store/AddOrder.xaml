@@ -12,12 +12,12 @@
             <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FFF0F0F0" Margin="81,0,0,0" BorderBrush="Black" Foreground="Black" BorderThickness="1,1,2,2" />
         </WrapPanel>
 
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="PayBox" TextChanged="PayBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="NumberBox" MaxLength = "3" TextChanged="NumberBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="DiscountBox" MaxLength = "2" TextChanged="DiscountBox_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Ціна"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.946,0.643" Text="Кількість"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.946,0.643" Text="Знижка"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="PayBox" TextChanged="PayBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="NumberBox" MaxLength = "3" TextChanged="NumberBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="DiscountBox" MaxLength = "2" TextChanged="DiscountBox_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Ціна"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.946,0.643" Text="Кількість"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109" RenderTransformOrigin="0.946,0.643" Text="Знижка"/>
         <Label Name ="Label" Content="Додати замовлення" HorizontalAlignment="Left" Height="42" Margin="275,10,0,0" VerticalAlignment="Top" Width="258" RenderTransformOrigin="0.946,0.643" FontWeight="Bold" FontSize="24" Foreground="Black"/>
         <ComboBox HorizontalAlignment="Left" Height="26" Margin="317,90,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxID_C" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxID_CTextChanged"/>
         <ComboBox HorizontalAlignment="Left" Height="26" Margin="317,164,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxID_T" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxID_TTextChanged"/>
@@ -27,7 +27,7 @@
         <TextBox HorizontalAlignment="Left" Height="26" Margin="317,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="ID_PBox" TextChanged="ID_PBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="584,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.946,0.643" Text="Дата"/>
         <DatePicker x:Name  ="dP" HorizontalAlignment="Left" Height="26" Margin="584,360,0,0" VerticalAlignment="Top" Width="160" IsEnabled="False" Background="Transparent" BorderBrush="#FFAAAAAA" Foreground="Black"/>
-        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Margin="0,195,292,0" Foreground="Black" Width="20"/>
+        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text=" " VerticalAlignment="Top" Margin="0,195,507.667,0" Foreground="Red" Width="180" FontSize="10" Opacity="0.8"/>
         <TextBlock x:Name="TextLog" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" Text="Наявна кількість на складі:" VerticalAlignment="Top" Margin="0,195,304,0" Foreground="Black" Width="169" Visibility="Hidden"/>
     </Grid>
 </Window>

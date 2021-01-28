@@ -59,7 +59,7 @@ namespace Project_Store
             }
             else
             {
-                MessageBox.Show("Виберіть потрібний товар!");
+                MessageBox.Show("Виберіть потрібного працівника!");
             }
         }
 

@@ -73,6 +73,7 @@ namespace Project_Store
                 if (boxklk > CheckNumber())
                 {
                     MessageBox.Show("Товару стільки немає.\n Наявна кількість: "+CheckNumber()+ "");
+                    log.Text = "Кількість на складі : " + CheckNumber() + " ";
                 }
                 else
                 {
@@ -150,7 +151,7 @@ namespace Project_Store
             StoreDatabase DB = new StoreDatabase();
             if (BoxID_T.Text == "")
             {
-                TextLog.Visibility = Visibility.Hidden;
+                //TextLog.Visibility = Visibility.Hidden;
                 MySqlDataReader myReader;
                 DB.OpenConnection();
                 MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar group by ID", DB.GetConnection());

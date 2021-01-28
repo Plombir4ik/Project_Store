@@ -12,7 +12,7 @@
         </Grid.Background>
         <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnAddTovar" Height="50" Background="#FFF0F0F0" Margin="102,339,526.667,0"  Foreground="Black" BorderBrush="Black" BorderThickness="1,1,2,2" />
         <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FFF0F0F0" Margin="326,339,275.667,0" BorderBrush="Black" BorderThickness="1,1,2,2" Foreground="Black" />
-        <ComboBox  HorizontalAlignment="Left" Height="26" Margin="88,96,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxTypeOF" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxTypeOFTextChanged" Foreground="Black" BorderBrush="Black"/>
+        <ComboBox  HorizontalAlignment="Left" Height="26" Margin="217,96,0,0" VerticalAlignment="Top" Width="115" x:Name ="BoxTypeOF" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxTypeOFTextChanged" Foreground="Black" BorderBrush="Black"/>
         <ComboBox HorizontalAlignment="Left" Height="26" Margin="88,170,0,0" VerticalAlignment="Top" Width="244" x:Name ="BoxManufacturer" IsEditable="True"  IsTextSearchEnabled="False" TextBoxBase.TextChanged="BoxManufacturerTextChanged" BorderBrush="Black" Foreground="Black"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="584,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"  x:Name="BoxSpecifications" Foreground="Black" BorderBrush="Black"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="403,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"  x:Name="BoxDescription" Foreground="Black" BorderBrush="Black"/>
@@ -20,7 +20,7 @@
         <TextBox HorizontalAlignment="Left" Height="26" Margin="402,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxPurchasePrice" Foreground="Black" BorderBrush="Black"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="584,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"  x:Name="BoxSellingPrice" Foreground="Black" BorderBrush="Black"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="403,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxName" Foreground="Black" BorderBrush="Black"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Тип товару" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="217,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.946,0.643" Text="Тип товару" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Виробник" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="584,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Специфікації" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="402,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.946,0.643" Text="Опис" Foreground="Black"/>
@@ -29,8 +29,8 @@
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="584,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.946,0.643" Text="Ціна продажі" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="402,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.946,0.643" Text="Назва" Foreground="Black"/>
         <Label Name ="Label" Content="Додати товар" HorizontalAlignment="Left" Height="42" Margin="280,10,0,0" VerticalAlignment="Top" Width="357" RenderTransformOrigin="0.946,0.643" FontSize="28" Foreground="Black" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="88,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="BoxID" Foreground="Black" BorderBrush="Black"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" RenderTransformOrigin="0.946,0.643" Text="ID" Foreground="Black"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="88,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"  x:Name="BoxID" Foreground="Black" BorderBrush="Black"/>
+        <TextBlock HorizontalAlignment="Left" Height="21" Margin="88,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="19" RenderTransformOrigin="0.946,0.643" Text="ID" Foreground="Black"/>
 
     </Grid>
 </Window>

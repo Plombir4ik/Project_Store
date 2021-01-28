@@ -15,7 +15,7 @@
                 <DataGridTextColumn Header="Вартість складу" Binding="{Binding StorePrice}" Width="275"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,10,0.333,0" Foreground="White" Width="540" FontSize="36"><Run Text="Найпопулярн"/><Run Text="і"/><Run Text="ший товар"/></TextBlock>
+        <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="White" Width="300" FontSize="18" Height="50"><Run Text="Найпопулярн"/><Run Text="і"/><Run Text="ший товар"/></TextBlock>
         <DataGrid x:Name="DataGridTovar_Copy"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="150"/>

@@ -41,6 +41,12 @@ namespace Project_Store
             Info4();
             Info5();
             StoreFill();
+            PrintDialog testPrint = new PrintDialog();
+            if (testPrint.ShowDialog() == true)
+            {
+                //Где border1 - это лист документа
+                testPrint.PrintVisual(DataGridStore, "Doduk.docx");
+            }
         }
         private void ToMainWindow(object sender, RoutedEventArgs e)
         {

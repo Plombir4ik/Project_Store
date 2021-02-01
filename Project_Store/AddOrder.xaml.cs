@@ -1,30 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-using System.Text.RegularExpressions;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для AddTovar.xaml
-    /// </summary>
     public partial class AddOrder : Window
     {
-        readonly long id = 0;
         private readonly MainOrder mform;
         string login = "";
-        public AddOrder(string login, MainOrder form, long id = -1)
+        public AddOrder(string login, MainOrder form)
         {
             InitializeComponent();
             FillComboBoxID_C();
@@ -32,28 +17,6 @@ namespace Project_Store
             this.login = login;
             Updating();
             mform = form;
-            this.id = id;
-            if (id > -1)
-            {
-                КнопкаДодатиТовар.Content = "Змінити";
-                Label.Content = "Змінити інформацію про замовлення";
-                StoreDatabase DB = new StoreDatabase();
-                MySqlCommand command = new MySqlCommand("select * from orders where id = '" + id + "';", DB.GetConnection());
-                DB.OpenConnection();
-                MySqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        //ID_TBox.Text = Convert.ToString(reader.GetValue(1));
-                        //ID_CBox.Text = Convert.ToString(reader.GetValue(2));
-                        //ID_PBox.Text = Convert.ToString(reader.GetValue(3));
-                        //NumberBox.Text = Convert.ToString(reader.GetValue(4));
-                    }
-                    reader.Close();
-                }
-                DB.CloseConnection();
-            }
         }
         
         private void BtnAddTovar(object sender, RoutedEventArgs e)
@@ -77,8 +40,6 @@ namespace Project_Store
                 }
                 else
                 {
-                    if (id == -1)
-                    {
                         int teper = CheckNumber() - boxklk;
                         MySqlCommand updatenumber = new MySqlCommand("UPDATE tovar set Number = '"+teper+"' where ID = '"+BoxID_T.Text+"'", DB.GetConnection());
                         MySqlCommand adding = new MySqlCommand("INSERT INTO orders (ID_C, ID_T, ID_P, Number, Pay, Discount, Date) VALUES ('" + BoxID_C.Text + "', '" + BoxID_T.Text + "', '" + ID_PBox.Text + "', '" + NumberBox.Text + "', '" + PayBox.Text + "', '" + DiscountBox.Text + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');", DB.GetConnection());
@@ -94,21 +55,6 @@ namespace Project_Store
                         FillJournal jr = new FillJournal(); 
                         jr.FillProcess(login, "AddOrder");
                         DB.CloseConnection();
-                    }
-                    else
-                    {
-                        MySqlCommand editing = new MySqlCommand(); //("UPDATE orders SET `PIB` = '" + BoxPIB.Text + "', `Phone` = '" + BoxPhone.Text + "', `Email` = '" + BoxEmail.Text + "' where ID = '" + id + "';", DB.getConnection());
-                        DB.OpenConnection();
-                        if (editing.ExecuteNonQuery() > 0)
-                        {
-                            MessageBox.Show("Інформація про клієнта \nбула успішно змінена!", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Інформація про клієнта \nне була успішно змінена.", "Змінюємо...", MessageBoxButton.OK, MessageBoxImage.Information, MessageBoxResult.OK, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        DB.CloseConnection();
-                    }
                     mform.Info();
                     this.Close();
                 }
@@ -151,7 +97,6 @@ namespace Project_Store
             StoreDatabase DB = new StoreDatabase();
             if (BoxID_T.Text == "")
             {
-                //TextLog.Visibility = Visibility.Hidden;
                 MySqlDataReader myReader;
                 DB.OpenConnection();
                 MySqlCommand comm = new MySqlCommand("select concat(ID, ') ', Name) as 'ID_T' from tovar group by ID", DB.GetConnection());
@@ -207,7 +152,6 @@ namespace Project_Store
             {
                 dscnt = Convert.ToByte(DiscountBox.Text);
             }
-            //log.Text = Convert.ToString(boxklk);
             long tsina = 0;
             if (myReader.Read())
             {

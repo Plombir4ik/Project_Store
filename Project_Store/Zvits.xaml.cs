@@ -1,52 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
+﻿using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-//using Microsoft.Office.Interop.Word;
-//using Word = Microsoft.Office.Interop.Word;
-using System.IO;
-using System.Reflection;
-using System.Windows.Media.Animation;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
     public partial class Zvits : Window
     {
-        string login = "";
         public Zvits(string login = "")
         {
             InitializeComponent();
             log.Text = login;
-            this.login = login;
             this.Width = SystemParameters.WorkArea.Width;
             this.Height = SystemParameters.WorkArea.Height;
             this.Left = 0;
             this.Top = 0;
             this.WindowState = WindowState.Maximized;
-            Info();
-            Info2();
-            Info3();
-            Info4();
-            Info5();
             StoreFill();
-            PrintDialog testPrint = new PrintDialog();
-            if (testPrint.ShowDialog() == true)
-            {
-                //Где border1 - это лист документа
-                testPrint.PrintVisual(DataGridStore, "Doduk.docx");
-            }
         }
         private void ToMainWindow(object sender, RoutedEventArgs e)
         {
@@ -57,10 +27,6 @@ namespace Project_Store
        
         private void DataGridTovar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (DataGridTovar_Copy.SelectedItem != null && DataGridTovar_Copy.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            {
-                Info();
-            }
         }
         public void Info()
         {
@@ -81,7 +47,7 @@ namespace Project_Store
         public void Info3()
         {
             StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select sum(Number) as 'RevenueNumber', sum(Pay) as 'RevenueValue' from orders", DB.GetConnection());
+            MySqlDataAdapter sda = new MySqlDataAdapter("select sum(orders.Number) as 'RevenueNumber', sum(orders.Pay - tovar.PurchasePrice) as 'RevenueValue' from orders, tovar", DB.GetConnection());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             DataGridTovar_Copy3.ItemsSource = dt.DefaultView;
@@ -94,18 +60,17 @@ namespace Project_Store
             sda.Fill(dt);
             DataGridTovar_Copy.ItemsSource = dt.DefaultView;
         }
-        public void Info5()
-        {
-            StoreDatabase DB = new StoreDatabase();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select sum(Number) as 'RevenueNumber', sum(Pay) as 'RevenueValue' from orders", DB.GetConnection());
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            DataGridTovar_Copy2.ItemsSource = dt.DefaultView;
-        }
         public void StoreFill()
         {
-            //StoreDatabase DB = new StoreDatabase();
-            //MySqlDataAdapter sda = new MySqlDataAdapter("")
+            Info();
+            Info2();
+            Info3();
+            Info4();
+        }
+
+        private void ToUpdate(object sender, RoutedEventArgs e)
+        {
+            StoreFill();
         }
     }
 }

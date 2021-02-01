@@ -1,27 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-//using Microsoft.Office.Interop.Word;
-//using Word = Microsoft.Office.Interop.Word;
-using System.IO;
-using System.Reflection;
 using System.Windows.Media.Animation;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
     public partial class MainTovar : Window
     {
         long id = 0;
@@ -96,19 +83,19 @@ namespace Project_Store
             string searching;
             if (ButtonSearchID.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from tovar where id = '" + SearchBox.Text + "' ";
             }
             else if (ButtonSearchManufacturer.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Manufacturer like '%"+SearchBox.Text+"%'";
+                searching = "select * from tovar where Manufacturer like '%"+SearchBox.Text+"%'";
             }
             else if (ButtonSearchName.IsChecked == true)
             {
-                searching = "select * from tovar where tovar.Name like '%" + SearchBox.Text + "%'";
+                searching = "select * from tovar where Name like '%" + SearchBox.Text + "%'";
             }
             else
             {
-                searching = "select * from tovar where tovar.id = '" + SearchBox.Text + "' ";
+                searching = "select * from tovar where id = '" + SearchBox.Text + "' ";
             }
             StoreDatabase DB = new StoreDatabase();
             MySqlCommand thesearch = new MySqlCommand(searching, DB.GetConnection());
@@ -174,12 +161,9 @@ namespace Project_Store
                 anim3.Duration = TimeSpan.FromSeconds(0.5);
                 anim4.Duration = TimeSpan.FromSeconds(0.25);
                 ramka.BeginAnimation(WidthProperty, anim);
-                //id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
-                //Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
                 ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
-                //Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = false;
             }
         }

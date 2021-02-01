@@ -2,9 +2,6 @@
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow(string login = "")
@@ -15,16 +12,12 @@ namespace Project_Store
             var post = check.RevertPost(log.Text);
             if (post == "")
             {
-                MessageBox.Show("Вийди отсюда розбійник");
+                MessageBox.Show("Неавтентифікований користувач. \n Залогіньтесь!");
                 Close();
             }
-            else if (post == "Manager")
+            else if (post == "Manager" || post == "Admin")
             {
-                //MessageBox.Show("Вітаємо менеджера!");
-            }
-            else if (post == "Admin")
-            {
-                //MessageBox.Show("Адмін, звільняйся");
+                
             }
             else
             {

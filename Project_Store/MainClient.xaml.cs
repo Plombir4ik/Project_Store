@@ -1,27 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-//using Microsoft.Office.Interop.Word;
-//using Word = Microsoft.Office.Interop.Word;
-using System.IO;
-using System.Reflection;
 using System.Windows.Media.Animation;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
     public partial class MainClient : Window
     {
         long id = 0;
@@ -173,12 +160,9 @@ namespace Project_Store
                 anim3.Duration = TimeSpan.FromSeconds(0.5);
                 anim4.Duration = TimeSpan.FromSeconds(0.25);
                 ramka.BeginAnimation(WidthProperty, anim);
-                //id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
-                //Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
                 ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
-                //Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = false;
             }
         }

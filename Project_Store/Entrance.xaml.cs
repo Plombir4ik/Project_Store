@@ -6,9 +6,6 @@ using System.Data;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
     public partial class Entrance : Window
     {
         public Entrance()

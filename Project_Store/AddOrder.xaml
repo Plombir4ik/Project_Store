@@ -12,7 +12,7 @@
             <Button x:Name="КнопкаСкасувати" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="144" Click="BtnCancel" Height="50" Background="#FFF0F0F0" Margin="81,0,0,0" BorderBrush="Black" Foreground="Black" BorderThickness="1,1,2,2" />
         </WrapPanel>
 
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="PayBox" TextChanged="PayBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="102,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="PayBox" TextChanged="PayBox_TextChanged" IsReadOnly="True"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="102,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="NumberBox" MaxLength = "3" TextChanged="NumberBox_TextChanged"/>
         <TextBox HorizontalAlignment="Left" Height="26" Margin="102,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"  x:Name="DiscountBox" MaxLength = "2" TextChanged="DiscountBox_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="21" Margin="102,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.946,0.643" Text="Ціна"/>

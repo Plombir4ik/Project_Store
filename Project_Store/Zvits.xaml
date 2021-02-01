@@ -9,59 +9,46 @@
     <Grid Background="#FF212121">
 
 
-        <DataGrid x:Name="DataGridStore"  SelectionMode="Single" Margin="67,552,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
+        <DataGrid x:Name="DataGridStore"  SelectionMode="Single" Margin="187,552,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="638" BorderThickness="8" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Кількість" Binding="{Binding StoreNumber}" Width="150"/>
                 <DataGridTextColumn Header="Вартість складу" Binding="{Binding StorePrice}" Width="275"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock x:Name="log" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="White" Width="300" FontSize="18" Height="50"><Run Text="Найпопулярн"/><Run Text="і"/><Run Text="ший товар"/></TextBlock>
-        <DataGrid x:Name="DataGridTovar_Copy"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
+        <DataGrid x:Name="DataGridTovar_Copy"  SelectionMode="Single" Margin="187,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="638" BorderThickness="8" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="150"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="140"/>
                 <DataGridTextColumn Header="Назва" Binding="{Binding Name}" Width="275"/>
                 <DataGridTextColumn Header="Кількість" Binding="{Binding SellNumber}" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DataGridTovar_Copy1"  SelectionMode="Single" Margin="687,552,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
+        <DataGrid x:Name="DataGridTovar_Copy1"  SelectionMode="Single" Margin="1084,552,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="638" BorderThickness="8" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Кількість" Binding="{Binding OborotNumber}" Width="150"/>
                 <DataGridTextColumn Header="Оборот" Binding="{Binding OborotValue}" Width="275"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DataGridTovar_Copy2"  SelectionMode="Single" Margin="687,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="150"/>
-                <DataGridTextColumn Header="Прізвище" Binding="{Binding P}" Width="275"/>
-                <DataGridTextColumn Header="Ім'я" Binding="{Binding I}" Width="275"/>
-                <DataGridTextColumn Header="По-батькові" Binding="{Binding B}" Width="275"/>
-                <DataGridTextColumn Header="Кількість" Binding="{Binding OrderNumber}" Width="100"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="DataGridTovar_Copy3"  SelectionMode="Single" Margin="1302,552,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
+        <DataGrid x:Name="DataGridTovar_Copy3"  SelectionMode="Single" Margin="1084,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="638" BorderThickness="8" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Кількість" Binding="{Binding RevenueNumber}" Width="150"/>
                 <DataGridTextColumn Header="Дохід" Binding="{Binding RevenueValue}" Width="275"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="DataGridTovar_Copy4"  SelectionMode="Single" Margin="1302,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridTovar_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="363" VerticalAlignment="Top" HorizontalAlignment="Left" Width="540" BorderThickness="8" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="150"/>
-                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" Width="275"/>
-                <DataGridTextColumn Header="Кількість" Binding="{Binding SellNumber}" Width="100"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <TextBlock x:Name="log_Copy" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,696.333,0" Foreground="White" Width="540" FontSize="36" Text="Найефективніший працівник"/>
-        <TextBlock x:Name="log_Copy1" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,81.333,0" Foreground="White" Width="540" FontSize="36" Text="Кількість клієнтів"/>
-        <TextBlock x:Name="log_Copy2" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,499,1316.333,0" Foreground="White" Width="540" FontSize="36" Text="Склад"/>
-        <TextBlock x:Name="log_Copy3" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,504,696.333,0" Foreground="White" Width="540" FontSize="36" Text="Оборот"/>
-        <TextBlock x:Name="log_Copy4" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,513,81.333,0" Foreground="White" Width="540" FontSize="36" Text="Дохід"/>
+        <TextBlock x:Name="log_Copy2" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,499,1097.333,0" Foreground="White" Width="638" FontSize="36" Text="Склад"/>
+        <TextBlock x:Name="log_Copy3" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,504,201.333,0" Foreground="White" Width="638" FontSize="36" Text="Оборот"/>
+        <TextBlock x:Name="log_Copy4" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,201.333,0" Foreground="White" Width="638" FontSize="36" Text="Дохід"/>
         <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToMainWindow" Margin="870,920,865.333,0" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <TextBlock x:Name="log_Copy5" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,1316.333,0" Foreground="White" Width="540" FontSize="36" Text="Найпопулярніший товар"/>
+        <TextBlock x:Name="log_Copy5" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,1097.333,0" Foreground="White" Width="638" FontSize="36" Text="Найпопулярніший товар"/>
+        <Button x:Name="ГоловнеМеню_Copy" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToUpdate" Margin="870,479,865.333,0" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
 
 

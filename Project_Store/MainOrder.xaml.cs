@@ -1,30 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-//using Microsoft.Office.Interop.Word;
-//using Word = Microsoft.Office.Interop.Word;
-using System.IO;
-using System.Reflection;
 using System.Windows.Media.Animation;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
     public partial class MainOrder : Window
     {
-        long id = 0;
         bool a = false;
         public MainOrder(string login)
         {
@@ -53,36 +39,6 @@ namespace Project_Store
         {
             AddOrder mform = new AddOrder(log.Text, this);
             mform.Show();
-        }
-
-        private void EditOrder(object sender, RoutedEventArgs e)
-        {
-            if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            {
-                AddOrder a = new AddOrder(log.Text, this, id);
-                a.Show();
-            }
-            else
-            {
-                MessageBox.Show("Виберіть потрібного клієнта!");
-            }
-        }
-
-        private void DeleteOrder(object sender, RoutedEventArgs e)
-        {
-            StoreDatabase DB = new StoreDatabase();
-            if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            {
-                DB.OpenConnection();
-                MySqlCommand deleting = new MySqlCommand("DELETE FROM orders WHERE ID = '" + id + "';", DB.GetConnection());
-                deleting.ExecuteNonQuery();
-                DB.CloseConnection();
-            }
-            else
-            {
-                MessageBox.Show("Виберіть замовлення!");
-            }
-            Info();
         }
 
         private void Update(object sender, RoutedEventArgs e)
@@ -173,29 +129,13 @@ namespace Project_Store
                 anim3.Duration = TimeSpan.FromSeconds(0.5);
                 anim4.Duration = TimeSpan.FromSeconds(0.25);
                 ramka.BeginAnimation(WidthProperty, anim);
-                //id_ellipse.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchID.BeginAnimation(OpacityProperty, anim2);
                 ButtonSearchManufacturer.BeginAnimation(OpacityProperty, anim3);
-                //Manufacturer_ellipse.BeginAnimation(OpacityProperty, anim3);
                 ButtonSearchName.BeginAnimation(OpacityProperty, anim4);
-                //Name_ellipse.BeginAnimation(OpacityProperty, anim4);
                 a = false;
             }
         }
 
-        private void DataGridOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (DataGridOrder.SelectedItem != null && DataGridOrder.SelectedItem.ToString() != "{NewItemPlaceholder}")
-            {
-                foreach (DataRowView row in DataGridOrder.SelectedItems)
-                {
-                    if (row.Row.ItemArray[0] != DBNull.Value)
-                    {
-                        id = Convert.ToInt32(row.Row.ItemArray[0]);
-                    }
-                }
-            }
-        }
         public void Info()
         {
             StoreDatabase DB = new StoreDatabase();

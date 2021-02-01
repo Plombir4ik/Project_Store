@@ -1,24 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
-using System.Text.RegularExpressions;
 
 namespace Project_Store
 {
-    /// <summary>
-    /// Логика взаимодействия для AddTovar.xaml
-    /// </summary>
     public partial class AddTovar : Window
     {
         readonly long id = 0;
@@ -184,11 +170,6 @@ namespace Project_Store
             BoxManufacturer.Items.Clear();
             FillComboBoxManufacturer();
             BoxManufacturer.IsDropDownOpen = true;
-        }
-
-        private void BoxTypeOF_PreviewDragLeave(object sender, DragEventArgs e)
-        {
-            BoxTypeOF.Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
         }
     }
 }

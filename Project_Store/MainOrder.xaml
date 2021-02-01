@@ -9,7 +9,7 @@
     <Grid Background="#FF212121">
 
 
-        <DataGrid x:Name="DataGridOrder"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridOrder_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
+        <DataGrid x:Name="DataGridOrder"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="70" />
                 <DataGridTextColumn Header="ID клієнта" Binding="{Binding ID_C}" Width="100" />

@@ -68,9 +68,5 @@ namespace Project_Store
             Info4();
         }
 
-        private void ToUpdate(object sender, RoutedEventArgs e)
-        {
-            StoreFill();
-        }
     }
 }

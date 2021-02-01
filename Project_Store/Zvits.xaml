@@ -44,11 +44,6 @@
             </Button.Effect>
         </Button>
         <TextBlock x:Name="log_Copy5" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,1097.333,0" Foreground="White" Width="638" FontSize="36" Text="Найпопулярніший товар"/>
-        <Button x:Name="ГоловнеМеню_Copy" Content="Оновити" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToUpdate" Margin="870,479,865.333,0" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
 
 
 

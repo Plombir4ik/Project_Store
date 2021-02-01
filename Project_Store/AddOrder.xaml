@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="AddTovar" Height="450" Width="800">
+        Title="Додати замовлення" Height="450" Width="800">
     <Grid Margin="0,0,3.333,-0.333" Background="#FFF0F0F0">
         <WrapPanel HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="368" Margin="102,339,0,0">
             <Button x:Name="КнопкаДодатиТовар" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Top" Width="143" Click="BtnAddTovar" Height="50" Background="#FFF0F0F0"  Foreground="Black" BorderBrush="Black" BorderThickness="1,1,2,2" />

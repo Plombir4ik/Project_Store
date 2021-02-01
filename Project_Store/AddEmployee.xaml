@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="AddTovar" Height="450" Width="459.227">
+        Title="Додати працівника" Height="450" Width="459.227">
     <Grid Margin="0,0,3.333,-0.333" Background="#FFF0F0F0">
 
         <TextBox HorizontalAlignment="Left" Height="26" Margin="25,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"  x:Name="BoxP" Foreground="Black" BorderBrush="Black"/>

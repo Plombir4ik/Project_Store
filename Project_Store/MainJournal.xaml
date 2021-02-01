@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Store"
         mc:Ignorable="d"
-        Title="Window1" Width="1930" Height="1051">
+        Title="Журнал" Width="1930" Height="1051">
     <Grid Background="#FF212121">
 
 
         <DataGrid x:Name="DataGridJournal"  SelectionMode="Single" Margin="67,113,0,0" BorderBrush="Black" Foreground="Black" OpacityMask="#FFE6F6FF" HorizontalGridLinesBrush="DimGray" VerticalGridLinesBrush="White" HeadersVisibility="Column" AlternatingRowBackground="DarkGray" RowBackground="LightGray" Background="Gray" AreRowDetailsFrozen="True" MinColumnWidth="10" RowHeight="50" SelectionChanged="DataGridJournal_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True" Height="785" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1462" BorderThickness="8" Grid.ColumnSpan="2" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50" />
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="60" />
                 <DataGridTextColumn Header="Операція" Binding="{Binding Operation}" Width="125" />
                 <DataGridTextColumn Header="ID працівника" Binding="{Binding ID_P}" Width="120"/>
                 <DataGridTextColumn Header="Дата виконання" Binding="{Binding Date}"  Width="200"/>

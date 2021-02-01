@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Project_Store"
         xmlns:s="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="AddTovar" Height="450" Width="460">
+        Title="Додати клієнта" Height="450" Width="460">
     <Grid Margin="0,0,3.333,-0.333" Background="#FFF0F0F0">
 
         <TextBox HorizontalAlignment="Left" Height="30" Margin="41,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  x:Name="BoxP"/>

@@ -61,6 +61,11 @@
                         <DropShadowEffect/>
                 </Button.Effect>
                 </Button>
+                <Button x:Name="Звіти" Content="Звіти" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Margin="0,0,0,54" Click="ToZvits" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                </Button>
                 <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToMainWindow" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
                     <Button.Effect>
                             <DropShadowEffect/>

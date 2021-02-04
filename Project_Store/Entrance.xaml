@@ -30,7 +30,7 @@
                         <DropShadowEffect/>
                     </PasswordBox.Effect>
                 </PasswordBox>
-                <Button Content="Авторизуватись" Margin="75 50" Click="ButtonEntrance" Background="#FF1D1D1D" BorderBrush="White" Foreground="#DDFFFFFF" BorderThickness="2">
+                <Button Content="Увійти" Margin="75 50" Click="ButtonEntrance" Background="#FF1D1D1D" BorderBrush="White" Foreground="#DDFFFFFF" BorderThickness="2">
                     <Button.Effect>
                         <DropShadowEffect/>
                     </Button.Effect>

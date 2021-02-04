@@ -37,7 +37,7 @@
         </DataGrid>
         <TextBlock x:Name="log_Copy2" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,499,1097.333,0" Foreground="White" Width="638" FontSize="36" Text="Склад"/>
         <TextBlock x:Name="log_Copy3" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,504,201.333,0" Foreground="White" Width="638" FontSize="36" Text="Оборот"/>
-        <TextBlock x:Name="log_Copy4" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,201.333,0" Foreground="White" Width="638" FontSize="36" Text="Дохід"/>
+        <TextBlock x:Name="log_Copy4" TextAlignment="Center" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,60,201.333,0" Foreground="White" Width="638" FontSize="36" Text="Дохід."/>
         <Button x:Name="ГоловнеМеню" Content="Головне меню" HorizontalAlignment="Center" VerticalAlignment="Top" Width="188" Click="ToMainWindow" Margin="870,920,865.333,0" Height="68" Background="#FF1D1D1D" BorderThickness="3" BorderBrush="White" FontSize="21" FontWeight="Normal" >
             <Button.Effect>
                 <DropShadowEffect/>
